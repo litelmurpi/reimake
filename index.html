@@ -13,6 +13,9 @@
   
   <!-- CSS Stylesheet -->
   <link rel="stylesheet" href="style.css">
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
@@ -74,24 +77,28 @@
     <!-- Tab Navigation -->
     <nav class="tab-nav">
       <button class="tab-btn active" data-tab="outbound">
-        <span class="tab-icon">🏃‍♂️</span>
+        <span class="tab-icon"><i data-lucide="footprints" class="tab-lucide-icon"></i></span>
         <span class="tab-text">Outbound Anak</span>
       </button>
       <button class="tab-btn" data-tab="ketoprak">
-        <span class="tab-icon">🎭</span>
+        <span class="tab-icon"><i data-lucide="clapperboard" class="tab-lucide-icon"></i></span>
         <span class="tab-text">Ketoprak Warga</span>
       </button>
       <button class="tab-btn" data-tab="eco">
-        <span class="tab-icon">🍃</span>
+        <span class="tab-icon"><i data-lucide="leaf" class="tab-lucide-icon"></i></span>
         <span class="tab-text">Eco & Logistik</span>
       </button>
       <button class="tab-btn" data-tab="rab">
-        <span class="tab-icon">📊</span>
+        <span class="tab-icon"><i data-lucide="wallet" class="tab-lucide-icon"></i></span>
         <span class="tab-text">Anggaran (RAB)</span>
       </button>
       <button class="tab-btn" data-tab="timeline">
-        <span class="tab-icon">📅</span>
+        <span class="tab-icon"><i data-lucide="calendar" class="tab-lucide-icon"></i></span>
         <span class="tab-text">Timeline & Plan B</span>
+      </button>
+      <button class="tab-btn" data-tab="panitia">
+        <span class="tab-icon"><i data-lucide="users" class="tab-lucide-icon"></i></span>
+        <span class="tab-text">Panitia & Lampiran</span>
       </button>
     </nav>
     
@@ -160,7 +167,7 @@
             
             <!-- Sholat Integration Highlight -->
             <div class="sholat-card">
-              <div class="sholat-icon">🕌</div>
+              <div class="sholat-icon"><i data-lucide="landmark" class="sholat-lucide-icon"></i></div>
               <div>
                 <h4>Integrasi Sholat Dzuhur</h4>
                 <p>Rest Zone & Clue Drop di masjid. Clue Pos 6 diberikan oleh Takmir setelah sholat jamaah selesai.</p>
@@ -195,17 +202,17 @@
             <div class="time-block">
               <span class="time-hours">09:15</span>
               <h5 class="time-title">Pos 1 - Pos 3</h5>
-              <p class="time-desc">Start keberangkatan dengan jeda 5 menit.</p>
+              <p class="time-desc">Tim berangkat (interval 5 menit). <strong><i data-lucide="droplet" class="inline-lucide"></i> Wajib cek hidrasi di setiap pos</strong> (wajib minum, air disediakan).</p>
             </div>
             <div class="time-block">
               <span class="time-hours">10:30</span>
               <h5 class="time-title">Istirahat Tengah</h5>
-              <p class="time-desc">Snack jajanan pasar & minum kendi di rute.</p>
+              <p class="time-desc">Jajanan pasar tradisional & air minum ekstra disediakan di rute tengah.</p>
             </div>
             <div class="time-block">
               <span class="time-hours">11:00</span>
               <h5 class="time-title">Pos 4 - Pos 5</h5>
-              <p class="time-desc">Melanjutkan petualangan & tantangan.</p>
+              <p class="time-desc">Lanjut rute. <strong><i data-lucide="droplet" class="inline-lucide"></i> Wajib cek hidrasi di Pos 4</strong> (aktivitas fisik terberat: estafet air & egrang).</p>
             </div>
             <div class="time-block highlight">
               <span class="time-hours">11:45</span>
@@ -221,6 +228,14 @@
               <span class="time-hours">14:30</span>
               <h5 class="time-title">Skor & Hadiah</h5>
               <p class="time-desc">Pengumuman pemenang, pembagian bibit tanaman & piala kayu.</p>
+            </div>
+          </div>
+          <!-- Hydration & Heat Alert Card -->
+          <div class="hydration-alert-box">
+            <i data-lucide="droplet" class="hydration-alert-icon"></i>
+            <div class="hydration-alert-content">
+              <h4>Catatan Hidrasi & Antisipasi Panas</h4>
+              <p>Total durasi outbound adalah ± 6-7 jam, sebagian besar berlangsung pada jam terpanas (09.00-14.00) di musim kemarau. Selain 2 titik istirahat utama, <strong>setiap pos wajib menyediakan air minum</strong>. Panitia pos diinstruksikan untuk menegur atau menahan tim yang terlihat kelelahan (pusing, pucat, lemas) untuk beristirahat ekstra sebelum melanjutkan perjalanan. Sie P3K wajib membawa persediaan oralit.</p>
             </div>
           </div>
         </div>
@@ -450,6 +465,15 @@
         <div class="section-header">
           <h2>Rencana Anggaran Biaya (RAB) & Perbandingan</h2>
           <p class="section-subtitle">Konsep "Kembali ke Alam" memotong biaya cetak, dekorasi modern, dan konsumsi kemasan plastik sekali pakai secara drastis.</p>
+        </div>
+        
+        <!-- Status Alert Banner -->
+        <div class="template-alert-banner">
+          <i data-lucide="alert-triangle" class="template-alert-icon"></i>
+          <div class="template-alert-content">
+            <h4>STATUS: DRAF TEMPLATE / BELUM FINAL</h4>
+            <p>Semua angka di bawah masih berupa placeholder untuk memberi gambaran struktur RAB, bukan hasil survey harga riil atau kesepakatan BPH. Sebelum digunakan untuk rapat resmi, angka-angka ini wajib divalidasi ulang dengan mengecek jumlah KK riil, harga bahan lokal terkini, dan alokasi dana desa yang sebenarnya.</p>
+          </div>
         </div>
         
         <div class="rab-comparison-grid">
@@ -711,6 +735,28 @@
                   <p>Gladi bersih ketoprak full kostum, technical meeting panitia outbound.</p>
                 </div>
               </div>
+              
+              <div class="timeline-step-card" data-step="9">
+                <div class="step-check">
+                  <input type="checkbox" id="task-h" class="timeline-checkbox">
+                </div>
+                <div class="step-body">
+                  <span class="step-time">H (17 Agustus)</span>
+                  <h4>HARI-H PELAKSANAAN</h4>
+                  <p>Upacara Bendera pagi, Outbound siang, dan Malam Tirakatan pentas Ketoprak.</p>
+                </div>
+              </div>
+              
+              <div class="timeline-step-card" data-step="10">
+                <div class="step-check">
+                  <input type="checkbox" id="task-hplus1" class="timeline-checkbox">
+                </div>
+                <div class="step-body">
+                  <span class="step-time">H+1 (18 Agustus)</span>
+                  <h4>Evaluasi & Bersih-bersih</h4>
+                  <p>Pengembalian inventaris warga, pembongkaran dekorasi, rapat evaluasi BPH.</p>
+                </div>
+              </div>
             </div>
           </div>
           
@@ -719,10 +765,35 @@
             <h3>Skenario Darurat & Plan B</h3>
             <p class="text-muted text-sm mb-4">Mengantisipasi hambatan teknis dan alam saat pelaksanaan acara.</p>
             
+            <!-- Status Alert Banner -->
+            <div class="template-alert-banner" style="margin-bottom: 20px;">
+              <i data-lucide="alert-triangle" class="template-alert-icon"></i>
+              <div class="template-alert-content">
+                <h4>STATUS: DRAF TEMPLATE / BELUM FINAL</h4>
+                <p>Kerangka skenario mitigasi di bawah masih merupakan contoh umum dan belum disesuaikan dengan kondisi lapangan riil (lokasi pendopo cadangan yang benar-benar ada, kapasitas tenda yang benar-benar dimiliki desa, dll). Wajib divalidasi ke Sie terkait sebelum menjadi acuan resmi H-1.</p>
+              </div>
+            </div>
+            
             <div class="accordion">
+              <!-- Kelelahan / Dehidrasi Accordion Item -->
               <div class="accordion-item">
                 <button class="accordion-header">
-                  <span>⛈️ Jika Hujan Deras Saat Outbound</span>
+                  <span><i data-lucide="droplet" class="accordion-lucide-icon"></i> Jika Anak Mengalami Kelelahan / Dehidrasi (Baru)</span>
+                  <span class="accordion-arrow">▼</span>
+                </button>
+                <div class="accordion-content">
+                  <p><strong>Mitigasi & Solusi:</strong></p>
+                  <ul>
+                    <li>Lakukan cek hidrasi wajib di setiap pos (panitia pos menyediakan air minum).</li>
+                    <li>Pendamping tim dibekali kriteria sederhana kapan anak harus istirahat (jika pusing, pucat, atau lemas &rarr; segera stop, jangan paksa lanjut).</li>
+                    <li>Tim medis Sie P3K wajib menyiapkan oralit dan obat penunjang hidrasi, bukan hanya kotak P3K standar.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <button class="accordion-header">
+                  <span><i data-lucide="cloud-rain" class="accordion-lucide-icon"></i> Jika Hujan Deras Saat Outbound</span>
                   <span class="accordion-arrow">▼</span>
                 </button>
                 <div class="accordion-content">
@@ -738,7 +809,7 @@
               
               <div class="accordion-item">
                 <button class="accordion-header">
-                  <span>🎭 Jika Pemain Ketoprak Mendadak Absen</span>
+                  <span><i data-lucide="clapperboard" class="accordion-lucide-icon"></i> Jika Pemain Ketoprak Mendadak Absen</span>
                   <span class="accordion-arrow">▼</span>
                 </button>
                 <div class="accordion-content">
@@ -753,7 +824,7 @@
               
               <div class="accordion-item">
                 <button class="accordion-header">
-                  <span>🌧️ Jika Hujan Saat Malam Tirakatan</span>
+                  <span><i data-lucide="cloud-lightning" class="accordion-lucide-icon"></i> Jika Hujan Saat Malam Tirakatan</span>
                   <span class="accordion-arrow">▼</span>
                 </button>
                 <div class="accordion-content">
@@ -768,7 +839,7 @@
               
               <div class="accordion-item">
                 <button class="accordion-header">
-                  <span>📉 Jika Jumlah Peserta Outbound Kurang dari 40</span>
+                  <span><i data-lucide="trending-down" class="accordion-lucide-icon"></i> Jika Jumlah Peserta Outbound Kurang dari 40</span>
                   <span class="accordion-arrow">▼</span>
                 </button>
                 <div class="accordion-content">
@@ -785,14 +856,227 @@
             <div class="contact-box mt-4">
               <h4>Kontak Kunci Panitia</h4>
               <div class="contact-grid">
-                <div><span>Ketua Panitia:</span> <strong>Mas Bagus</strong></div>
-                <div><span>PJ Outbound:</span> <strong>Mbak Nia</strong></div>
-                <div><span>PJ Ketoprak:</span> <strong>Mas Danang</strong></div>
-                <div><span>Medis / P3K:</span> <strong>Mbak Amel</strong></div>
+                <div><span>Ketua Panitia:</span> <strong>[Nama Ketua]</strong></div>
+                <div><span>PJ Outbound:</span> <strong>[Nama PJ]</strong></div>
+                <div><span>PJ Ketoprak:</span> <strong>[Nama PJ]</strong></div>
+                <div><span>Medis / P3K:</span> <strong>[Nama PJ]</strong></div>
               </div>
             </div>
           </div>
           
+        </div>
+      </section>
+
+      <!-- TAB 6: PANITIA & LAMPIRAN -->
+      <section id="panitia" class="tab-content">
+        <div class="section-header">
+          <h2>Struktur Kepanitiaan & Dokumen Lampiran</h2>
+          <p class="section-subtitle">Struktur organisasi panitia pelaksana 17-an dan template formulir logistik resmi.</p>
+        </div>
+
+        <p class="panitia-section-desc">Penyelenggaraan perayaan HUT RI ke-81 ini bertumpu pada asas gotong royong dan kemitraan aktif antar-warga. Total kebutuhan panitia inti berkisar antara <strong>25 - 32 orang</strong> lintas usia.</p>
+
+        <div class="panitia-stats-row">
+          <span class="panitia-stat-pill"><i data-lucide="users" class="inline-lucide-margin"></i> Total Panitia: ±25-32 Orang</span>
+          <span class="panitia-stat-pill accent"><i data-lucide="sparkles" class="inline-lucide-margin"></i> Konsep: Efisiensi & Eco-Friendly</span>
+          <span class="panitia-stat-pill"><i data-lucide="calendar" class="inline-lucide-margin"></i> Hari Pelaksanaan: 17 Agustus 2026</span>
+        </div>
+
+        <div class="panitia-table-card">
+          <h3>Struktur Kepanitiaan Inti</h3>
+          <div class="panitia-table-wrapper">
+            <table class="rab-table">
+              <thead>
+                <tr>
+                  <th>Posisi Kepanitiaan</th>
+                  <th>Jumlah Personel</th>
+                  <th>Tugas Utama & Tanggung Jawab</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Ketua Panitia</strong></td>
+                  <td>1 orang</td>
+                  <td>Melakukan koordinasi umum, pengambilan keputusan tertinggi, serta penanggung jawab jalannya seluruh rangkaian acara.</td>
+                </tr>
+                <tr>
+                  <td><strong>Wakil Ketua</strong></td>
+                  <td>1 orang</td>
+                  <td>Membantu ketua panitia dalam mengawasi kerja seksi-seksi, membackup ketua bila berhalangan hadir, dan memperlancar komunikasi antar-divisi.</td>
+                </tr>
+                <tr>
+                  <td><strong>Sekretaris</strong></td>
+                  <td>1 orang</td>
+                  <td>Mengurus administrasi, persuratan (perizinan RT/RW, proposal sponsorship), penyusunan notulen rapat, serta dokumentasi tertulis.</td>
+                </tr>
+                <tr>
+                  <td><strong>Bendahara</strong></td>
+                  <td>1 orang</td>
+                  <td>Pencatatan sirkulasi keuangan (pemasukan/iuran & pengeluaran), memegang kas utama, dan merekapitulasi laporan pertanggungjawaban RAB.</td>
+                </tr>
+                <tr>
+                  <td><strong>Sie Outbound</strong></td>
+                  <td>4 - 5 orang</td>
+                  <td>Mendesain rute jelajah, menyiapkan 6 pos permainan, melatih pendamping tim, menyusun teka-teki clue, dan menyiapkan peralatan lomba anak.</td>
+                </tr>
+                <tr>
+                  <td><strong>Sie Ketoprak & Acara Malam</strong></td>
+                  <td>3 - 4 orang</td>
+                  <td>Menyusun naskah komedi-satir, memimpin casting dan latihan rutin para pemain ketoprak, serta mengatur rundown & MC di malam tirakatan.</td>
+                </tr>
+                <tr>
+                  <td><strong>Sie Dekorasi</strong></td>
+                  <td>4 - 5 orang</td>
+                  <td>Menata panggung tirakatan menggunakan anyaman gedek dan janur, menyiapkan lampion kertas, obor gerbang, gapura start/finish, dan papan penunjuk pos.</td>
+                </tr>
+                <tr>
+                  <td><strong>Sie Konsumsi</strong></td>
+                  <td>3 - 4 orang</td>
+                  <td>Menyiapkan hidangan eco-friendly tanpa plastik (bancakan daun pisang, rebusan) bekerjasama dengan ibu-ibu masak RT, mengelola peminjaman kendi/gelas seng.</td>
+                </tr>
+                <tr>
+                  <td><strong>Sie Perlengkapan & Sound</strong></td>
+                  <td>2 - 3 orang</td>
+                  <td>Memastikan kesiapan sound system (bel bambu, mic panggung, HT), menyewa lighting warm-white, genset cadangan, panggung, dan tikar pandan.</td>
+                </tr>
+                <tr>
+                  <td><strong>Sie Humas & Dokumentasi</strong></td>
+                  <td>2 - 3 orang</td>
+                  <td>Mensosialisasikan acara ke warga, membuka pendaftaran peserta, mengabadikan momen foto/video, serta mengelola postingan media sosial desa.</td>
+                </tr>
+                <tr>
+                  <td><strong>Sie Keamanan & P3K</strong></td>
+                  <td>3 - 4 orang</td>
+                  <td>Mengamankan persimpangan rute outbound, memantau kondisi fisik anak (hidrasi, kelelahan), menyediakan obat-obatan & oralit, serta berkoordinasi darurat.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Lampiran Grid -->
+        <h3>Dokumen & Formulir Lampiran Resmi</h3>
+        <p class="sub-desc" style="margin-bottom: 25px;">Formulir operasional di bawah dapat disalin langsung untuk keperluan lapangan panitia.</p>
+        
+        <div class="lampiran-grid">
+          <!-- Lampiran 1: Form Peminjaman -->
+          <div class="lampiran-card">
+            <h3>Form Peminjaman Peralatan Warga</h3>
+            <p class="lampiran-desc">Digunakan oleh Sie Konsumsi & Perlengkapan untuk mendata peminjaman tampah, kendi, tikar, dan gelas enamel per RT.</p>
+            <div class="doc-mockup-wrapper">
+              <div class="doc-mockup-header">
+                <span class="doc-title-badge">Lampiran 1: Logistik RT</span>
+                <button class="doc-action-btn" onclick="copyTemplate('form-pinjam')">Salin Template</button>
+              </div>
+              <div class="doc-mockup-body" id="form-pinjam">FORM PEMINJAMAN PERALATAN 17 AGUSTUS 2026
+RT: ___  RW: ___
+
+Nama Pemilik: ___________________
+Alamat: _________________________
+
+Barang yang dipinjamkan:
+[ ] Tampah besar &mdash; jumlah: ___
+[ ] Tampah kecil &mdash; jumlah: ___
+[ ] Kendi &mdash; jumlah: ___
+[ ] Gelas seng/enamel &mdash; jumlah: ___
+[ ] Tikar pandan &mdash; jumlah: ___
+[ ] Teko besar &mdash; jumlah: ___
+[ ] Lainnya: ________________ &mdash; jumlah: ___
+
+Tanggal pinjam: ___/___/2026
+Tanggal kembali: ___/___/2026
+
+Kondisi barang saat dipinjam: Baik / Ada catatan: ____________
+
+Tanda tangan pemilik: ___________
+Tanda tangan panitia: ___________</div>
+            </div>
+          </div>
+          
+          <!-- Lampiran 2: Kartu Skor -->
+          <div class="lampiran-card">
+            <h3>Kartu Skor Outbound Juri</h3>
+            <p class="lampiran-desc">Dibawa oleh setiap pendamping tim untuk mencatat akumulasi nilai dari juri pos 1 sampai pos 6.</p>
+            <div class="doc-mockup-wrapper">
+              <div class="doc-mockup-header">
+                <span class="doc-title-badge">Lampiran 2: Kartu Skor</span>
+                <button class="doc-action-btn" onclick="copyTemplate('kartu-skor')">Salin Template</button>
+              </div>
+              <div class="doc-mockup-body" id="kartu-skor">KARTU SKOR — JELAJAH DESA BERKAH
+
+Nama Tim: ___________________
+Warna Tim: __________________
+Jumlah Anggota: ___ orang
+Pendamping: _________________
+
+| Pos | Nama Pos       | Skor (1-100) | Catatan Juri |
+|-----|----------------|--------------|--------------|
+| 1   | Jejak Pejuang  |              |              |
+| 2   | Apotik Hidup   |              |              |
+| 3   | Sandi Alam     |              |              |
+| 4   | Gotong Royong  |              |              |
+| 5   | Hafalan Berkah |              |              |
+| 6   | Membangun Desa |              |              |
+| TOTAL |              | /600         |              |
+
+Skor Tambahan:
+Kekompakan & Sportivitas: ___/100
+Kedisiplinan Sholat: ___/100
+Yel-yel & Semangat: ___/100
+Kebersihan: ___/100
+
+Nama Juri: ___________
+Tanda Tangan: ________</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lampiran 3: Kontak Darurat -->
+        <div class="contact-card-organic">
+          <h3>Lampiran 3: Daftar Kontak Darurat & Komunikasi</h3>
+          <div class="contact-list-organic">
+            <div class="contact-item-organic">
+              <span>Ketua Panitia</span>
+              <strong>[Nama Ketua]</strong>
+              <p><i data-lucide="phone" class="contact-lucide-icon"></i> [No. HP]</p>
+            </div>
+            <div class="contact-item-organic">
+              <span>Wakil Ketua</span>
+              <strong>[Nama Wakil]</strong>
+              <p><i data-lucide="phone" class="contact-lucide-icon"></i> [No. HP]</p>
+            </div>
+            <div class="contact-item-organic">
+              <span>Koordinator Outbound</span>
+              <strong>[Nama PJ]</strong>
+              <p><i data-lucide="phone" class="contact-lucide-icon"></i> [No. HP]</p>
+            </div>
+            <div class="contact-item-organic">
+              <span>Koordinator Ketoprak</span>
+              <strong>[Nama PJ]</strong>
+              <p><i data-lucide="phone" class="contact-lucide-icon"></i> [No. HP]</p>
+            </div>
+            <div class="contact-item-organic">
+              <span>P3K / Medis</span>
+              <strong>[Nama PJ]</strong>
+              <p><i data-lucide="phone" class="contact-lucide-icon"></i> [No. HP]</p>
+            </div>
+            <div class="contact-item-organic">
+              <span>Puskesmas Pembantu</span>
+              <strong>[Nama Puskesmas]</strong>
+              <p><i data-lucide="phone" class="contact-lucide-icon"></i> [No. Telp]</p>
+            </div>
+          </div>
+          
+          <div class="comms-box">
+            <div class="comm-item">
+              <h5><i data-lucide="radio" class="inline-lucide"></i> Frekuensi Radio HT</h5>
+              <p>Semua panitia inti & penanggung jawab pos wajib menggunakan frekuensi <strong>Channel 12 (142.350 MHz)</strong> untuk koordinasi cepat.</p>
+            </div>
+            <div class="comm-item">
+              <h5><i data-lucide="message-square" class="inline-lucide"></i> WhatsApp Group Panitia</h5>
+              <p>Link grup koordinasi utama: <a href="#" style="color: var(--color-accent); font-weight: 700; text-decoration: none;">bit.ly/panitia17-desa-sejahtera</a></p>
+            </div>
+          </div>
         </div>
       </section>
       

@@ -53,7 +53,8 @@ document.addEventListener('DOMContentLoaded', () => {
         "10 jenis tanaman herbal segar di dalam wadah tampah",
         "Kain penutup mata hitam (3 buah)",
         "Lembar panduan juri untuk kunci jawaban"
-      ]
+      ],
+      safety: "<i data-lucide='alert-triangle' class='contact-lucide-icon' style='vertical-align: -2px; margin-right: 4px; color: var(--color-accent);'></i> <strong>Catatan Keamanan (Baru):</strong> Karena ronde aroma dilakukan dengan mata tertutup dan tangan meraba, pastikan semua 10 jenis tanaman sudah dicek aman disentuh kulit (tidak gatal/iritasi). Tanyakan dulu ke pendamping/orang tua bila ada anak yang punya alergi kulit sebelum ronde dimulai."
     },
     "3": {
       title: "Pos 3: Sandi Alam",
@@ -112,16 +113,22 @@ document.addEventListener('DOMContentLoaded', () => {
     // Create equipment list items
     const equipmentItems = data.equipment.map(item => `<li>${item}</li>`).join('');
 
+    const safetyBox = data.safety ? `
+      <div class="pos-safety-badge" style="margin-top: 15px;">
+        <span>${data.safety}</span>
+      </div>
+    ` : '';
+
     posDetailContainer.innerHTML = `
       <div class="pos-detail-header">
         <h3>${data.title}</h3>
-        <span class="pos-location-badge">📍 Lokasi: ${data.location}</span>
+        <span class="pos-location-badge"><i data-lucide="map-pin" class="contact-lucide-icon" style="margin-right: 4px;"></i> Lokasi: ${data.location}</span>
       </div>
       
       <div class="pos-grid-detail">
         <div class="pos-sub-block">
           <h4>
-            <span class="sub-icon">🎮</span>
+            <i data-lucide="gamepad-2" class="accordion-lucide-icon"></i>
             Konsep & Cara Main
           </h4>
           <p>${data.games}</p>
@@ -129,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         <div class="pos-sub-block">
           <h4>
-            <span class="sub-icon">🔧</span>
+            <i data-lucide="wrench" class="accordion-lucide-icon"></i>
             Kebutuhan Peralatan
           </h4>
           <ul>
@@ -139,10 +146,16 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
       
       <div class="pos-scoring-box">
-        <h4>📋 Metode Penilaian Juri:</h4>
+        <h4><i data-lucide="clipboard-check" class="accordion-lucide-icon"></i> Metode Penilaian Juri:</h4>
         <p>${data.assess}</p>
       </div>
+      ${safetyBox}
     `;
+
+    // Re-initialize Lucide icons for dynamically added HTML
+    if (window.lucide) {
+      lucide.createIcons();
+    }
   }
 
   // Handle Pos button clicks
@@ -233,6 +246,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initial progress update on load
   updateProgress();
 
+  // Initialize Lucide Icons on load
+  if (window.lucide) {
+    lucide.createIcons();
+  }
+
   // ==========================================
   // 5. ACCORDION (PLAN B / RISK MITIGATION)
   // ==========================================
@@ -254,3 +272,26 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
+// Global helper for copying templates
+window.copyTemplate = function(elementId) {
+  const content = document.getElementById(elementId).innerText;
+  navigator.clipboard.writeText(content).then(() => {
+    const btn = document.querySelector(`button[onclick="copyTemplate('${elementId}')"]`);
+    if (btn) {
+      const originalText = btn.innerText;
+      btn.innerText = "Tersalin!";
+      btn.style.backgroundColor = "var(--color-green)";
+      btn.style.color = "#ffffff";
+      btn.style.borderColor = "var(--color-green)";
+      setTimeout(() => {
+        btn.innerText = originalText;
+        btn.style.backgroundColor = "transparent";
+        btn.style.color = "var(--color-primary-light)";
+        btn.style.borderColor = "var(--color-primary-light)";
+      }, 2000);
+    }
+  }).catch(err => {
+    console.error("Gagal menyalin: ", err);
+  });
+};

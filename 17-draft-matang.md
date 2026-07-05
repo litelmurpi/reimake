@@ -79,9 +79,9 @@ Perayaan 17 Agustus tahun ini mengusung konsep **"Kembali ke Alam & Budaya"** �
 | 08.00 - 08.30 | Persiapan & transit panitia outbound | Panitia menuju pos masing-masing |
 | 08.30 - 09.00 | **Registrasi & Pembagian Tim** | Di lapangan desa / balai desa. Pembagian kaos tim (warna berbeda) atau gelang tim |
 | 09.00 - 09.15 | **Briefing & Yel-yel Tim** | Penjelasan aturan, penilaian, dan pelepasan tim |
-| 09.15 - 10.30 | **Pos 1-3** (± 25 menit/pos + 5 menit transit) | Tim berangkat dengan interval 5 menit antar tim |
-| 10.30 - 11.00 | **Istirahat + Snack Tradisional** | Di titik tengah rute — disediakan jajanan pasar |
-| 11.00 - 11.45 | **Pos 4-5** | Lanjut rute |
+| 09.15 - 10.30 | **Pos 1-3** (± 25 menit/pos + 5 menit transit) | Tim berangkat dengan interval 5 menit antar tim. **💧 Wajib cek hidrasi di setiap pos** — panitia pos menyediakan air minum, tim tidak lanjut ke pos berikutnya sebelum minum |
+| 10.30 - 11.00 | **Istirahat + Snack Tradisional** | Di titik tengah rute — disediakan jajanan pasar + air minum ekstra |
+| 11.00 - 11.45 | **Pos 4-5** | Lanjut rute. **💧 Cek hidrasi lagi di Pos 4** (aktivitas fisik paling berat — estafet air + egrang) |
 | 11.45 - 12.30 | **🕌 REST ZONE & CLUE DROP — Sholat Dzuhur** | Semua tim berkumpul di masjid. Sholat berjamaah. **Clue utama untuk Pos 6 (final) dibagikan setelah salam oleh takmir.** |
 | 12.30 - 13.00 | **Makan Siang Bersama** | Di halaman masjid / area sekitar. Menu tradisional (nasi liwet bungkus daun, lauk sederhana) |
 | 13.00 - 14.00 | **Pos 6: Final Challenge** | Pos terakhir — tantangan kolaboratif seluruh tim |
@@ -89,6 +89,8 @@ Perayaan 17 Agustus tahun ini mengusung konsep **"Kembali ke Alam & Budaya"** �
 | 14.30 - 15.00 | **Perhitungan Skor & Pengumuman** | Rekapitulasi nilai seluruh pos |
 | 15.00 - 15.30 | **🕌 Sholat Ashar Berjamaah** | Di masjid terdekat |
 | 15.30 - 16.00 | **Pembagian Hadiah & Penutupan** | Penyerahan piala/hadiah + foto bersama |
+
+> 💧 **Catatan Hidrasi & Panas (baru):** Total durasi outbound ± 6-7 jam, sebagian besar di jam paling panas (09.00-14.00, musim kemarau). Selain 2 titik istirahat utama, **setiap pos wajib menyediakan air minum** dan panitia pos diinstruksikan menegur/menahan tim yang terlihat kelelahan (pusing, pucat, lemas) untuk istirahat ekstra sebelum lanjut. Sie P3K sebaiknya juga bawa oralit, bukan cuma kotak P3K standar.
 
 ## C. Detail Pos & Permainan
 
@@ -103,6 +105,7 @@ Perayaan 17 Agustus tahun ini mengusung konsep **"Kembali ke Alam & Budaya"** �
 - **Games:** Tebak 10 jenis tanaman empon-empon/herbal (jahe, kunyit, lengkuas, dll) hanya dari aroma dan bentuk daun (mata ditutup untuk ronde aroma)
 - **Penilaian:** Jumlah jawaban benar
 - **Peralatan:** 10 jenis tanaman segar, penutup mata, lembar jawaban
+- ⚠️ **Catatan keamanan (baru):** Karena ronde aroma dilakukan dengan mata tertutup dan tangan meraba, pastikan semua 10 jenis tanaman sudah dicek aman disentuh kulit (tidak getah gatal/iritasi). Tanyakan dulu ke pendamping/orang tua bila ada anak yang punya alergi kulit sebelum ronde dimulai
 
 ### Pos 3 — "Sandi Alam" (Problem Solving)
 - **Lokasi:** Area hutan/kebun bambu
@@ -157,6 +160,7 @@ Perayaan 17 Agustus tahun ini mengusung konsep **"Kembali ke Alam & Budaya"** �
 | **Hujan** | Siapkan 2-3 pos indoor (teras rumah warga, pendopo, balai dusun) sebagai pos cadangan. Clue dari media alam dipindah ke papan kayu kecil yang tahan air. Rute dipendekkan |
 | **Anak tersesat** | Setiap tim wajib bersama pendamping dewasa. Panitia di setiap persimpangan. Komunikasi via HT/grup WA panitia |
 | **Cedera/sakit** | Sie P3K standby di 2 titik (tengah rute + finish). Sediakan kotak P3K + kendaraan darurat |
+| **Kelelahan/dehidrasi anak** *(baru)* | Cek hidrasi wajib di setiap pos (lihat catatan di rundown). Pendamping tim dibekali kriteria sederhana kapan anak harus istirahat (pusing/pucat/lemas → stop, jangan paksa lanjut). P3K bawa oralit |
 | **Peserta terlalu banyak/sedikit** | Fleksibel: jika > 100 anak, tambah 2 tim dan 1 pendamping. Jika < 40, kurangi jumlah tim (min 5 tim) |
 | **Warga keberatan rute lewat area mereka** | Koordinasi & izin tertulis H-14 ke setiap RT yang dilalui rute |
 
@@ -334,6 +338,8 @@ Pemuda desa (tokoh: **Mas Bejo**, pemuda karang taruna) yang awalnya kecanduan g
 
 # 💰 RENCANA ANGGARAN BIAYA (RAB)
 
+> ⚠️ **STATUS: TEMPLATE / BELUM FIX.** Semua angka di bawah masih placeholder untuk memberi gambaran struktur RAB, bukan hasil survey harga atau kesepakatan BPH. Sebelum dipakai untuk rapat resmi, angka-angka ini wajib dicek ulang: jumlah KK riil, harga bahan lokal terkini, dan besaran dana desa yang benar-benar dialokasikan.
+
 ## A. Pemasukan (Estimasi)
 
 | Sumber | Estimasi |
@@ -415,6 +421,8 @@ Pemuda desa (tokoh: **Mas Bejo**, pemuda karang taruna) yang awalnya kecanduan g
 ---
 
 # 🔄 PLAN B — SKENARIO DARURAT
+
+> ⚠️ **STATUS: TEMPLATE / BELUM FIX.** Kerangka skenario di bawah masih contoh umum, belum disesuaikan dengan kondisi lapangan riil (lokasi pendopo cadangan yang benar-benar ada, kapasitas tenda yang benar-benar dipunya desa, dll). Perlu divalidasi ke Sie terkait sebelum jadi acuan resmi H-1.
 
 ## Jika Hujan Deras di Hari-H
 
