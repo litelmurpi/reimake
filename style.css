@@ -1857,6 +1857,11 @@ body {
   .lampiran-grid {
     grid-template-columns: 1fr;
   }
+  
+  /* Ensure tab navigation is scrollable */
+  .tab-nav {
+    overflow-x: auto;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1865,19 +1870,19 @@ body {
   }
 
   .app-header {
-    padding: 40px 24px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border-radius: var(--radius-md);
+    padding: 30px 16px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: var(--radius-sm);
   }
   
   .main-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   
   .tagline {
-    font-size: 1rem;
-    margin-bottom: 30px;
+    font-size: 0.95rem;
+    margin-bottom: 25px;
   }
 
   .stats-grid {
@@ -1886,27 +1891,27 @@ body {
   }
 
   .stat-card {
-    padding: 14px 16px;
+    padding: 12px 14px;
   }
 
   .tab-nav {
     padding: 6px;
-    margin-bottom: 25px;
-    gap: 6px;
+    margin-bottom: 20px;
+    gap: 5px;
   }
   
   .tab-btn {
-    padding: 10px 16px;
-    font-size: 0.85rem;
-    gap: 8px;
+    padding: 8px 12px;
+    font-size: 0.78rem;
+    gap: 6px;
   }
 
   .section-header h2 {
-    font-size: 1.6rem;
+    font-size: 1.45rem;
   }
 
   .section-subtitle {
-    font-size: 0.95rem;
+    font-size: 0.88rem;
   }
 
   /* Outbound Pos List Horizontal Scroll */
@@ -1914,7 +1919,7 @@ body {
     flex-direction: row;
     overflow-x: auto;
     padding: 4px 4px 12px 4px;
-    gap: 10px;
+    gap: 8px;
     scrollbar-width: none; /* Firefox */
     -webkit-overflow-scrolling: touch;
   }
@@ -1926,7 +1931,7 @@ body {
   .pos-btn {
     flex: 0 0 auto;
     width: auto;
-    padding: 12px 20px;
+    padding: 10px 16px;
     transform: none !important;
   }
   
@@ -1935,22 +1940,22 @@ body {
   }
 
   .pos-detail-card {
-    padding: 24px 20px;
-    border-radius: var(--radius-md);
+    padding: 20px 16px;
+    border-radius: var(--radius-sm);
   }
   
   .pos-grid-detail {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 15px;
   }
 
   .pos-detail-header h3 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 
   /* Tables Mobile Minimum Width for scrollability */
   .rab-table {
-    min-width: 650px;
+    min-width: 600px;
   }
 
   .table-responsive {
@@ -1959,83 +1964,83 @@ body {
 
   .lending-calculator {
     grid-template-columns: 1fr;
-    padding: 20px;
-    border-radius: var(--radius-md);
+    padding: 16px;
+    border-radius: var(--radius-sm);
   }
   
   .calculator-form {
     border-right: none;
     border-bottom: 1px solid var(--border-color);
     padding-right: 0;
-    padding-bottom: 24px;
+    padding-bottom: 20px;
   }
   
   .comms-box {
     flex-direction: column;
-    gap: 15px;
-    padding: 15px;
+    gap: 12px;
+    padding: 12px;
   }
 
   .timeline-step-card {
-    padding: 16px;
-    gap: 12px;
+    padding: 14px;
+    gap: 10px;
   }
 
   .template-alert-banner,
   .hydration-alert-box {
-    padding: 16px;
-    gap: 12px;
+    padding: 12px;
+    gap: 8px;
   }
 
   .lampiran-card {
-    padding: 20px;
-    border-radius: var(--radius-md);
+    padding: 16px;
+    border-radius: var(--radius-sm);
   }
 
   .contact-card-organic {
-    padding: 20px;
-    border-radius: var(--radius-md);
+    padding: 16px;
+    border-radius: var(--radius-sm);
   }
 }
 
 @media (max-width: 480px) {
   .app-header {
-    padding: 30px 16px;
+    padding: 24px 12px;
   }
 
   .main-title {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 
   .tagline {
-    font-size: 0.9rem;
-    padding-left: 10px;
+    font-size: 0.85rem;
+    padding-left: 8px;
   }
 
   .section-header h2 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 
   .tab-btn {
-    padding: 8px 12px;
-    font-size: 0.8rem;
+    padding: 6px 8px;
+    font-size: 0.72rem;
   }
 
   .tab-lucide-icon {
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
   }
 
   .pos-detail-card {
-    padding: 16px;
+    padding: 12px;
   }
 
   .pos-detail-header h3 {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
   }
 
   .pos-scoring-box {
-    padding: 12px;
+    padding: 10px;
   }
 
   .borrow-estimate-list {
