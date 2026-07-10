@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teleprompter Naskah Presentasi</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        :root {
+            --bg-color: #000000;
+            --text-color: #ffffff;
+            --spoken-color: #ffde59;
+            --instruction-color: #888888;
+            --ui-bg: rgba(30, 30, 30, 0.8);
+            --font-size: 32px;
+            --line-height: 1.5;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Inter', sans-serif;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #prompter-container {
+            flex: 1;
+            overflow-y: auto;
+            padding: 50vh 20px; /* Add padding to allow scrolling past the end */
+            scroll-behavior: smooth;
+        }
+
+        #content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: var(--font-size);
+            line-height: var(--line-height);
+            transform: scaleX(1);
+            transition: transform 0.3s ease;
+        }
+
+        #content.mirrored {
+            transform: scaleX(-1);
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            color: #ffffff;
+            margin-top: 2em;
+            margin-bottom: 0.5em;
+        }
+
+        .spoken {
+            color: var(--spoken-color);
+            font-weight: 600;
+            font-size: 1.2em;
+            margin: 1em 0;
+            border-left: 4px solid var(--spoken-color);
+            padding-left: 15px;
+        }
+
+        .instruction {
+            color: var(--instruction-color);
+            font-size: 0.8em;
+            margin: 1em 0;
+        }
+
+        ul {
+            color: var(--instruction-color);
+            font-size: 0.8em;
+            padding-left: 20px;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid #333;
+            margin: 2em 0;
+        }
+
+        /* Controls UI */
+        #controls {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--ui-bg);
+            backdrop-filter: blur(10px);
+            padding: 15px 25px;
+            border-radius: 50px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            z-index: 1000;
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        #controls.hidden {
+            opacity: 0;
+            transform: translate(-50%, 50px);
+            pointer-events: none;
+        }
+
+        button {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            border-radius: 50%;
+            transition: background 0.2s;
+        }
+
+        button:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-primary {
+            background: var(--spoken-color);
+            color: black;
+            width: 50px;
+            height: 50px;
+        }
+
+        .btn-primary:hover {
+            background: #e6c84f;
+        }
+
+        .control-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-left: 1px solid rgba(255,255,255,0.2);
+            padding-left: 20px;
+        }
+
+        .control-label {
+            font-size: 12px;
+            color: #aaa;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .val-display {
+            font-weight: bold;
+            color: white;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+
+        
+        #focus-marker {
+            position: fixed;
+            top: 30%;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: rgba(255, 222, 89, 0.3);
+            z-index: 100;
+            pointer-events: none;
+        }
+
+        /* SVG Icons */
+        svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="focus-marker"></div>
+
+    <div id="prompter-container">
+        <div id="content">
+            <h1 style="font-size: 1.5em; color: #fff;">Panduan Presentasi Forum Warga: HUT RI ke-81</h1>
+            <div class="instruction">Naskah ini disusun sebagai panduan (talking points) saat Anda mempresentasikan proposal HUT RI ke-81 di forum/pertemuan warga Dukuh Kemasan. Anda bisa menyesuaikan bahasanya agar lebih santai dan membaur dengan warga.</div>
+            
+            <hr>
+
+            <h2>1. Pembukaan (Salam & Penghormatan)</h2>
+            <div class="spoken">"Assalamu’alaikum Warahmatullahi Wabarakatuh. Selamat malam dan salam sejahtera untuk kita semua."</div>
+            
+            <div class="instruction">Sapa Tokoh Masyarakat:</div>
+            <div class="spoken">"Yang saya hormati Bapak Kepala Desa (jika hadir), Bapak Setiyono selaku Ketua RW 07, Bapak Muhammad Qomarudin selaku Ketua RT 13, Bapak Herman Susilo selaku Ketua RT 14, Bapak/Ibu sesepuh pinisepuh, serta seluruh warga Dukuh Kemasan yang kulo tresnani."</div>
+            
+            <div class="instruction">Mukadimah Singkat:</div>
+            <div class="spoken">"Pertama-tama, mari kita panjatkan puji syukur ke hadirat Allah SWT, Tuhan Yang Maha Esa, karena malam ini kita bisa berkumpul dalam keadaan sehat walafiat. Terima kasih atas waktu yang diberikan kepada saya selaku perwakilan Panitia HUT Kemerdekaan RI ke-81 Dukuh Kemasan."</div>
+
+            <h2>2. Pengantar & Tema Acara</h2>
+            
+            <div class="instruction">Tujuan Presentasi:</div>
+            <div class="spoken">"Bapak/Ibu sekalian, sebentar lagi kita akan menyambut Hari Kemerdekaan RI yang ke-81. Malam ini, kami dari panitia memohon izin untuk memaparkan rencana kegiatan yang sudah kami susun."</div>
+            
+            <div class="instruction">Memperkenalkan Tema:</div>
+            <div class="spoken">"Tahun ini, kami membawa konsep yang sedikit berbeda. Tema yang kami angkat adalah <strong>'Kembara Rimba Nusantara: Merayakan Kemerdekaan di Dekapan Alam'</strong>."</div>
+            
+            <div class="instruction">Alasan Tema:</div>
+            <div class="spoken">"Kenapa tema ini? Karena kami ingin perayaan tahun ini lebih efisien, meminimalkan sampah plastik, lebih berkarakter mengangkat budaya lokal kita, dan pastinya melibatkan semua kalangan mulai dari anak-anak, remaja, hingga Bapak/Ibu sekalian."</div>
+
+            <h2>3. Pemaparan 4 Agenda Utama</h2>
+            
+            <div class="spoken">"Untuk memeriahkan peringatan ini, kami telah merumuskan <strong>4 Agenda Utama</strong>, yaitu:"</div>
+            
+            <div class="instruction">1. Lomba PAUD & TK (8 Agustus)</div>
+            <div class="spoken">"Lomba anak-anak yang edukatif, seperti menyusun bentuk daun dan estafet untuk melatih motorik."</div>
+            
+            <div class="instruction">2. Outbound SD & SMP "Jelajah Desa Berkah" (9 Agustus) - (Beri penekanan di sini)</div>
+            <div class="spoken">"Ini bukan sekadar main-main, Bapak/Ibu. Kami memasukkan 4 nilai penting. Ada <strong>Namu (srawung)</strong> di mana anak-anak harus berinteraksi dengan tokoh warga, ada <strong>Reresik</strong> untuk pungut sampah di jalan, <strong>Berkah</strong> untuk kekompakan tim memecahkan clue, dan <strong>Barokah</strong> di mana ada setoran hafalan Asmaul Husna serta jeda wajib untuk salat berjamaah."</div>
+            
+            <div class="instruction">3. Malam Tirakatan & Ketoprak (16 Agustus)</div>
+            <div class="spoken">"Pada malam 17-an, kita adakan renungan dan doa bersama di Lapangan Tengah Desa, yang akan dimeriahkan dengan pertunjukan Ketoprak warga berjudul 'Sowan ke Masa Lalu'."</div>
+            
+            <div class="instruction">4. Jalan Sehat Warga (23 Agustus)</div>
+            <div class="spoken">"Sebagai puncak acara, jalan sehat untuk seluruh warga dengan berbagai doorprize menarik dan sarapan bersama."</div>
+
+            <h2>4. Transparansi Anggaran (RAB) & Sumber Dana</h2>
+            
+            <div class="instruction">Kebutuhan Anggaran:</div>
+            <div class="spoken">"Bapak/Ibu yang kami hormati, untuk menyelenggarakan seluruh rangkaian acara dari awal hingga jalan sehat, kami memproyeksikan kebutuhan dana sebesar <strong>Rp 5.500.000,- (Lima juta lima ratus ribu rupiah)</strong>."</div>
+            
+            <div class="instruction">Alokasi Terbesar:</div>
+            <div class="spoken">"Dana tersebut paling banyak akan dialokasikan untuk konsumsi gotong royong dan acara (sekitar 1,5 juta), doorprize jalan sehat (1,5 juta), sewa tratak, perlengkapan, dan hadiah lomba."</div>
+            
+            <div class="instruction">Sumber Dana:</div>
+            <div class="spoken">"Dari mana dana ini berasal? Harapan kami, dana bisa terkumpul dari 2 sumber utama: Pertama, dari <strong>Iuran Swadaya dan Donatur Warga</strong> Dukuh Kemasan, karena ini dari kita dan untuk kita. Kedua, kami panitia juga akan bergerak mencari <strong>Sponsorship</strong> atau donatur dari luar/usaha lokal di sekitar Karanganom."</div>
+
+            <h2>5. Penutup & Ajakan Kerja Sama</h2>
+            
+            <div class="instruction">Harapan Dukungan:</div>
+            <div class="spoken">"Tentu saja, sehebat apapun rencana kami anak-anak muda dan panitia, tidak akan berjalan tanpa doa restu, bimbingan, dan dukungan materiil maupun moril dari Bapak/Ibu warga sekalian."</div>
+            
+            <div class="instruction">Penutupan:</div>
+            <div class="spoken">"Demikian rencana yang bisa kami sampaikan. Jika ada masukan, saran, atau pertanyaan dari Bapak/Ibu sekalian, kami sangat terbuka. Atas perhatian dan dukungan Bapak/Ibu, kami ucapkan terima kasih yang sebesar-besarnya."</div>
+            <div class="spoken">"Wassalamu’alaikum Warahmatullahi Wabarakatuh."</div>
+
+            <hr>
+
+            <div class="instruction">
+                <strong>💡 Tips Tambahan Saat Tampil:</strong>
+                <ul>
+                    <li>Buka dan tampilkan slide <code>presentasi.html</code> (menggunakan proyektor/TV jika ada) saat membicarakan poin-poin di atas.</li>
+                    <li>Saat menjelaskan <strong>Detail Outbound</strong>, Anda bisa menampilkan <strong>Slide 5</strong> terbaru yang berisi 4 pilar (Namu, Reresik, Berkah, Barokah).</li>
+                    <li>Saat menjelaskan dana, tunjukkan <strong>Slide 8 (RAB)</strong> agar warga merasa dilibatkan dan panitia terlihat sangat transparan.</li>
+                </ul>
+            </div>
+            
+            <!-- Bottom padding for scrolling -->
+            <div style="height: 50vh;"></div>
+        </div>
+    </div>
+
+    <div id="controls">
+        <button id="btn-mirror" title="Mirror Text">
+            <svg viewBox="0 0 24 24"><path d="M6.99 11L3 15l3.99 4v-3H14v-2H6.99v-3zM21 9l-3.99-4v3H10v2h7.01v3L21 9z"></path></svg>
+        </button>
+
+        <div class="control-group">
+            <div class="control-label">
+                <span>Size</span>
+                <span id="val-size" class="val-display">32</span>
+            </div>
+            <button id="btn-size-down" title="Decrease Font Size">
+                <svg viewBox="0 0 24 24"><path d="M19 13H5v-2h14v2z"></path></svg>
+            </button>
+            <button id="btn-size-up" title="Increase Font Size">
+                <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path></svg>
+            </button>
+        </div>
+
+        <button id="btn-play" class="btn-primary" title="Play/Pause">
+            <svg id="icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+            <svg id="icon-pause" viewBox="0 0 24 24" style="display: none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path></svg>
+        </button>
+
+        <div class="control-group">
+            <div class="control-label">
+                <span>Speed</span>
+                <span id="val-speed" class="val-display">3</span>
+            </div>
+            <button id="btn-speed-down" title="Slower">
+                <svg viewBox="0 0 24 24"><path d="M19 13H5v-2h14v2z"></path></svg>
+            </button>
+            <button id="btn-speed-up" title="Faster">
+                <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path></svg>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const container = document.getElementById('prompter-container');
+        const content = document.getElementById('content');
+        const controls = document.getElementById('controls');
+        
+        let isPlaying = false;
+        let speed = 3; // pixels per frame approx
+        let fontSize = 32;
+        let scrollInterval;
+
+        // UI Elements
+        const btnPlay = document.getElementById('btn-play');
+        const iconPlay = document.getElementById('icon-play');
+        const iconPause = document.getElementById('icon-pause');
+        const btnSpeedUp = document.getElementById('btn-speed-up');
+        const btnSpeedDown = document.getElementById('btn-speed-down');
+        const valSpeed = document.getElementById('val-speed');
+        const btnSizeUp = document.getElementById('btn-size-up');
+        const btnSizeDown = document.getElementById('btn-size-down');
+        const valSize = document.getElementById('val-size');
+        const btnMirror = document.getElementById('btn-mirror');
+
+        // Play/Pause
+        function togglePlay() {
+            isPlaying = !isPlaying;
+            if (isPlaying) {
+                iconPlay.style.display = 'none';
+                iconPause.style.display = 'block';
+                startScroll();
+                controls.classList.add('hidden'); // Hide controls when playing
+            } else {
+                iconPlay.style.display = 'block';
+                iconPause.style.display = 'none';
+                stopScroll();
+                controls.classList.remove('hidden');
+            }
+        }
+
+        btnPlay.addEventListener('click', togglePlay);
+
+        // Scrolling logic using requestAnimationFrame for smoothness
+        let lastTime = 0;
+        function autoScroll(timestamp) {
+            if (!isPlaying) return;
+            
+            if (lastTime) {
+                // Calculate scroll amount based on speed (higher speed = more pixels)
+                // Speed 1 = ~20px/s, Speed 10 = ~200px/s
+                const deltaTime = timestamp - lastTime;
+                const scrollPixels = (speed * 15) * (deltaTime / 1000); 
+                container.scrollTop += scrollPixels;
+            }
+            
+            lastTime = timestamp;
+            scrollInterval = requestAnimationFrame(autoScroll);
+        }
+
+        function startScroll() {
+            lastTime = 0;
+            scrollInterval = requestAnimationFrame(autoScroll);
+        }
+
+        function stopScroll() {
+            cancelAnimationFrame(scrollInterval);
+        }
+
+        // Click to toggle controls/play
+        container.addEventListener('click', (e) => {
+            // Ignore if clicking on controls
+            if (e.target.closest('#controls')) return;
+
+            if (isPlaying) {
+                togglePlay(); // Stop and show controls
+            } else {
+                controls.classList.toggle('hidden');
+            }
+        });
+
+        // Speed Control
+        btnSpeedUp.addEventListener('click', () => {
+            if (speed < 10) {
+                speed++;
+                valSpeed.textContent = speed;
+            }
+        });
+        
+        btnSpeedDown.addEventListener('click', () => {
+            if (speed > 1) {
+                speed--;
+                valSpeed.textContent = speed;
+            }
+        });
+
+        // Size Control
+        btnSizeUp.addEventListener('click', () => {
+            if (fontSize < 100) {
+                fontSize += 4;
+                updateSize();
+            }
+        });
+        
+        btnSizeDown.addEventListener('click', () => {
+            if (fontSize > 16) {
+                fontSize -= 4;
+                updateSize();
+            }
+        });
+
+        function updateSize() {
+            valSize.textContent = fontSize;
+            document.documentElement.style.setProperty('--font-size', fontSize + 'px');
+        }
+
+        // Mirror mode
+        let isMirrored = false;
+        btnMirror.addEventListener('click', () => {
+            isMirrored = !isMirrored;
+            if (isMirrored) {
+                content.classList.add('mirrored');
+                btnMirror.style.color = 'var(--spoken-color)';
+            } else {
+                content.classList.remove('mirrored');
+                btnMirror.style.color = 'white';
+            }
+        });
+        
+        // Manual scroll stops auto-scroll temporarily
+        container.addEventListener('wheel', () => {
+            if(isPlaying) togglePlay();
+        });
+        container.addEventListener('touchstart', () => {
+            if(isPlaying) togglePlay();
+        });
+
+    </script>
+</body>
+</html>
