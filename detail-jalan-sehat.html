@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail Jalan Sehat - HUT RI 81</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    :root {
+      --bg-presentation: #f2f7f4;
+      --bg-slide: #ffffff;
+      --color-primary: #123c2a;
+      --color-primary-light: #2d6a4f;
+      --color-accent: #c0563d;
+      --color-sage: #e8f1ec;
+      --color-mint: #d8f3dc;
+      --text-main: #1d2c25;
+      --text-muted: #52675d;
+      --border-color: #d1dfd8;
+      
+      --font-title: 'Plus Jakarta Sans', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --radius-card: 16px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      background-color: var(--bg-presentation);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      opacity: 0;
+      animation: fadeIn 0.5s forwards;
+    }
+    
+    @keyframes fadeIn { to { opacity: 1; } }
+
+    .container {
+      background: var(--bg-slide);
+      width: 100%;
+      max-width: 800px;
+      border-radius: var(--radius-card);
+      box-shadow: 0 10px 30px rgba(18, 60, 42, 0.05);
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+    }
+
+    .header {
+      background: var(--color-sage);
+      padding: 40px;
+      border-bottom: 1px solid var(--border-color);
+      position: relative;
+    }
+
+    .back-btn {
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--color-primary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      background: #ffffff;
+      padding: 8px 16px;
+      border-radius: 20px;
+      border: 1px solid var(--border-color);
+      transition: all 0.2s;
+    }
+    .back-btn:hover {
+      background: var(--color-primary);
+      color: #ffffff;
+    }
+
+    .title {
+      font-family: var(--font-title);
+      font-size: 2.2rem;
+      color: var(--color-primary);
+      margin-top: 20px;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .meta {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+    .meta span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .content {
+      padding: 40px;
+    }
+
+    .timeline-container {
+      position: relative;
+      padding-left: 30px;
+    }
+    .timeline-container::before {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--color-primary-light);
+      opacity: 0.3;
+    }
+
+    .timeline-event {
+      position: relative;
+      margin-bottom: 24px;
+    }
+    .timeline-event:last-child {
+      margin-bottom: 0;
+    }
+    .timeline-event::before {
+      content: '';
+      position: absolute;
+      left: -28px;
+      top: 4px;
+      width: 12px;
+      height: 12px;
+      background: var(--color-accent);
+      border-radius: 50%;
+      border: 3px solid #fff;
+      box-shadow: 0 0 0 2px var(--color-primary-light);
+    }
+    
+    .event-time {
+      font-family: var(--font-title);
+      font-size: 0.9rem;
+      color: var(--color-primary);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .event-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 4px;
+    }
+    .event-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+      body { padding: 0; }
+      .container { border-radius: 0; min-height: 100vh; border: none; }
+      .header { padding: 60px 20px 20px; text-align: center; }
+      .back-btn { top: 16px; left: 16px; padding: 6px 12px; font-size: 0.8rem; }
+      .title { font-size: 1.6rem; margin-top: 24px; }
+      .meta { flex-direction: column; gap: 8px; align-items: center; }
+      .content { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <a href="presentasi.html?slide=4" class="back-btn" id="backBtn">
+        <i data-lucide="arrow-left"></i> Kembali
+      </a>
+      <h1 class="title">Jalan Sehat Warga</h1>
+      <div class="meta">
+        <span><i data-lucide="calendar"></i> Minggu, 23 Agustus 2026</span>
+        <span><i data-lucide="map-pin"></i> Lapangan & Pedesaan</span>
+      </div>
+    </div>
+    <div class="content">
+      <div class="timeline-container">
+        <div class="timeline-event">
+          <div class="event-time">06.00 - 06.30</div>
+          <div class="event-title">Persiapan Peserta</div>
+          <div class="event-desc">Seluruh warga berkumpul di Lapangan Tengah Desa.</div>
+        </div>
+        <div class="timeline-event">
+          <div class="event-time">06.30 - 06.50</div>
+          <div class="event-title">Lagu Indonesia Raya & Senam</div>
+          <div class="event-desc">Menyanyikan lagu kebangsaan dipimpin Dirijen, dilanjutkan pemanasan senam bersama Instruktur.</div>
+        </div>
+        <div class="timeline-event">
+          <div class="event-time">06.50 - 07.55</div>
+          <div class="event-title">Doa Pelepasan & Jalan Sehat</div>
+          <div class="event-desc">Jalan sehat mengelilingi rute pedesaan dilepas langsung oleh Bapak Ketua RW.</div>
+        </div>
+        <div class="timeline-event">
+          <div class="event-time">07.55 - 08.20</div>
+          <div class="event-title">Pembagian Sarapan & Istirahat</div>
+          <div class="event-desc">Menikmati sarapan bersama sembari memulihkan tenaga.</div>
+        </div>
+        <div class="timeline-event">
+          <div class="event-time">08.20 - 08.40</div>
+          <div class="event-title">Presentasi Lomba Kreasi Pot</div>
+          <div class="event-desc">Penjurian dan pemaparan ide daur ulang pot oleh warga.</div>
+        </div>
+        <div class="timeline-event">
+          <div class="event-time">08.40 - 09.50</div>
+          <div class="event-title">Pembagian Hadiah & Doorprize Puncak</div>
+          <div class="event-desc">Pengundian ratusan doorprize dan pembagian hadiah para pemenang lomba PAUD, TK, Ibu-ibu, Outbound, dan Kreasi Pot. Ditutup dengan doa.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    lucide.createIcons();
+    document.getElementById('backBtn').addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = this.href;
+      document.body.style.opacity = '0';
+      document.body.style.transition = 'opacity 0.3s';
+      setTimeout(() => { window.location.href = target; }, 300);
+    });
+  </script>
+</body>
+</html>

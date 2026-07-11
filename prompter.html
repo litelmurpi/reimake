@@ -180,6 +180,45 @@
             height: 24px;
             fill: currentColor;
         }
+        /* Responsive Mobile */
+        @media (max-width: 768px) {
+            :root {
+                --font-size: 20px !important;
+            }
+            #controls {
+                width: 90%;
+                padding: 10px;
+                gap: 8px;
+                justify-content: center;
+                flex-wrap: wrap;
+                bottom: 10px;
+                border-radius: 20px;
+            }
+            .control-group {
+                padding-left: 5px;
+                gap: 5px;
+                border-left: none;
+            }
+            button {
+                padding: 5px;
+            }
+            .btn-primary {
+                width: 40px;
+                height: 40px;
+            }
+            svg {
+                width: 20px;
+                height: 20px;
+            }
+            #prompter-container {
+                padding: 50vh 15px;
+            }
+            .spoken {
+                font-size: 1.1em;
+                margin: 0.8em 0;
+                padding-left: 10px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -228,6 +267,15 @@
             <div class="instruction">3. Malam Tirakatan & Ketoprak (16 Agustus)</div>
             <div class="spoken">"Pada malam 17-an, kita adakan renungan dan doa bersama di Lapangan Tengah Desa, yang akan dimeriahkan dengan pertunjukan Ketoprak warga berjudul 'Sowan ke Masa Lalu'."</div>
             
+            <div class="spoken">"Bapak, Ibu, sesepuh, dan seluruh warga yang kami hormati. Perkenankan kami dari panitia menyampaikan sedikit informasi terkait acara Tirakatan malam nanti. Jadi, Tirakatan tahun ini akan sedikit berbeda dari biasanya — kami menyiapkan sebuah special show yang mengusung konsep 'Guyub Rukun'. Konsep ini sengaja kami rancang supaya betul-betul melibatkan seluruh unsur warga: ada perwakilan dari bapak-bapak, ibu-ibu, remaja, dan juga adik-adik kita."</div>
+            
+            <div class="spoken">"Alhamdulillah, dari ibu-ibu sudah ada yang bersedia untuk ikut berpartisipasi dalam pentas ini. Nah, giliran dari bapak-bapak nih yang kami tunggu-tunggu."</div>
+            
+            <div class="instruction">*(Sampaikan bagian ini dengan nada bercanda/satir)*</div>
+            <div class="spoken">"Kalau soal diajak rapat, bapak-bapak biasanya paling semangat. Tapi kalau sudah diajak tampil di panggung... tiba-tiba jadi sibuk semua, ya, Pak? Hehe. Padahal konsepnya 'Guyub Rukun', masa nanti yang tampil cuma ibu-ibu, remaja, sama anak-anak saja? Nanti dikira bapak-bapaknya nggak rukun sama panggungnya."</div>
+            
+            <div class="spoken">"Jadi kami mohon dengan hormat, kalau ada Bapak yang berkenan, boleh langsung menghubungi panitia. Dan apabila sampai mendekati hari-H belum ada perwakilan dari bapak-bapak yang bersedia, kami mohon bantuan Bapak Ketua RT dan Ketua RW untuk membantu mencarikan perwakilan, supaya konsep guyub rukun ini benar-benar bisa terwujud dan lengkap dari semua unsur warga. Sekali lagi, ini acara kita bersama, jadi kami harap partisipasinya juga dari kita semua. Terima kasih."</div>
+            
             <div class="instruction">4. Jalan Sehat Warga (23 Agustus)</div>
             <div class="spoken">"Sebagai puncak acara, jalan sehat untuk seluruh warga dengan berbagai doorprize menarik dan sarapan bersama."</div>
 
@@ -261,8 +309,8 @@
                 <strong>💡 Tips Tambahan Saat Tampil:</strong>
                 <ul>
                     <li>Buka dan tampilkan slide <code>presentasi.html</code> (menggunakan proyektor/TV jika ada) saat membicarakan poin-poin di atas.</li>
-                    <li>Saat menjelaskan <strong>Detail Outbound</strong>, Anda bisa menampilkan <strong>Slide 5</strong> terbaru yang berisi 4 pilar (Namu, Reresik, Berkah, Barokah).</li>
-                    <li>Saat menjelaskan dana, tunjukkan <strong>Slide 8 (RAB)</strong> agar warga merasa dilibatkan dan panitia terlihat sangat transparan.</li>
+                    <li>Saat menjelaskan <strong>Detail Outbound</strong>, Anda bisa menekan kartu Outbound di Slide 4 untuk membuka halaman detail yang memuat 4 pilar (Namu, Reresik, Berkah, Barokah).</li>
+                    <li>Saat menjelaskan dana, tunjukkan <strong>Slide 7 (RAB)</strong> agar warga merasa dilibatkan dan panitia terlihat sangat transparan.</li>
                 </ul>
             </div>
             

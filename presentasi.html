@@ -1,0 +1,1688 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Presentasi Proposal HUT RI Ke-81 - Dukuh Kemasan</title>
+  <meta name="description" content="Presentasi interaktif proposal kegiatan HUT RI ke-81 Dukuh Kemasan. Tema Eco-Nature Pastel.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    :root {
+      /* Eco-Nature Pastel Palette */
+      --bg-presentation: #f2f7f4;    /* Soft Sage Tinted White */
+      --bg-slide: #ffffff;           /* Clean slide container */
+      --color-primary: #123c2a;      /* Deep Forest Moss */
+      --color-primary-light: #2d6a4f;/* Medium Sage Green */
+      --color-accent: #c0563d;       /* Soft Terracotta Clay */
+      --color-accent-light: #f5ebe6; /* Terracotta Mist */
+      --color-sage: #e8f1ec;         /* Pastel Sage Green */
+      --color-mint: #d8f3dc;         /* Light Pastel Mint */
+      --text-main: #1d2c25;          /* Deep Charcoal Green */
+      --text-muted: #52675d;         /* Muted Slate Green */
+      --border-color: #d1dfd8;       /* Sage-gray border */
+      
+      /* Typography */
+      --font-title: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      
+      /* Transitions & Shadows */
+      --transition-slide: 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+      --transition-fade: 0.3s ease;
+      --shadow-slide: 0 20px 50px rgba(18, 60, 42, 0.08);
+      --shadow-card: 0 4px 15px rgba(18, 60, 42, 0.04);
+      --radius-slide: 24px;
+      --radius-card: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      background-color: var(--bg-presentation);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Background Leaf Ornaments */
+    .bg-leaf {
+      position: absolute;
+      opacity: 0.06;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .leaf-tl { top: -50px; left: -50px; transform: rotate(45deg); width: 350px; }
+    .leaf-br { bottom: -80px; right: -80px; transform: rotate(-135deg); width: 400px; }
+
+    /* Presentation Layout Container */
+    .presentation-wrapper {
+      position: relative;
+      width: 90vw;
+      height: 80vh;
+      max-width: 1100px;
+      max-height: 700px;
+      background: var(--bg-slide);
+      border-radius: var(--radius-slide);
+      box-shadow: var(--shadow-slide);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      z-index: 10;
+    }
+
+    /* Progress Bar */
+    .progress-bar-container {
+      width: 100%;
+      height: 6px;
+      background: var(--color-sage);
+      position: relative;
+      z-index: 20;
+    }
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--color-primary-light), var(--color-accent));
+      transition: width var(--transition-slide);
+    }
+
+    /* Slides Container */
+    .slides-container {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Individual Slide */
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 48px 64px;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateX(50px) scale(0.98);
+      transition: opacity var(--transition-slide), transform var(--transition-slide);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .slide.active {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateX(0) scale(1);
+    }
+
+    .slide.prev-slide {
+      transform: translateX(-50px) scale(0.98);
+    }
+
+    /* Header in Slide */
+    .slide-header {
+      margin-bottom: 24px;
+    }
+    .slide-badge {
+      display: inline-block;
+      padding: 6px 14px;
+      background: var(--color-sage);
+      color: var(--color-primary);
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      font-family: var(--font-title);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+    .slide-title {
+      font-family: var(--font-title);
+      font-size: 2.2rem;
+      color: var(--color-primary);
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .slide-content {
+      flex: 1;
+      display: flex;
+      align-items: center;
+    }
+
+    /* Custom Grids & Elements */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 32px;
+      width: 100%;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      width: 100%;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      width: 100%;
+    }
+
+    /* Left column descriptive text */
+    .desc-box {
+      background: var(--color-sage);
+      padding: 24px;
+      border-radius: var(--radius-card);
+      border-left: 4px solid var(--color-primary);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .desc-box p {
+      font-size: 1.1rem;
+      color: var(--color-primary);
+      font-weight: 500;
+      line-height: 1.6;
+      font-style: italic;
+    }
+
+    /* List cards */
+    .list-container {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .list-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: var(--bg-presentation);
+      padding: 16px 20px;
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border-color);
+      transition: transform var(--transition-fade), background var(--transition-fade);
+    }
+    .list-item:hover {
+      transform: translateY(-2px);
+      background: var(--color-mint);
+    }
+    .list-icon {
+      background: var(--color-primary);
+      color: #fff;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+    .list-item h4 {
+      font-family: var(--font-title);
+      font-size: 1.05rem;
+      color: var(--color-primary);
+      margin-bottom: 2px;
+    }
+    .list-item p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Purpose Card */
+    .purpose-card {
+      background: var(--color-sage);
+      padding: 28px 24px;
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border-color);
+      text-align: center;
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+    .purpose-card:hover {
+      transform: translateY(-5px);
+      background: var(--color-mint);
+    }
+    .purpose-icon-wrapper {
+      background: var(--color-primary);
+      color: #fff;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .purpose-card h3 {
+      font-family: var(--font-title);
+      color: var(--color-primary);
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+    .purpose-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Agenda Card */
+    .agenda-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-card);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .agenda-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--color-primary-light);
+      box-shadow: 0 8px 25px rgba(18, 60, 42, 0.08);
+    }
+    .agenda-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--color-primary-light);
+    }
+    .agenda-card.accent::before {
+      background: var(--color-accent);
+    }
+    .agenda-num {
+      font-family: var(--font-title);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--color-sage);
+      line-height: 1;
+    }
+    .agenda-card.accent .agenda-num {
+      color: var(--color-accent-light);
+    }
+    .agenda-card h3 {
+      font-family: var(--font-title);
+      color: var(--color-primary);
+      font-size: 1.15rem;
+    }
+    .agenda-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+    .agenda-tag {
+      align-self: flex-start;
+      padding: 4px 10px;
+      background: var(--bg-presentation);
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--color-primary-light);
+    }
+
+    /* Slide 1 Cover Specific Styles */
+    .slide-cover {
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at 50% 50%, var(--bg-slide) 0%, var(--color-sage) 100%);
+    }
+    .cover-badge {
+      background: var(--color-primary);
+      color: #ffffff;
+      padding: 8px 18px;
+      border-radius: 30px;
+      font-family: var(--font-title);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 10px rgba(18, 60, 42, 0.15);
+    }
+    .cover-title {
+      font-family: var(--font-title);
+      font-size: 3rem;
+      color: var(--color-primary);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 12px;
+      max-width: 850px;
+    }
+    .cover-tagline {
+      font-size: 1.3rem;
+      color: var(--color-accent);
+      font-weight: 600;
+      font-style: italic;
+      margin-bottom: 35px;
+    }
+    .cover-footer {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-color);
+      padding-top: 16px;
+      display: flex;
+      gap: 24px;
+      font-family: var(--font-title);
+      font-weight: 500;
+    }
+
+    /* Table Styles */
+    .table-container {
+      width: 100%;
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-card);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+    th {
+      background: var(--color-primary);
+      color: #ffffff;
+      padding: 14px 20px;
+      font-family: var(--font-title);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    td {
+      padding: 12px 20px;
+      font-size: 0.85rem;
+      border-bottom: 1px solid var(--border-color);
+      color: var(--text-main);
+      background: #ffffff;
+    }
+    tr:nth-child(even) td {
+      background: var(--bg-presentation);
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* RAB Slide styles */
+    .rab-container {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 32px;
+      width: 100%;
+    }
+    .rab-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      max-height: 380px;
+      overflow-y: auto;
+      padding-right: 8px;
+    }
+    .rab-list::-webkit-scrollbar {
+      width: 4px;
+    }
+    .rab-list::-webkit-scrollbar-thumb {
+      background: var(--border-color);
+      border-radius: 4px;
+    }
+    .rab-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      background: var(--bg-presentation);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-color);
+    }
+    .rab-item-name {
+      font-weight: 600;
+      color: var(--color-primary);
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .rab-item-value {
+      font-family: var(--font-title);
+      font-weight: 700;
+      color: var(--color-accent);
+      font-size: 0.95rem;
+    }
+    .rab-summary {
+      background: var(--color-sage);
+      border: 2px dashed var(--color-primary-light);
+      border-radius: var(--radius-card);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      gap: 12px;
+    }
+    .rab-total-label {
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: var(--text-muted);
+    }
+    .rab-total-value {
+      font-family: var(--font-title);
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--color-primary);
+    }
+    .rab-total-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* Team slide styles */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      width: 100%;
+    }
+    .team-card {
+      background: var(--bg-presentation);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-card);
+      padding: 20px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    .team-icon-wrapper {
+      background: var(--color-sage);
+      color: var(--color-primary);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 6px;
+    }
+    .team-role {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .team-name {
+      font-family: var(--font-title);
+      font-weight: 700;
+      color: var(--color-primary);
+      font-size: 1.05rem;
+    }
+    .team-sub {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* Source of Funds slide */
+    .funds-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      width: 100%;
+    }
+    .fund-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-card);
+      padding: 24px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      position: relative;
+    }
+    .fund-card::after {
+      content: '→';
+      position: absolute;
+      right: -16px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.5rem;
+      color: var(--color-primary-light);
+      opacity: 0.5;
+    }
+    .fund-card:last-child::after {
+      display: none;
+    }
+    .fund-icon-wrapper {
+      background: var(--color-sage);
+      color: var(--color-primary);
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .fund-card h3 {
+      font-family: var(--font-title);
+      font-size: 1.2rem;
+      color: var(--color-primary);
+    }
+    .fund-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Slide 9 specific closing style */
+    .closing-box {
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+    .closing-text {
+      font-family: var(--font-title);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      line-height: 1.4;
+      font-style: italic;
+    }
+    .closing-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .contact-grid {
+      display: flex;
+      gap: 24px;
+      margin-top: 10px;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--color-sage);
+      padding: 10px 18px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-primary);
+    }
+
+    /* Presentation Controls Panel */
+    .presentation-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 48px;
+      background: var(--color-sage);
+      border-top: 1px solid var(--border-color);
+      z-index: 20;
+    }
+    .controls-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .slide-counter {
+      font-family: var(--font-title);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--color-primary);
+    }
+    .nav-btn {
+      background: var(--color-primary);
+      color: #ffffff;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s ease, transform 0.2s ease;
+      box-shadow: 0 4px 8px rgba(18, 60, 42, 0.1);
+    }
+    .nav-btn:hover {
+      background: var(--color-primary-light);
+      transform: scale(1.05);
+    }
+    .nav-btn:active {
+      transform: scale(0.95);
+    }
+    .nav-btn:disabled {
+      background: var(--border-color);
+      color: var(--text-muted);
+      cursor: not-allowed;
+      box-shadow: none;
+      transform: none;
+    }
+    .slide-dots {
+      display: flex;
+      gap: 8px;
+    }
+    .slide-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--border-color);
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    .slide-dot.active {
+      background: var(--color-accent);
+      transform: scale(1.2);
+    }
+
+    /* Presenter Notes Modal or Panel */
+    .speaker-notes-toggle {
+      background: transparent;
+      border: 1px solid var(--color-primary);
+      color: var(--color-primary);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: var(--font-title);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .speaker-notes-toggle:hover {
+      background: var(--color-primary);
+      color: #ffffff;
+    }
+
+    /* Speaker Notes Panel (Bottom expandable or popup) */
+    .notes-panel {
+      position: absolute;
+      bottom: 80px;
+      left: 5%;
+      width: 90%;
+      background: rgba(18, 60, 42, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: var(--radius-card);
+      padding: 20px 28px;
+      color: #ffffff;
+      display: none;
+      z-index: 100;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    .notes-panel.active {
+      display: block;
+      animation: fadeInUp 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .notes-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 6px;
+    }
+    .notes-header h4 {
+      font-family: var(--font-title);
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--color-mint);
+    }
+    .notes-close {
+      background: transparent;
+      border: none;
+      color: #ffffff;
+      cursor: pointer;
+      opacity: 0.7;
+    }
+    .notes-close:hover {
+      opacity: 1;
+    }
+    .notes-content {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      font-style: italic;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Modal Detail & Toggle */
+    .view-mode-toggle {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--bg-presentation);
+      padding: 6px 12px;
+      border-radius: 30px;
+      border: 1px solid var(--border-color);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      margin-left: auto;
+    }
+    .toggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 44px;
+      height: 24px;
+    }
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: var(--color-mint);
+      transition: .4s;
+      border-radius: 24px;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: var(--color-primary);
+      transition: .4s;
+      border-radius: 50%;
+    }
+    input:checked + .slider {
+      background-color: var(--color-accent-light);
+    }
+    input:checked + .slider:before {
+      transform: translateX(20px);
+      background-color: var(--color-accent);
+    }
+
+    .detail-modal {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(18, 60, 42, 0.4);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .detail-modal.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .detail-modal-content {
+      background: #fff;
+      border-radius: var(--radius-slide);
+      width: 85%;
+      max-width: 700px;
+      max-height: 85%;
+      overflow-y: auto;
+      padding: 40px;
+      position: relative;
+      transform: scale(0.95) translateY(20px);
+      transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+      box-shadow: 0 25px 60px rgba(18, 60, 42, 0.2);
+    }
+    .detail-modal.active .detail-modal-content {
+      transform: scale(1) translateY(0);
+    }
+    .close-modal-btn {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      background: var(--bg-presentation);
+      border: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-primary);
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .close-modal-btn:hover {
+      background: var(--color-mint);
+    }
+    .detail-body {
+      margin-top: 10px;
+    }
+    .detail-body h3 {
+      font-family: var(--font-title);
+      font-size: 1.5rem;
+      color: var(--color-primary);
+      margin-bottom: 8px;
+    }
+    .detail-body .detail-meta {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      display: flex;
+      gap: 16px;
+    }
+    .detail-body .detail-meta span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .detail-body p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--text-main);
+      margin-bottom: 16px;
+    }
+    .detail-timeline {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .timeline-item {
+      display: flex;
+      gap: 16px;
+      padding: 12px 16px;
+      background: var(--bg-presentation);
+      border-radius: var(--radius-card);
+      border-left: 3px solid var(--color-primary-light);
+    }
+    .timeline-time {
+      font-weight: 700;
+      color: var(--color-primary);
+      font-size: 0.9rem;
+      min-width: 100px;
+    }
+    .timeline-desc {
+      font-size: 0.9rem;
+      color: var(--text-main);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 992px) {
+      .slide {
+        padding: 30px 40px;
+      }
+      .slide-title {
+        font-size: 1.8rem;
+      }
+      .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .desc-box {
+        padding: 16px;
+      }
+      .desc-box p {
+        font-size: 0.95rem;
+      }
+      .list-item {
+        padding: 10px 14px;
+      }
+      .purpose-card {
+        padding: 16px;
+      }
+      .funds-container {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .fund-card::after {
+        display: none;
+      }
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+      .rab-container {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .presentation-wrapper {
+        width: 96vw;
+        height: 94vh;
+        max-height: none;
+      }
+      .slide {
+        padding: 24px 20px;
+        display: block;
+        overflow-y: auto;
+      }
+      .slide-cover {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 100%;
+      }
+      .slide-content {
+        display: block;
+      }
+      .slide-title {
+        font-size: 1.5rem;
+      }
+      .team-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+      .grid-4 {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      .rab-list {
+        max-height: none;
+        overflow-y: visible;
+        padding-right: 0;
+      }
+      .table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      table {
+        min-width: 550px;
+      }
+      .presentation-controls {
+        padding: 16px 24px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .slide-dots {
+        display: none;
+      }
+      .speaker-notes-toggle span {
+        display: none;
+      }
+      .speaker-notes-toggle {
+        padding: 8px;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        justify-content: center;
+      }
+      .controls-left {
+        gap: 12px;
+      }
+      .slide-counter {
+        font-size: 0.8rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .presentation-wrapper {
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+        border: none;
+      }
+      .slide {
+        padding: 20px 16px;
+      }
+      .slide-badge {
+        font-size: 0.7rem;
+        padding: 4px 10px;
+      }
+      .slide-title {
+        font-size: 1.3rem;
+      }
+      .grid-4 {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .cover-title {
+        font-size: 1.8rem;
+      }
+      .cover-tagline {
+        font-size: 1rem;
+        margin-bottom: 24px;
+      }
+      .cover-footer {
+        flex-direction: column;
+        gap: 8px;
+        font-size: 0.8rem;
+        align-items: center;
+      }
+      th, td {
+        padding: 10px 12px;
+        font-size: 0.75rem;
+      }
+      .closing-text {
+        font-size: 1.1rem;
+      }
+      .closing-desc {
+        font-size: 0.8rem;
+      }
+      .contact-grid {
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+      }
+      .contact-item {
+        width: 100%;
+        justify-content: center;
+      }
+      .notes-panel {
+        bottom: 72px;
+        width: 95%;
+        left: 2.5%;
+        padding: 16px;
+      }
+      .notes-header h4 {
+        font-size: 0.8rem;
+      }
+      .notes-content {
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Decorative Leaves -->
+  <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23123c2a'><path d='M10,90 Q40,40 90,10 Q80,50 10,90 M40,65 Q60,45 80,25' stroke='%23123c2a' stroke-width='2' fill='none'/></svg>" class="bg-leaf leaf-tl" alt="">
+  <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23123c2a'><path d='M10,90 Q40,40 90,10 Q80,50 10,90 M40,65 Q60,45 80,25' stroke='%23123c2a' stroke-width='2' fill='none'/></svg>" class="bg-leaf leaf-br" alt="">
+
+  <!-- Presentation App Shell -->
+  <div class="presentation-wrapper">
+    
+    <!-- Top Progress Bar -->
+    <div class="progress-bar-container">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Slides Frame -->
+    <div class="slides-container">
+      
+      <!-- Slide 1: Cover -->
+      <div class="slide slide-cover active" id="slide-1" data-notes="Selamat pagi/siang Bapak, Ibu, dan rekan-rekan sekalian. Terima kasih atas kehadirannya. Hari ini kami dari Panitia HUT Kemerdekaan RI ke-81 Dukuh Kemasan RW 07 ingin memaparkan rencana perayaan HUT RI ke-81. Tahun ini kami mengusung tema 'Kembara Rimba Nusantara: Merayakan Kemerdekaan di Dekapan Alam' dengan konsep 'Kembali ke Alam & Budaya', yang berfokus pada kelestarian alam dan warisan tradisi budaya kita.">
+        <span class="cover-badge">PROPOSAL HUT RI KE-81</span>
+        <h1 class="cover-title">KEMBARA RIMBA NUSANTARA</h1>
+        <p class="cover-tagline">“Merayakan Kemerdekaan di Dekapan Alam”</p>
+        <div class="cover-footer">
+          <span>🌿 Panitia HUT RI Ke-81 RW 07</span>
+          <span>•</span>
+          <span>📍 Dk. Kemasan RT 13 &amp; 14, Desa Gempol</span>
+          <span>•</span>
+          <span>🗓️ Tahun 2026</span>
+        </div>
+      </div>
+
+      <!-- Slide 2: Latar Belakang -->
+      <div class="slide" id="slide-2" data-notes="Dalam perayaan HUT RI ke-81 ini, kami berpegang pada tiga prinsip utama. Pertama, Efisiensi, di mana kegiatan tidak membebani tenaga panitia secara berlebihan serta meminimalkan dekorasi berbahan plastik sekali pakai. Kedua, Berkarakter, dengan memaksimalkan keindahan geografis dan kekayaan budaya desa Gempol. Dan ketiga, Inklusif, memastikan semua kalangan warga dari anak-anak hingga bapak-bapak ikut serta aktif.">
+        <div class="slide-header">
+          <span class="slide-badge">Konteks &amp; Nilai</span>
+          <h2 class="slide-title">Latar Belakang Kegiatan</h2>
+        </div>
+        <div class="slide-content">
+          <div class="grid-2">
+            <div class="desc-box">
+              <p>“Peringatan ini menjadi momentum untuk mempererat persatuan warga, memandang perbedaan bukan sebagai penghalang melainkan kekayaan yang memperkuat kebersamaan.”</p>
+            </div>
+            <div class="list-container">
+              <div class="list-item">
+                <div class="list-icon">1</div>
+                <div>
+                  <h4>Efisiensi</h4>
+                  <p>Kegiatan tidak membebani tenaga panitia secara berlebihan &amp; meminimalkan sampah plastik.</p>
+                </div>
+              </div>
+              <div class="list-item">
+                <div class="list-icon">2</div>
+                <div>
+                  <h4>Berkarakter</h4>
+                  <p>Memanfaatkan potensi geografis dan kebudayaan lokal desa secara kreatif.</p>
+                </div>
+              </div>
+              <div class="list-item">
+                <div class="list-icon">3</div>
+                <div>
+                  <h4>Inklusif</h4>
+                  <p>Melibatkan seluruh elemen warga (anak-anak, remaja, ibu-ibu, hingga bapak-bapak).</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3: Tujuan -->
+      <div class="slide" id="slide-3" data-notes="Tujuan utama kami terangkum dalam 4 poin penting. Pertama, menumbuhkan sikap persatuan warga dalam keberagaman. Kedua, mempererat tali silaturahmi. Ketiga, mengenang jasa para pahlawan. Dan keempat, mengenalkan kembali kearifan lokal serta menumbuhkan kepedulian bagi generasi muda.">
+        <div class="slide-header">
+          <span class="slide-badge">Komitmen Warga</span>
+          <h2 class="slide-title">Tujuan Utama Kegiatan</h2>
+        </div>
+        <div class="slide-content">
+          <div class="grid-4">
+            <div class="purpose-card">
+              <div class="purpose-icon-wrapper">
+                <i data-lucide="users"></i>
+              </div>
+              <h3>Persatuan Warga</h3>
+              <p>Menumbuhkan sikap persatuan dalam keberagaman warga RW 07 Dukuh Kemasan.</p>
+            </div>
+            <div class="purpose-card">
+              <div class="purpose-icon-wrapper">
+                <i data-lucide="heart"></i>
+              </div>
+              <h3>Tali Silaturahmi</h3>
+              <p>Mempererat tali silaturahmi dan kebersamaan antar warga Dukuh Kemasan.</p>
+            </div>
+            <div class="purpose-card">
+              <div class="purpose-icon-wrapper">
+                <i data-lucide="flag"></i>
+              </div>
+              <h3>Mengenang Pahlawan</h3>
+              <p>Mengenang jasa dan perjuangan para Pahlawan Kemerdekaan RI.</p>
+            </div>
+            <div class="purpose-card">
+              <div class="purpose-icon-wrapper">
+                <i data-lucide="sprout"></i>
+              </div>
+              <h3>Kearifan Lokal</h3>
+              <p>Mengenal kembali kearifan lokal, nilai budaya, dan kepedulian generasi muda.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 4: Agenda Utama -->
+      <div class="slide" id="slide-4" data-notes="Kami merancang 4 agenda utama perayaan kali ini dengan nafas kelestarian alam dan budaya. Pertama, Lomba PAUD dan TK untuk melatih kreativitas anak. Kedua, Outbound SD &amp; SMP bertajuk 'Jelajah Desa Berkah' untuk menumbuhkan cinta lingkungan. Ketiga, Malam Tirakatan dan Pentas Ketoprak 'Sowan ke Masa Lalu' sebagai pertunjukan budaya warga. Dan keempat, Jalan Sehat Warga yang bugar dan penuh kebersamaan.">
+        <div class="slide-header">
+          <span class="slide-badge">Program Kerja</span>
+          <h2 class="slide-title">4 Agenda Utama Perayaan</h2>
+        </div>
+        <div class="slide-content">
+          <div class="grid-4">
+            <div class="agenda-card" data-agenda="1">
+              <span class="agenda-num">01</span>
+              <h3>Lomba PAUD &amp; TK</h3>
+              <p>Mengasah kreativitas dan motorik anak sejak dini dengan menyusun bentuk alam.</p>
+              <span class="agenda-tag">8 Agustus</span>
+            </div>
+            <div class="agenda-card" data-agenda="2">
+              <span class="agenda-num">02</span>
+              <h3>Outbound SD &amp; SMP</h3>
+              <p>Petualangan “Jelajah Desa Berkah” untuk membangun kerja sama dan karakter tangguh.</p>
+              <span class="agenda-tag">9 Agustus</span>
+            </div>
+            <div class="agenda-card accent" data-agenda="3">
+              <span class="agenda-num">03</span>
+              <h3>Tirakatan &amp; Ketoprak</h3>
+              <p>Pementasan Ketoprak “Sowan ke Masa Lalu” dipadukan doa bersama malam kemerdekaan.</p>
+              <span class="agenda-tag">16 Agustus</span>
+            </div>
+            <div class="agenda-card" data-agenda="4">
+              <span class="agenda-num">04</span>
+              <h3>Jalan Sehat Warga</h3>
+              <p>Olahraga santai keliling dusun, dilanjutkan pengumuman pemenang dan doorprize.</p>
+              <span class="agenda-tag">23 Agustus</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- Slide 5: Jadwal & Waktu -->
+      <div class="slide" id="slide-5" data-notes="Ini adalah jadwal pelaksanaan kegiatan kami. Diawali dengan Lomba Ibu-ibu pada tanggal 2 Agustus, dilanjutkan Lomba PAUD dan TK pada Sabtu sore tanggal 8 Agustus. Untuk anak-anak SD dan SMP, outbound diadakan hari Minggu siang hingga malam tanggal 9 Agustus. Malam Tirakatan bertepatan pada Minggu malam tanggal 16 Agustus, dan ditutup dengan Jalan Sehat warga pada Minggu pagi tanggal 23 Agustus.">
+        <div class="slide-header">
+          <span class="slide-badge">Rencana Aksi</span>
+          <h2 class="slide-title">Detail Jadwal &amp; Lokasi</h2>
+        </div>
+        <div class="slide-content">
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Nama Kegiatan</th>
+                  <th>Hari, Tanggal &amp; Waktu</th>
+                  <th>Lokasi Kegiatan</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Lomba Ibu-Ibu</strong></td>
+                  <td>Minggu, 2 Agustus 2026 (15.30 - 17.15 WIB)</td>
+                  <td>Lapangan Tengah Desa (Tanah BMT)</td>
+                </tr>
+                <tr>
+                  <td><strong>Lomba PAUD &amp; TK</strong></td>
+                  <td>Sabtu, 8 Agustus 2026 (15.30 - 17.00 WIB)</td>
+                  <td>Lapangan Tengah Desa (Tanah BMT)</td>
+                </tr>
+                <tr>
+                  <td><strong>Outbound SD &amp; SMP</strong></td>
+                  <td>Minggu, 9 Agustus 2026 (12.30 - 19.00 WIB)</td>
+                  <td>Rute Jelajah (Menyesuaikan)</td>
+                </tr>
+                <tr>
+                  <td><strong>Malam Tirakatan (Ketoprak)</strong></td>
+                  <td>Minggu, 16 Agustus 2026 (19.30 - Selesai)</td>
+                  <td>Lapangan Tengah Desa (Tanah BMT)</td>
+                </tr>
+                <tr>
+                  <td><strong>Jalan Sehat Warga</strong></td>
+                  <td>Minggu, 23 Agustus 2026 (06.00 - Selesai)</td>
+                  <td>Lapangan Tengah Desa (Tanah BMT)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 6: Struktur Panitia -->
+      <div class="slide" id="slide-6" data-notes="Susunan kepanitiaan ini dibentuk atas hasil musyawarah warga. Pelindung kami adalah Kepala Desa Gempol dengan penasehat Ketua RW 07 Bapak Setiyono. Penanggung jawab dipegang oleh Mas Yudhistira dan Mbak Faizah. Struktur kepanitiaan harian dipimpin oleh Nizar Gandi selaku Ketua dan Faizah Nur'aini sebagai Wakil Ketua, didukung Sekretaris Yunita Salsabila dan Bendahara Arninda Nanda Risma. Serta koordinasi divisi lapangan yang dipimpin oleh rekan-rekan Karang Taruna Kemasan.">
+        <div class="slide-header">
+          <span class="slide-badge">Kekuatan Organisasi</span>
+          <h2 class="slide-title">Struktur Panitia Pelaksana</h2>
+        </div>
+        <div class="slide-content">
+          <div class="team-grid">
+            <div class="team-card">
+              <div class="team-icon-wrapper"><i data-lucide="shield"></i></div>
+              <span class="team-role">Pelindung &amp; Penasehat</span>
+              <span class="team-name">Kades Gempol &amp; Bp. Setiyono</span>
+              <span class="team-sub">Kepala Desa Gempol &amp; Ketua RW 07</span>
+            </div>
+            <div class="team-card">
+              <div class="team-icon-wrapper"><i data-lucide="user-check"></i></div>
+              <span class="team-role">Penanggung Jawab</span>
+              <span class="team-name">Yudistira A. D. &amp; Faizah L. N.</span>
+              <span class="team-sub">Pengawas &amp; Pembimbing Panitia</span>
+            </div>
+            <div class="team-card">
+              <div class="team-icon-wrapper"><i data-lucide="users"></i></div>
+              <span class="team-role">Ketua &amp; Wakil Ketua</span>
+              <span class="team-name">Nizar Gandi &amp; Faizah Nur'aini</span>
+              <span class="team-sub">BPH Pelaksana Kegiatan</span>
+            </div>
+            <div class="team-card">
+              <span class="team-role">Sekretaris</span>
+              <span class="team-name">Yunita Salsabila</span>
+              <span class="team-sub">Administrasi &amp; Surat-Menyurat</span>
+            </div>
+            <div class="team-card">
+              <span class="team-role">Bendahara</span>
+              <span class="team-name">Arninda Nanda Risma D.</span>
+              <span class="team-sub">Pengelolaan &amp; Pelaporan Dana</span>
+            </div>
+            <div class="team-card">
+              <span class="team-role">Koordinator Divisi</span>
+              <span class="team-name">Marsha, Naufal, Shiva, Talita, Wisnu</span>
+              <span class="team-sub">Sie Acara, Perkap, Humas, Konsum, Dekdok</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 7: Rencana Anggaran (RAB) -->
+      <div class="slide" id="slide-7" data-notes="Total kebutuhan anggaran untuk menyelenggarakan seluruh rangkaian perayaan HUT RI ke-81 ini adalah sebesar 5,5 juta rupiah. Rincian pengeluaran utama meliputi konsumsi untuk gotong royong, rapat panitia, lomba, malam tirakatan, dan makan bersama sebesar 1,54 juta rupiah. Doorprize untuk jalan sehat sebesar 1,5 juta rupiah. Sisanya dialokasikan untuk perlengkapan lomba dan tirakatan, hadiah anak-anak, sewa tratak, administrasi, serta obat-obatan P3K.">
+        <div class="slide-header">
+          <span class="slide-badge">Transparansi Keuangan</span>
+          <h2 class="slide-title">Rencana Anggaran Biaya (RAB)</h2>
+        </div>
+        <div class="slide-content">
+          <div class="rab-container">
+            <div class="rab-list">
+              <div class="rab-item">
+                <span class="rab-item-name"><i data-lucide="clipboard-list"></i> Administrasi &amp; Kesekretariatan</span>
+                <span class="rab-item-value">Rp 250.000,-</span>
+              </div>
+              <div class="rab-item">
+                <span class="rab-item-name"><i data-lucide="home"></i> Sewa Tratak &amp; Tliser</span>
+                <span class="rab-item-value">Rp 700.000,-</span>
+              </div>
+              <div class="rab-item">
+                <span class="rab-item-name"><i data-lucide="coffee"></i> Konsumsi Rangkaian Kegiatan</span>
+                <span class="rab-item-value">Rp 1.540.000,-</span>
+              </div>
+              <div class="rab-item">
+                <span class="rab-item-name"><i data-lucide="music"></i> Perlengkapan Tirakatan</span>
+                <span class="rab-item-value">Rp 500.000,-</span>
+              </div>
+              <div class="rab-item">
+                <span class="rab-item-name"><i data-lucide="gamepad-2"></i> Perlengkapan Lomba</span>
+                <span class="rab-item-value">Rp 250.000,-</span>
+              </div>
+              <div class="rab-item">
+                <span class="rab-item-name"><i data-lucide="activity"></i> P3K &amp; Kesehatan</span>
+                <span class="rab-item-value">Rp 60.000,-</span>
+              </div>
+              <div class="rab-item">
+                <span class="rab-item-name"><i data-lucide="award"></i> Hadiah Lomba Anak-Anak</span>
+                <span class="rab-item-value">Rp 700.000,-</span>
+              </div>
+              <div class="rab-item">
+                <span class="rab-item-name"><i data-lucide="gift"></i> Doorprize Jalan Sehat</span>
+                <span class="rab-item-value">Rp 1.500.000,-</span>
+              </div>
+            </div>
+            <div class="rab-summary">
+              <span class="rab-total-label">Total Anggaran Kebutuhan</span>
+              <span class="rab-total-value">Rp 5.500.000,-</span>
+              <p class="rab-total-desc">Telah dirinci dan dioptimalkan agar efisien namun tetap menjamin kemeriahan acara warga.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 8: Sumber Dana -->
+      <div class="slide" id="slide-8" data-notes="Anggaran perayaan HUT RI ke-81 ini akan bersumber dari dua pilar pendanaan utama. Yang pertama adalah donatur dan iuran swadaya gotong royong dari seluruh warga Dukuh Kemasan RT 13 dan RT 14. Pilar kedua adalah sponsorship, di mana kami membuka peluang kerja sama yang saling menguntungkan dengan para tokoh masyarakat, simpatisan, serta para pemilik usaha lokal di area Karanganom dan Klaten.">
+        <div class="slide-header">
+          <span class="slide-badge">Kemandirian Finansial</span>
+          <h2 class="slide-title">Sumber Pendanaan Kegiatan</h2>
+        </div>
+        <div class="slide-content">
+          <div class="funds-container" style="grid-template-columns: repeat(2, 1fr);">
+            <div class="fund-card">
+              <div class="fund-icon-wrapper"><i data-lucide="users-2"></i></div>
+              <h3>Donatur &amp; Iuran Warga</h3>
+              <p>Iuran gotong royong sukarela dan bantuan donatur dari warga RT 13 &amp; RT 14 Dukuh Kemasan.</p>
+            </div>
+            <div class="fund-card">
+              <div class="fund-icon-wrapper"><i data-lucide="handshake"></i></div>
+              <h3>Sponsorship</h3>
+              <p>Kemitraan eksternal dari usaha lokal, tokoh masyarakat, serta simpatisan di sekitar Karanganom.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 9: Penutup -->
+      <div class="slide" id="slide-9" data-notes="Demikian pemaparan proposal dari kami. Kami mengucapkan terima kasih sebesar-besarnya kepada Bapak RT 13 Muhammad Qomarudin, Bapak RT 14 Herman Susilo, serta Bapak RW 07 Setiyono atas persetujuan dan bimbingannya. Serta terima kasih terdalam kepada Bapak, Ibu, dan para donatur sekalian atas seluruh doa restu dan dukungan dana yang diberikan demi mewujudkan kemeriahan HUT RI ke-81 Dukuh Kemasan ini. Wassalamu'alaikum Wr. Wb.">
+        <div class="slide-header">
+          <span class="slide-badge">Sinergi Bersama</span>
+          <h2 class="slide-title">Penutup &amp; Harapan</h2>
+        </div>
+        <div class="slide-content">
+          <div class="closing-box">
+            <p class="closing-text">“Atas bantuan dan kerjasamanya kami selaku Panitia mengucapkan banyak terima kasih.”</p>
+            <p class="closing-desc">Kami sangat mengharap bantuan dan dukungan dari Bapak/Ibu/Saudara agar bisa membantu mewujudkan seluruh rencana kegiatan perayaan kemerdekaan yang bernuansa budaya dan ramah lingkungan ini.</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; width: 100%; margin-top: 8px; font-size: 0.85rem; border-top: 1px solid var(--border-color); padding-top: 16px; text-align: left;">
+              <div>
+                <p style="font-weight: 700; color: var(--color-accent); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.5px; margin-bottom: 4px;">Panitia Pelaksana</p>
+                <p style="font-weight: 600; color: var(--color-primary);">Nizar Gandi Jati P.</p>
+                <p style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 4px;">Ketua Panitia</p>
+                <p style="font-weight: 600; color: var(--color-primary);">Yunita Salsabila</p>
+                <p style="color: var(--text-muted); font-size: 0.8rem;">Sekretaris</p>
+              </div>
+              <div>
+                <p style="font-weight: 700; color: var(--color-accent); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.5px; margin-bottom: 4px;">Mengetahui</p>
+                <p style="font-weight: 600; color: var(--color-primary);">Muhammad Qomarudin</p>
+                <p style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 4px;">Ketua RT 13</p>
+                <p style="font-weight: 600; color: var(--color-primary);">Herman Susilo</p>
+                <p style="color: var(--text-muted); font-size: 0.8rem;">Ketua RT 14</p>
+              </div>
+              <div>
+                <p style="font-weight: 700; color: var(--color-accent); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.5px; margin-bottom: 4px;">Menyetujui</p>
+                <p style="font-weight: 600; color: var(--color-primary);">Setiyono</p>
+                <p style="color: var(--text-muted); font-size: 0.8rem;">Ketua RW 07</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Navigation Controls -->
+    <div class="presentation-controls">
+      <div class="controls-left">
+        <button class="nav-btn" id="prevBtn" disabled aria-label="Slide Sebelumnya">
+          <i data-lucide="chevron-left"></i>
+        </button>
+        <span class="slide-counter" id="slideCounter">Slide 1 dari 9</span>
+        <button class="nav-btn" id="nextBtn" aria-label="Slide Selanjutnya">
+          <i data-lucide="chevron-right"></i>
+        </button>
+      </div>
+
+      <div class="slide-dots" id="slideDots">
+        <!-- Dots will be generated by JS -->
+      </div>
+
+      <button class="speaker-notes-toggle" id="notesToggle">
+        <i data-lucide="clipboard-list"></i>
+        <span>Presenter Notes</span>
+      </button>
+    </div>
+
+    <!-- Speaker Notes Panel -->
+    <div class="notes-panel" id="notesPanel">
+      <div class="notes-header">
+        <h4>Catatan Presenter (Speaker Notes)</h4>
+        <button class="notes-close" id="notesClose" aria-label="Tutup Catatan">
+          <i data-lucide="x" style="width: 18px; height: 18px;"></i>
+        </button>
+      </div>
+      <div class="notes-content" id="notesContent">
+        <!-- Content will be filled by JS -->
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initialize Lucide Icons
+      lucide.createIcons();
+
+      const slides = document.querySelectorAll('.slide');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const slideCounter = document.getElementById('slideCounter');
+      const progressBar = document.getElementById('progressBar');
+      const slideDotsContainer = document.getElementById('slideDots');
+      
+      const notesToggle = document.getElementById('notesToggle');
+      const notesPanel = document.getElementById('notesPanel');
+      const notesClose = document.getElementById('notesClose');
+      const notesContent = document.getElementById('notesContent');
+
+      let currentSlideIndex = 0;
+
+      // Generate Navigation Dots
+      slides.forEach((slide, idx) => {
+        const dot = document.createElement('div');
+        dot.classList.add('slide-dot');
+        if (idx === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => {
+          goToSlide(idx);
+        });
+        slideDotsContainer.appendChild(dot);
+      });
+
+      const dots = document.querySelectorAll('.slide-dot');
+
+      function updateSlideState() {
+        // Toggle active classes on slides
+        slides.forEach((slide, idx) => {
+          slide.classList.remove('active', 'prev-slide');
+          if (idx === currentSlideIndex) {
+            slide.classList.add('active');
+          } else if (idx < currentSlideIndex) {
+            slide.classList.add('prev-slide');
+          }
+        });
+
+        // Toggle active classes on dots
+        dots.forEach((dot, idx) => {
+          if (idx === currentSlideIndex) {
+            dot.classList.add('active');
+          } else {
+            dot.classList.remove('active');
+          }
+        });
+
+        // Update button states
+        prevBtn.disabled = currentSlideIndex === 0;
+        nextBtn.disabled = currentSlideIndex === slides.length - 1;
+
+        // Update counter text
+        slideCounter.textContent = `Slide ${currentSlideIndex + 1} dari ${slides.length}`;
+
+        // Update progress bar width
+        const progressPercentage = ((currentSlideIndex + 1) / slides.length) * 100;
+        progressBar.style.width = `${progressPercentage}%`;
+
+        // Update speaker notes content
+        const notes = slides[currentSlideIndex].getAttribute('data-notes');
+        notesContent.textContent = notes || "Tidak ada catatan presenter untuk slide ini.";
+      }
+
+      function goToSlide(index) {
+        if (index >= 0 && index < slides.length) {
+          currentSlideIndex = index;
+          updateSlideState();
+        }
+      }
+
+      function nextSlide() {
+        if (currentSlideIndex < slides.length - 1) {
+          goToSlide(currentSlideIndex + 1);
+        }
+      }
+
+      function prevSlide() {
+        if (currentSlideIndex > 0) {
+          goToSlide(currentSlideIndex - 1);
+        }
+      }
+
+      // Event Listeners
+      nextBtn.addEventListener('click', nextSlide);
+      prevBtn.addEventListener('click', prevSlide);
+
+      // Keyboard Navigation
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight' || e.key === 'Space') {
+          e.preventDefault();
+          nextSlide();
+        } else if (e.key === 'ArrowLeft') {
+          e.preventDefault();
+          prevSlide();
+        }
+      });
+
+      // Notes toggle
+      notesToggle.addEventListener('click', () => {
+        notesPanel.classList.toggle('active');
+      });
+
+      notesClose.addEventListener('click', () => {
+        notesPanel.classList.remove('active');
+      });
+
+      // --- Interactive Agenda Logic ---
+      const agendaDetails = {
+        '1': "detail-lomba.html",
+        '2': "detail-outbound.html",
+        '3': "detail-tirakatan.html",
+        '4': "detail-jalan-sehat.html"
+      };
+
+      const agendaCards = document.querySelectorAll('.agenda-card');
+      
+      agendaCards.forEach(card => {
+        card.addEventListener('click', () => {
+          const id = card.getAttribute('data-agenda');
+          if (!id || !agendaDetails[id]) return;
+          
+          // Animasi exit lalu pindah halaman
+          document.body.style.opacity = '0';
+          document.body.style.transition = 'opacity 0.3s';
+          setTimeout(() => {
+            window.location.href = agendaDetails[id];
+          }, 300);
+        });
+      });
+
+      // Initialize
+      const params = new URLSearchParams(window.location.search);
+      const slideParam = params.get('slide');
+      if (slideParam) {
+        const targetId = 'slide-' + slideParam;
+        const targetIndex = Array.from(slides).findIndex(s => s.id === targetId);
+        if (targetIndex !== -1) {
+          currentSlideIndex = targetIndex;
+        }
+      }
+      updateSlideState();
+    });
+  </script>
+</body>
+</html>
