@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Riwayat Aktivitas Saya - SiPanitia</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config from Guidelines -->
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface": "#fff8f6",
+                      "status-delayed-bg": "#FED7AA",
+                      "on-secondary-fixed-variant": "#44474a",
+                      "tertiary-fixed": "#dfe0ff",
+                      "inverse-surface": "#3e2c29",
+                      "secondary-fixed": "#e0e2e6",
+                      "on-tertiary-fixed-variant": "#0027d4",
+                      "on-surface": "#271815",
+                      "surface-container-highest": "#f9dcd7",
+                      "status-overdue-bg": "#FEE2E2",
+                      "secondary-fixed-dim": "#c4c7ca",
+                      "on-tertiary-container": "#abb4ff",
+                      "error-container": "#ffdad6",
+                      "tertiary": "#001ba0",
+                      "primary-container": "#990000",
+                      "progress-low": "#DC2626",
+                      "status-pending-text": "#6B7280",
+                      "error": "#ba1a1a",
+                      "tertiary-fixed-dim": "#bcc2ff",
+                      "outline-variant": "#e4beb8",
+                      "status-pending-bg": "#E5E7EB",
+                      "status-completed-text": "#065F46",
+                      "status-completed-bg": "#D1FAE5",
+                      "surface-container": "#ffe9e6",
+                      "primary-fixed-dim": "#ffb4a8",
+                      "on-tertiary": "#ffffff",
+                      "background": "#fff8f6",
+                      "outline": "#8f706b",
+                      "tertiary-container": "#0029dc",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary-fixed": "#410000",
+                      "surface-container-high": "#ffe2dd",
+                      "surface-variant": "#f9dcd7",
+                      "progress-medium": "#D97706",
+                      "on-background": "#271815",
+                      "status-overdue-text": "#991B1B",
+                      "inverse-on-surface": "#ffedea",
+                      "on-primary": "#ffffff",
+                      "surface-bright": "#fff8f6",
+                      "on-primary-fixed-variant": "#930000",
+                      "on-tertiary-fixed": "#000c61",
+                      "progress-high": "#059669",
+                      "status-delayed-text": "#9A3412",
+                      "primary-fixed": "#ffdad4",
+                      "on-secondary-container": "#606366",
+                      "on-surface-variant": "#5b403c",
+                      "inverse-primary": "#ffb4a8",
+                      "divider": "#F3F4F6",
+                      "on-error-container": "#93000a",
+                      "on-error": "#ffffff",
+                      "status-progress-bg": "#FEF3C7",
+                      "on-secondary": "#ffffff",
+                      "primary": "#6e0000",
+                      "surface-tint": "#b82014",
+                      "on-primary-container": "#ffa092",
+                      "surface-dim": "#f1d4cf",
+                      "on-secondary-fixed": "#191c1f",
+                      "surface-container-low": "#fff0ee",
+                      "status-progress-text": "#92400E",
+                      "secondary": "#5c5f62",
+                      "secondary-container": "#dee0e4"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "bottom-nav-height": "64px",
+                      "container-padding": "16px",
+                      "top-bar-height": "56px",
+                      "gutter": "12px",
+                      "component-gap": "8px"
+              },
+              "fontFamily": {
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "headline-sm": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Plus Jakarta Sans"
+                      ]
+              },
+              "fontSize": {
+                      "label-sm": [
+                              "11px",
+                              {
+                                      "lineHeight": "14px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-sm": [
+                              "18px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-md": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        
+        /* Timeline styling */
+        .timeline-line {
+            position: absolute;
+            left: 27px; /* center of the 24px icon + container padding */
+            top: 24px;
+            bottom: 0;
+            width: 2px;
+            background-color: theme('colors.secondary-fixed-dim');
+            z-index: 0;
+        }
+        
+        .timeline-dot {
+            position: relative;
+            z-index: 10;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased min-h-screen flex flex-col font-body-md text-body-md">
+<!-- TopAppBar (Customized for sub-page) -->
+<header class="fixed top-0 w-full h-top-bar-height bg-primary text-on-primary shadow-sm z-50 flex items-center px-container-padding">
+<button aria-label="Kembali" class="p-2 -ml-2 mr-2 rounded-full hover:bg-primary-container/20 active:scale-95 transition-transform flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold truncate">Riwayat Aktivitas Saya</h1>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-[calc(theme(spacing.top-bar-height)+16px)] px-container-padding pb-8 flex-1 w-full max-w-2xl mx-auto">
+<!-- Filter Section -->
+<div class="mb-6 flex justify-end">
+<div class="relative inline-block text-left">
+<button aria-expanded="true" aria-haspopup="true" class="inline-flex items-center justify-center w-full rounded-lg border border-outline-variant bg-surface px-4 py-2 text-sm font-medium text-on-surface hover:bg-surface-container-low focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-colors shadow-sm" id="menu-button" type="button">
+                    7 hari terakhir
+                    <span class="material-symbols-outlined ml-2 text-on-surface-variant text-[20px]" style="font-variation-settings: 'FILL' 0;">arrow_drop_down</span>
+</button>
+<!-- Dropdown menu (hidden by default in real app, showing purely for design completeness but inactive visually without JS) -->
+<div aria-labelledby="menu-button" aria-orientation="vertical" class="hidden origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-surface ring-1 ring-black ring-opacity-5 divide-y divide-divider focus:outline-none z-20" role="menu" tabindex="-1">
+<div class="py-1" role="none">
+<a class="text-on-surface block px-4 py-2 text-sm bg-surface-container-low" href="#" role="menuitem" tabindex="-1">7 hari terakhir</a>
+<a class="text-on-surface block px-4 py-2 text-sm hover:bg-surface-container-low" href="#" role="menuitem" tabindex="-1">30 hari</a>
+<a class="text-on-surface block px-4 py-2 text-sm hover:bg-surface-container-low" href="#" role="menuitem" tabindex="-1">Semua</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Timeline View -->
+<div class="relative">
+<!-- Continuous line for the whole timeline -->
+<div class="absolute left-6 top-8 bottom-4 w-[2px] bg-divider z-0"></div>
+<!-- Date Group: Hari ini -->
+<div class="mb-8 relative z-10">
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-4 sticky top-[calc(theme(spacing.top-bar-height))] bg-background/90 backdrop-blur-sm py-2 z-20">Hari ini</h2>
+<div class="flex flex-col gap-4">
+<!-- Event 1 -->
+<div class="flex gap-4 relative group cursor-pointer active:scale-[0.98] transition-transform">
+<!-- Dot & Line Alignment -->
+<div class="flex flex-col items-center mt-1">
+<div class="w-12 h-12 rounded-full bg-surface-container-lowest border border-divider shadow-sm flex items-center justify-center timeline-dot group-hover:border-primary-container transition-colors">
+<span class="material-symbols-outlined text-progress-medium" style="font-variation-settings: 'FILL' 1;">sync</span>
+</div>
+</div>
+<!-- Content Card -->
+<div class="flex-1 bg-surface-container-lowest rounded-xl border border-divider p-4 shadow-[0_1px_3px_rgba(0,0,0,0.08)] group-hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-1">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-wider">14:30</span>
+<span class="bg-surface-container px-2 py-1 rounded-full font-label-sm text-label-sm text-on-surface-variant">BPH</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mt-1">
+                                Mengubah status <span class="font-semibold">"Koordinasi Sponsor"</span> dari <span class="text-status-pending-text bg-status-pending-bg px-1.5 py-0.5 rounded text-xs">Belum Mulai</span> <span class="material-symbols-outlined text-[14px] align-middle">arrow_forward</span> <span class="text-progress-medium bg-status-progress-bg px-1.5 py-0.5 rounded text-xs">Proses</span>
+</p>
+</div>
+</div>
+<!-- Event 2 -->
+<div class="flex gap-4 relative group cursor-pointer active:scale-[0.98] transition-transform">
+<div class="flex flex-col items-center mt-1">
+<div class="w-12 h-12 rounded-full bg-surface-container-lowest border border-divider shadow-sm flex items-center justify-center timeline-dot group-hover:border-primary-container transition-colors">
+<span class="material-symbols-outlined text-progress-high" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+</div>
+</div>
+<div class="flex-1 bg-surface-container-lowest rounded-xl border border-divider p-4 shadow-[0_1px_3px_rgba(0,0,0,0.08)] group-hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-1">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-wider">10:15</span>
+<span class="bg-surface-container px-2 py-1 rounded-full font-label-sm text-label-sm text-on-surface-variant">Inventaris</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mt-1">
+                                Menambah barang <span class="font-semibold text-primary">"Tali Tampar 50m"</span>
+</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Date Group: Kemarin -->
+<div class="mb-8 relative z-10">
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-4 sticky top-[calc(theme(spacing.top-bar-height))] bg-background/90 backdrop-blur-sm py-2 z-20">Kemarin</h2>
+<div class="flex flex-col gap-4">
+<!-- Event 3 -->
+<div class="flex gap-4 relative group cursor-pointer active:scale-[0.98] transition-transform">
+<div class="flex flex-col items-center mt-1">
+<div class="w-12 h-12 rounded-full bg-surface-container-lowest border border-divider shadow-sm flex items-center justify-center timeline-dot group-hover:border-primary-container transition-colors">
+<span class="material-symbols-outlined text-progress-medium" style="font-variation-settings: 'FILL' 1;">sync</span>
+</div>
+</div>
+<div class="flex-1 bg-surface-container-lowest rounded-xl border border-divider p-4 shadow-[0_1px_3px_rgba(0,0,0,0.08)] group-hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-1">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-wider">16:00</span>
+<span class="bg-surface-container px-2 py-1 rounded-full font-label-sm text-label-sm text-on-surface-variant">BPH</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mt-1">
+                                Mengubah status <span class="font-semibold">"Sebar Undangan"</span> dari <span class="text-status-pending-text bg-status-pending-bg px-1.5 py-0.5 rounded text-xs">Belum Mulai</span> <span class="material-symbols-outlined text-[14px] align-middle">arrow_forward</span> <span class="text-progress-medium bg-status-progress-bg px-1.5 py-0.5 rounded text-xs">Proses</span>
+</p>
+</div>
+</div>
+<!-- Event 4 -->
+<div class="flex gap-4 relative group cursor-pointer active:scale-[0.98] transition-transform">
+<div class="flex flex-col items-center mt-1">
+<div class="w-12 h-12 rounded-full bg-surface-container-lowest border border-divider shadow-sm flex items-center justify-center timeline-dot group-hover:border-primary-container transition-colors">
+<span class="material-symbols-outlined text-tertiary-container" style="font-variation-settings: 'FILL' 1;">edit_note</span>
+</div>
+</div>
+<div class="flex-1 bg-surface-container-lowest rounded-xl border border-divider p-4 shadow-[0_1px_3px_rgba(0,0,0,0.08)] group-hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-1">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-wider">09:30</span>
+<span class="bg-surface-container px-2 py-1 rounded-full font-label-sm text-label-sm text-on-surface-variant">BPH</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mt-1">
+                                Mengedit catatan tugas <span class="font-semibold text-primary">"Buat Proposal Kegiatan"</span>
+</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Date Group: 15 Juli 2026 -->
+<div class="mb-4 relative z-10">
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-4 sticky top-[calc(theme(spacing.top-bar-height))] bg-background/90 backdrop-blur-sm py-2 z-20">15 Juli 2026</h2>
+<div class="flex flex-col gap-4">
+<!-- Event 5 -->
+<div class="flex gap-4 relative group cursor-pointer active:scale-[0.98] transition-transform">
+<div class="flex flex-col items-center mt-1">
+<div class="w-12 h-12 rounded-full bg-surface-container-lowest border border-divider shadow-sm flex items-center justify-center timeline-dot group-hover:border-primary-container transition-colors">
+<span class="material-symbols-outlined text-progress-high" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+</div>
+</div>
+<div class="flex-1 bg-surface-container-lowest rounded-xl border border-divider p-4 shadow-[0_1px_3px_rgba(0,0,0,0.08)] group-hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-1">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-wider">11:00</span>
+<span class="bg-surface-container px-2 py-1 rounded-full font-label-sm text-label-sm text-on-surface-variant">Konsumsi</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mt-1">
+                                Menambah item konsumsi <span class="font-semibold text-primary">"Snack Jajanan Pasar"</span>
+</p>
+</div>
+</div>
+</div>
+</div>
+<!-- End of timeline indicator -->
+<div class="flex gap-4 relative z-10 mt-8 pb-8">
+<div class="flex flex-col items-center">
+<div class="w-12 flex justify-center">
+<div class="w-3 h-3 rounded-full bg-divider ring-4 ring-background"></div>
+</div>
+</div>
+<div class="flex-1">
+<p class="font-label-md text-label-md text-secondary mt-[-4px]">Akhir riwayat</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Nav intentionally omitted per instructions (transactional/sub-page) -->
+</body></html>

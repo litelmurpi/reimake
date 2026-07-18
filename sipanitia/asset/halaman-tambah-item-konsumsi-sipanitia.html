@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tambah Item Konsumsi - SiPanitia</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#ffffff",
+                        "status-pending-bg": "#E5E7EB",
+                        "on-tertiary-fixed-variant": "#0027d4",
+                        "status-progress-text": "#92400E",
+                        "surface-container-low": "#fff0ee",
+                        "progress-medium": "#D97706",
+                        "on-surface": "#271815",
+                        "on-secondary-fixed": "#191c1f",
+                        "surface-container": "#ffe9e6",
+                        "secondary": "#5c5f62",
+                        "on-error-container": "#93000a",
+                        "outline-variant": "#e4beb8",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#dee0e4",
+                        "status-delayed-bg": "#FED7AA",
+                        "tertiary": "#001ba0",
+                        "surface-tint": "#b82014",
+                        "inverse-primary": "#ffb4a8",
+                        "surface-container-lowest": "#ffffff",
+                        "status-completed-bg": "#D1FAE5",
+                        "on-secondary-fixed-variant": "#44474a",
+                        "background": "#fff8f6",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#ffedea",
+                        "status-completed-text": "#065F46",
+                        "tertiary-container": "#0029dc",
+                        "status-delayed-text": "#9A3412",
+                        "secondary-fixed": "#e0e2e6",
+                        "surface-variant": "#f9dcd7",
+                        "surface-container-highest": "#f9dcd7",
+                        "primary": "#6e0000",
+                        "tertiary-fixed-dim": "#bcc2ff",
+                        "error": "#ba1a1a",
+                        "primary-container": "#990000",
+                        "status-pending-text": "#6B7280",
+                        "tertiary-fixed": "#dfe0ff",
+                        "surface-dim": "#f1d4cf",
+                        "surface-bright": "#fff8f6",
+                        "on-primary-container": "#ffa092",
+                        "primary-fixed-dim": "#ffb4a8",
+                        "surface-container-high": "#ffe2dd",
+                        "secondary-fixed-dim": "#c4c7ca",
+                        "status-overdue-bg": "#FEE2E2",
+                        "divider": "#F3F4F6",
+                        "on-secondary": "#ffffff",
+                        "outline": "#8f706b",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#5b403c",
+                        "progress-high": "#059669",
+                        "on-tertiary-fixed": "#000c61",
+                        "on-primary-fixed-variant": "#930000",
+                        "on-tertiary-container": "#abb4ff",
+                        "status-overdue-text": "#991B1B",
+                        "inverse-surface": "#3e2c29",
+                        "progress-low": "#DC2626",
+                        "surface": "#fff8f6",
+                        "status-progress-bg": "#FEF3C7",
+                        "on-background": "#271815",
+                        "primary-fixed": "#ffdad4",
+                        "on-primary-fixed": "#410000",
+                        "on-secondary-container": "#606366"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "12px",
+                        "top-bar-height": "56px",
+                        "container-padding": "16px",
+                        "bottom-nav-height": "64px",
+                        "component-gap": "8px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #dee0e4;
+            border-radius: 4px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md h-screen flex flex-col overflow-hidden selection:bg-primary-container selection:text-on-primary">
+<!-- Header -->
+<header class="bg-surface flex items-center justify-between px-container-padding h-top-bar-height border-b border-divider shrink-0 z-10 sticky top-0">
+<h1 class="font-headline-md text-headline-md font-bold text-on-surface">Tambah Item Konsumsi</h1>
+<button class="p-2 -mr-2 rounded-full hover:bg-surface-container-low transition-colors active:scale-95 text-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined">close</span>
+</button>
+</header>
+<!-- Scrollable Form Content -->
+<main class="flex-1 overflow-y-auto p-container-padding space-y-5 pb-[100px]">
+<!-- Event Dropdown -->
+<div class="flex flex-col gap-component-gap">
+<label class="font-label-md text-label-md text-on-surface-variant" for="event-select">Event/Kegiatan</label>
+<select class="w-full h-12 rounded-lg border border-outline-variant bg-surface px-3 py-2 font-body-md text-on-surface focus:border-primary-container focus:ring-1 focus:ring-primary-container focus:outline-none transition-shadow appearance-none" id="event-select">
+<option disabled="" selected="" value="">Pilih Event...</option>
+<option value="outbound">Outbound</option>
+<option value="tirakatan">Tirakatan</option>
+<option value="lomba_anak">Lomba Anak</option>
+<option value="lomba_ibu">Lomba Ibu-Ibu</option>
+<option value="jalan_sehat">Jalan Sehat</option>
+</select>
+<!-- Custom chevron icon for select (simulated) -->
+<div class="pointer-events-none absolute right-[32px] top-[95px] text-on-surface-variant">
+<span class="material-symbols-outlined" style="font-size: 20px;">expand_more</span>
+</div>
+</div>
+<!-- Jenis Konsumsi Input -->
+<div class="flex flex-col gap-component-gap">
+<label class="font-label-md text-label-md text-on-surface-variant" for="jenis-konsumsi">Jenis Konsumsi</label>
+<input class="w-full h-12 rounded-lg border border-outline-variant bg-surface px-3 py-2 font-body-md text-on-surface placeholder:text-secondary-fixed-dim focus:border-primary-container focus:ring-1 focus:ring-primary-container focus:outline-none transition-shadow" id="jenis-konsumsi" placeholder="Contoh: Snack Jajanan Pasar" type="text"/>
+</div>
+<!-- Porsi & Harga Row -->
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-component-gap">
+<label class="font-label-md text-label-md text-on-surface-variant" for="porsi">Porsi/Jumlah</label>
+<input class="w-full h-12 rounded-lg border border-outline-variant bg-surface px-3 py-2 font-body-md text-on-surface placeholder:text-secondary-fixed-dim focus:border-primary-container focus:ring-1 focus:ring-primary-container focus:outline-none transition-shadow" id="porsi" placeholder="100" type="number"/>
+</div>
+<div class="flex flex-col gap-component-gap">
+<label class="font-label-md text-label-md text-on-surface-variant" for="harga">Harga Satuan</label>
+<div class="relative flex items-center w-full">
+<span class="absolute left-3 font-body-md text-on-surface-variant">Rp</span>
+<input class="w-full h-12 rounded-lg border border-outline-variant bg-surface pl-9 pr-3 py-2 font-body-md text-on-surface placeholder:text-secondary-fixed-dim focus:border-primary-container focus:ring-1 focus:ring-primary-container focus:outline-none transition-shadow" id="harga" placeholder="5.000" type="text"/>
+</div>
+</div>
+</div>
+<!-- Calculation Card -->
+<div class="bg-divider rounded-xl p-4 flex flex-col gap-2 my-4 border border-outline-variant/30">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">calculate</span>
+<span class="font-label-md text-label-md">Total Biaya (otomatis):</span>
+</div>
+<div class="font-headline-lg text-headline-lg font-bold text-primary-container">
+                Rp 500.000
+            </div>
+<p class="font-label-sm text-[11px] text-secondary mt-1">100 × Rp 5.000 — dihitung otomatis, tidak bisa diedit</p>
+</div>
+<!-- PJ Konsumsi -->
+<div class="flex flex-col gap-component-gap">
+<label class="font-label-md text-label-md text-on-surface-variant" for="pj-konsumsi">PJ Konsumsi</label>
+<div class="relative flex items-center w-full">
+<span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full h-12 rounded-lg border border-outline-variant bg-surface pl-10 pr-3 py-2 font-body-md text-on-surface placeholder:text-secondary-fixed-dim focus:border-primary-container focus:ring-1 focus:ring-primary-container focus:outline-none transition-shadow" id="pj-konsumsi" placeholder="Cari penanggung jawab..." type="text"/>
+</div>
+</div>
+<!-- Kru Pembantu Input -->
+<div class="flex flex-col gap-component-gap">
+<label class="font-label-md text-label-md text-on-surface-variant" for="kru-pembantu">Kru Pembantu</label>
+<input class="w-full h-12 rounded-lg border border-outline-variant bg-surface px-3 py-2 font-body-md text-on-surface placeholder:text-secondary-fixed-dim focus:border-primary-container focus:ring-1 focus:ring-primary-container focus:outline-none transition-shadow" id="kru-pembantu" placeholder="Contoh: Bu Ani, Mbak Rina" type="text"/>
+</div>
+<!-- Perlengkapan Konsumsi -->
+<div class="flex flex-col gap-component-gap">
+<label class="font-label-md text-label-md text-on-surface-variant" for="perlengkapan">Perlengkapan Konsumsi</label>
+<input class="w-full h-12 rounded-lg border border-outline-variant bg-surface px-3 py-2 font-body-md text-on-surface placeholder:text-secondary-fixed-dim focus:border-primary-container focus:ring-1 focus:ring-primary-container focus:outline-none transition-shadow" id="perlengkapan" placeholder="Contoh: 15 tampah, 10 kendi" type="text"/>
+</div>
+<!-- Status Kesiapan Dropdown -->
+<div class="flex flex-col gap-component-gap">
+<label class="font-label-md text-label-md text-on-surface-variant">Status Kesiapan</label>
+<div class="flex gap-2 flex-wrap">
+<!-- Radio as chips -->
+<label class="cursor-pointer">
+<input checked="" class="peer sr-only" name="status" type="radio" value="belum"/>
+<div class="rounded-full px-3 py-1.5 border border-outline-variant bg-surface text-on-surface-variant font-label-md text-label-md peer-checked:bg-status-pending-bg peer-checked:text-status-pending-text peer-checked:border-status-pending-bg transition-colors flex items-center gap-1.5">
+<div class="w-2 h-2 rounded-full bg-status-pending-text"></div>
+                         Belum Dipesan
+                     </div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="status" type="radio" value="dipesan"/>
+<div class="rounded-full px-3 py-1.5 border border-outline-variant bg-surface text-on-surface-variant font-label-md text-label-md peer-checked:bg-status-progress-bg peer-checked:text-status-progress-text peer-checked:border-status-progress-bg transition-colors flex items-center gap-1.5">
+<div class="w-2 h-2 rounded-full bg-progress-medium"></div>
+                         Dipesan
+                     </div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="status" type="radio" value="siap"/>
+<div class="rounded-full px-3 py-1.5 border border-outline-variant bg-surface text-on-surface-variant font-label-md text-label-md peer-checked:bg-status-completed-bg peer-checked:text-status-completed-text peer-checked:border-status-completed-bg transition-colors flex items-center gap-1.5">
+<div class="w-2 h-2 rounded-full bg-progress-high"></div>
+                         Siap Hari H
+                     </div>
+</label>
+</div>
+</div>
+<!-- Catatan/Vendor Textarea -->
+<div class="flex flex-col gap-component-gap">
+<label class="font-label-md text-label-md text-on-surface-variant" for="catatan">Catatan/Vendor</label>
+<textarea class="w-full rounded-lg border border-outline-variant bg-surface px-3 py-2 font-body-md text-on-surface placeholder:text-secondary-fixed-dim focus:border-primary-container focus:ring-1 focus:ring-primary-container focus:outline-none transition-shadow resize-none" id="catatan" placeholder="Contoh: Pesan dari Bu Tini, bayar H-3" rows="3"></textarea>
+</div>
+</main>
+<!-- Bottom Sticky Action Area -->
+<footer class="bg-surface border-t border-outline-variant/50 p-container-padding fixed bottom-0 w-full z-20 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] pb-safe">
+<div class="flex gap-4">
+<button class="flex-1 h-12 rounded-xl border-2 border-primary-container bg-surface text-primary-container font-headline-sm text-headline-sm font-semibold active:scale-[0.98] transition-transform">
+                Batal
+            </button>
+<button class="flex-[2] h-12 rounded-xl bg-primary-container text-on-primary font-headline-sm text-headline-sm font-semibold active:scale-[0.98] transition-transform shadow-md hover:bg-primary-container/90">
+                Simpan
+            </button>
+</div>
+</footer>
+<!-- Safe area padding helper for iOS devices -->
+<style>
+        @supports (padding-bottom: env(safe-area-inset-bottom)) {
+            .pb-safe {
+                padding-bottom: calc(16px + env(safe-area-inset-bottom));
+            }
+        }
+    </style>
+</body></html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>SiPanitia - Kebutuhan Konsumsi</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Plus Jakarta Sans & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config injected from design system -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "status-progress-bg": "#FEF3C7",
+                        "status-delayed-text": "#9A3412",
+                        "surface-container-high": "#ffe2dd",
+                        "on-primary-fixed": "#410000",
+                        "primary-fixed-dim": "#ffb4a8",
+                        "inverse-on-surface": "#ffedea",
+                        "primary": "#6e0000",
+                        "on-secondary-fixed": "#191c1f",
+                        "on-surface-variant": "#5b403c",
+                        "on-primary-fixed-variant": "#930000",
+                        "on-tertiary": "#ffffff",
+                        "status-overdue-bg": "#FEE2E2",
+                        "on-secondary-container": "#606366",
+                        "tertiary-container": "#0029dc",
+                        "progress-low": "#DC2626",
+                        "surface-container-highest": "#f9dcd7",
+                        "outline-variant": "#e4beb8",
+                        "on-tertiary-fixed": "#000c61",
+                        "error-container": "#ffdad6",
+                        "secondary": "#5c5f62",
+                        "outline": "#8f706b",
+                        "secondary-container": "#dee0e4",
+                        "background": "#fff8f6",
+                        "primary-fixed": "#ffdad4",
+                        "status-pending-bg": "#E5E7EB",
+                        "status-delayed-bg": "#FED7AA",
+                        "surface-container": "#ffe9e6",
+                        "surface": "#fff8f6",
+                        "progress-medium": "#D97706",
+                        "surface-variant": "#f9dcd7",
+                        "progress-high": "#059669",
+                        "on-background": "#271815",
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "inverse-surface": "#3e2c29",
+                        "surface-bright": "#fff8f6",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#c4c7ca",
+                        "on-surface": "#271815",
+                        "surface-tint": "#b82014",
+                        "status-completed-bg": "#D1FAE5",
+                        "on-tertiary-container": "#abb4ff",
+                        "on-tertiary-fixed-variant": "#0027d4",
+                        "surface-container-low": "#fff0ee",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#001ba0",
+                        "status-progress-text": "#92400E",
+                        "secondary-fixed": "#e0e2e6",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed": "#dfe0ff",
+                        "on-secondary-fixed-variant": "#44474a",
+                        "primary-container": "#990000",
+                        "inverse-primary": "#ffb4a8",
+                        "on-primary-container": "#ffa092",
+                        "surface-container-lowest": "#ffffff",
+                        "status-overdue-text": "#991B1B",
+                        "status-completed-text": "#065F46",
+                        "status-pending-text": "#6B7280",
+                        "divider": "#F3F4F6",
+                        "tertiary-fixed-dim": "#bcc2ff",
+                        "surface-dim": "#f1d4cf"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "12px",
+                        "top-bar-height": "56px",
+                        "container-padding": "16px",
+                        "bottom-nav-height": "64px",
+                        "component-gap": "8px",
+                        "safe": "env(safe-area-inset-bottom)"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                        "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+                        "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+                    },
+                    "boxShadow": {
+                        "card": "0 1px 3px rgba(0,0,0,0.08)",
+                        "fab": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Hide scrollbar for horizontal scrolling filter */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col font-body-md pt-top-bar-height pb-[140px]"> <!-- Extra padding for sticky total and nav -->
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface shadow-sm h-top-bar-height flex items-center justify-between px-container-padding text-on-surface">
+<button aria-label="Back" class="flex items-center justify-center p-2 -ml-2 active:scale-95 transition-transform rounded-full hover:bg-surface-container-low">
+<span class="material-symbols-outlined text-on-surface">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold truncate mx-4 text-center flex-1">Kebutuhan Konsumsi</h1>
+<button aria-label="Notifications" class="flex items-center justify-center p-2 -mr-2 active:scale-95 transition-transform rounded-full hover:bg-surface-container-low">
+<span class="material-symbols-outlined text-on-surface">notifications</span>
+</button>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col w-full max-w-2xl mx-auto">
+<!-- Filter Chips -->
+<div class="w-full px-container-padding py-4 overflow-x-auto no-scrollbar whitespace-nowrap bg-surface">
+<div class="flex gap-2">
+<button class="px-4 py-2 rounded-full font-label-md text-label-md bg-primary text-on-primary active:scale-95 transition-transform whitespace-nowrap border border-primary">Semua</button>
+<button class="px-4 py-2 rounded-full font-label-md text-label-md bg-surface text-secondary border border-outline-variant hover:bg-surface-container-low active:scale-95 transition-transform whitespace-nowrap">Belum Dipesan</button>
+<button class="px-4 py-2 rounded-full font-label-md text-label-md bg-surface text-secondary border border-outline-variant hover:bg-surface-container-low active:scale-95 transition-transform whitespace-nowrap">Dipesan</button>
+<button class="px-4 py-2 rounded-full font-label-md text-label-md bg-surface text-secondary border border-outline-variant hover:bg-surface-container-low active:scale-95 transition-transform whitespace-nowrap">Siap Hari H</button>
+</div>
+</div>
+<!-- Cards List -->
+<div class="flex flex-col gap-component-gap px-container-padding">
+<!-- Card 1 -->
+<article class="bg-surface-container-lowest rounded-lg border border-outline-variant shadow-card p-4 relative">
+<div class="flex justify-between items-start mb-2">
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container py-1 px-2 rounded">OUTBOUND</span>
+<div class="bg-status-completed-bg text-status-completed-text font-label-md text-label-md px-3 py-1 rounded-full flex items-center">
+                        Siap Hari H
+                    </div>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-1">Snack Jajanan Pasar</h3>
+<p class="text-secondary font-body-md mb-2">100 porsi × Rp 5.000 =</p>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary text-xl">calculate</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">Rp 500.000</span>
+</div>
+<div class="flex items-center justify-between border-t border-divider pt-3">
+<div class="flex items-center gap-2">
+<span class="text-secondary font-label-sm text-label-sm uppercase tracking-wider">PJ:</span>
+<div class="flex items-center gap-2">
+<img class="w-6 h-6 rounded-full object-cover bg-surface-variant" data-alt="A small circular avatar placeholder image showing a friendly woman in modern, bright corporate lighting, simple white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCI65Q0C5g7nL_nWq2982i_NFq1m5meydbeoRwnHis4WYFWPfdGgSjNIffuI0hGv-bWD45E40ttjGwTgTQyRjqnLpCc7hC7cSnKg0iPC6Nq8T0fcv2Pih6Iqdap4oXW3bB6t4X9C3HWf2qDO3Axk46W7fExFiJbyCq9fdK5NA1EmIWyLrd9gtTl4_AnI_LCJFjKpNL4_3qdJP71PDYkRMPyQqdUYaBL3tXAh1jJl_OA4y05RHuU1lbXIj706DKobUnt3Zmvev_9hac"/>
+<span class="font-label-md text-label-md">Bu Sari</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="bg-surface-container-lowest rounded-lg border border-outline-variant shadow-card p-4 relative">
+<div class="flex justify-between items-start mb-2">
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container py-1 px-2 rounded">OUTBOUND</span>
+<div class="bg-status-delayed-bg text-status-delayed-text font-label-md text-label-md px-3 py-1 rounded-full flex items-center">
+                        Dipesan
+                    </div>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-1">Nasi Liwet Bungkus Daun</h3>
+<p class="text-secondary font-body-md mb-2">130 porsi × Rp 8.000 =</p>
+<div class="flex items-center gap-2 mb-4">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">Rp 1.040.000</span>
+</div>
+<div class="flex items-center justify-between border-t border-divider pt-3">
+<div class="flex items-center gap-2">
+<span class="text-secondary font-label-sm text-label-sm uppercase tracking-wider">PJ:</span>
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-primary-fixed-dim text-on-primary-fixed flex items-center justify-center font-label-md text-label-md">A</div>
+<span class="font-label-md text-label-md">Bu Ani</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="bg-surface-container-lowest rounded-lg border border-outline-variant shadow-card p-4 relative">
+<div class="flex justify-between items-start mb-2">
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container py-1 px-2 rounded">TIRAKATAN</span>
+<div class="bg-status-pending-bg text-status-pending-text font-label-md text-label-md px-3 py-1 rounded-full flex items-center">
+                        Belum Dipesan
+                    </div>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-1">Tumpeng &amp; Lauk Bancakan</h3>
+<p class="text-secondary font-body-md mb-2">200 porsi × Rp 5.000 =</p>
+<div class="flex items-center gap-2 mb-4">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">Rp 1.000.000</span>
+</div>
+<div class="flex items-center justify-between border-t border-divider pt-3">
+<div class="flex items-center gap-2">
+<span class="text-secondary font-label-sm text-label-sm uppercase tracking-wider">PJ:</span>
+<div class="flex items-center gap-2">
+<img class="w-6 h-6 rounded-full object-cover bg-surface-variant" data-alt="A small circular avatar placeholder image showing a friendly woman in modern, bright corporate lighting, simple white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZW29MS9rm2pR0Ca7w98sT91Ogym4y7ZHC07lNemwrDYKQK-KJcjnvwfrcJ-SZzH22XNIS5SNG-KnfxnJ_ipP0aZDe02QtqBCNJCz9n2iVpH15jHlyG4w2M0nLgya8uBkAzdLu_wA83maGjozBgEr9URyklttJfAtw6o1A1ypOoPGrpDMuUIF9ITUUdRYeq8m284NZ0ggg_HY1fM0v7BNPnY9AD6mzTdHszQPN9S7k9hFrIay03lsrJwox4vyWRbl7Bq-R24BXH0M"/>
+<span class="font-label-md text-label-md">Bu Sari</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Card 4 -->
+<article class="bg-surface-container-lowest rounded-lg border border-outline-variant shadow-card p-4 relative">
+<div class="flex justify-between items-start mb-2">
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container py-1 px-2 rounded">TIRAKATAN</span>
+<div class="bg-status-delayed-bg text-status-delayed-text font-label-md text-label-md px-3 py-1 rounded-full flex items-center">
+                        Dipesan
+                    </div>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-1">Wedang Jahe &amp; Teh Poci</h3>
+<p class="text-secondary font-body-md mb-2">250 porsi × Rp 2.000 =</p>
+<div class="flex items-center gap-2 mb-4">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">Rp 500.000</span>
+</div>
+<div class="flex items-center justify-between border-t border-divider pt-3">
+<div class="flex items-center gap-2">
+<span class="text-secondary font-label-sm text-label-sm uppercase tracking-wider">PJ:</span>
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-label-md text-label-md">R</div>
+<span class="font-label-md text-label-md">Mbak Rina</span>
+</div>
+</div>
+</div>
+</article>
+</div>
+</main>
+<!-- Floating Action Button (FAB) -->
+<button aria-label="Tambah Konsumsi" class="fixed bottom-[calc(64px+env(safe-area-inset-bottom)+80px)] right-4 w-14 h-14 bg-primary text-on-primary rounded-full shadow-fab flex items-center justify-center hover:opacity-90 active:scale-95 transition-transform z-40">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+<!-- Sticky Total Budget Footer -->
+<div class="fixed bottom-[calc(64px+env(safe-area-inset-bottom))] w-full max-w-2xl mx-auto left-0 right-0 z-40 px-4 pb-4 pointer-events-none">
+<div class="bg-primary-container text-on-primary-container rounded-lg p-4 shadow-card flex items-center gap-3 pointer-events-auto">
+<div class="bg-surface/20 p-2 rounded-full">
+<span class="material-symbols-outlined text-white">payments</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-primary-container/80">Total Estimasi Anggaran</p>
+<p class="font-headline-sm text-headline-sm text-white font-bold">Rp 2.600.000</p>
+</div>
+</div>
+</div>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface dark:bg-surface-container border-t border-outline-variant flex justify-around items-center h-bottom-nav-height pb-safe">
+<!-- Dashboard (Inactive) -->
+<button class="flex flex-col items-center justify-center text-secondary dark:text-on-secondary-fixed-variant hover:bg-surface-container-low active:scale-90 transition-all w-full h-full">
+<span class="material-symbols-outlined mb-1">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</button>
+<!-- Tugas (Inactive) -->
+<button class="flex flex-col items-center justify-center text-secondary dark:text-on-secondary-fixed-variant hover:bg-surface-container-low active:scale-90 transition-all w-full h-full">
+<span class="material-symbols-outlined mb-1">assignment</span>
+<span class="font-label-md text-label-md">Tugas</span>
+</button>
+<!-- Logistik (Active) -->
+<button class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim font-bold hover:bg-surface-container-low active:scale-90 transition-all w-full h-full">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<span class="font-label-md text-label-md">Logistik</span>
+</button>
+<!-- Profil (Inactive) -->
+<button class="flex flex-col items-center justify-center text-secondary dark:text-on-secondary-fixed-variant hover:bg-surface-container-low active:scale-90 transition-all w-full h-full">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-label-md text-label-md">Profil</span>
+</button>
+</nav>
+</body></html>

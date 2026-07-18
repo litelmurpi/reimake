@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Edit User - SiPanitia</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "status-pending-text": "#6B7280",
+                    "divider": "#F3F4F6",
+                    "tertiary-fixed-dim": "#bcc2ff",
+                    "surface-dim": "#f1d4cf",
+                    "surface-container-lowest": "#ffffff",
+                    "status-overdue-text": "#991B1B",
+                    "status-completed-text": "#065F46",
+                    "primary-container": "#990000",
+                    "inverse-primary": "#ffb4a8",
+                    "on-primary-container": "#ffa092",
+                    "on-secondary-fixed-variant": "#44474a",
+                    "tertiary-fixed": "#dfe0ff",
+                    "on-secondary": "#ffffff",
+                    "tertiary": "#001ba0",
+                    "status-progress-text": "#92400E",
+                    "secondary-fixed": "#e0e2e6",
+                    "on-error-container": "#93000a",
+                    "surface-container-low": "#fff0ee",
+                    "surface-tint": "#b82014",
+                    "status-completed-bg": "#D1FAE5",
+                    "on-tertiary-container": "#abb4ff",
+                    "on-tertiary-fixed-variant": "#0027d4",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed-dim": "#c4c7ca",
+                    "on-surface": "#271815",
+                    "surface-bright": "#fff8f6",
+                    "inverse-surface": "#3e2c29",
+                    "on-error": "#ffffff",
+                    "error": "#ba1a1a",
+                    "surface-variant": "#f9dcd7",
+                    "progress-high": "#059669",
+                    "on-background": "#271815",
+                    "surface-container": "#ffe9e6",
+                    "surface": "#fff8f6",
+                    "progress-medium": "#D97706",
+                    "status-pending-bg": "#E5E7EB",
+                    "status-delayed-bg": "#FED7AA",
+                    "secondary-container": "#dee0e4",
+                    "background": "#fff8f6",
+                    "primary-fixed": "#ffdad4",
+                    "secondary": "#5c5f62",
+                    "outline": "#8f706b",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed": "#000c61",
+                    "outline-variant": "#e4beb8",
+                    "progress-low": "#DC2626",
+                    "surface-container-highest": "#f9dcd7",
+                    "on-secondary-container": "#606366",
+                    "tertiary-container": "#0029dc",
+                    "on-primary-fixed-variant": "#930000",
+                    "on-tertiary": "#ffffff",
+                    "status-overdue-bg": "#FEE2E2",
+                    "on-surface-variant": "#5b403c",
+                    "primary-fixed-dim": "#ffb4a8",
+                    "inverse-on-surface": "#ffedea",
+                    "primary": "#6e0000",
+                    "on-secondary-fixed": "#191c1f",
+                    "surface-container-high": "#ffe2dd",
+                    "on-primary-fixed": "#410000",
+                    "status-progress-bg": "#FEF3C7",
+                    "status-delayed-text": "#9A3412"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "component-gap": "8px",
+                    "gutter": "12px",
+                    "top-bar-height": "56px",
+                    "container-padding": "16px",
+                    "bottom-nav-height": "64px"
+            },
+            "fontFamily": {
+                    "label-md": ["Inter"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-sm": ["Plus Jakarta Sans"],
+                    "label-sm": ["Inter"],
+                    "headline-md": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                    "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                    "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background h-[884px] overflow-hidden antialiased flex flex-col relative w-full max-w-md mx-auto shadow-2xl">
+<!-- Background Layer (Dimmed App Interface) -->
+<div class="absolute inset-0 flex flex-col z-0">
+<!-- TopAppBar (from JSON) -->
+<header class="fixed top-0 w-full z-10 flex items-center justify-between px-container-padding h-top-bar-height bg-primary shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-lowest overflow-hidden flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="A generic male user avatar with short dark hair in a professional setting, clean light background, high quality portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAr2_0QDe90eD2KiKg7WXNiMf6VrxJ1XbQHxwVpa4rqPKGCxQ3bqi_J3C1elllNpwkFzu6XVHSFJlbWW5BMCd9rozFtUjCzh20wLrzPSE5GDaXL7Ns2A2HGGvyX6-yPbXrv2ZwqsMT-7q3hk28ovlkCyPNruT8-Kgcoz6URpkI-pFpn2vi_t5SbwSFJIlge0Xc1v635jpduQFPgNRe_imdqZCF7v6RuHzbmBJuL7HcC0RPpwARYYmRUn1JJyQBg_ZDm4vTxE6LAbcQ"/>
+</div>
+<h1 class="font-headline-lg text-headline-lg font-bold text-on-primary">SiPanitia</h1>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:opacity-90 active:scale-95 transition-transform text-on-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">notifications</span>
+</button>
+</header>
+<!-- Main Content Dummy -->
+<main class="flex-1 mt-top-bar-height pt-4 px-container-padding pb-bottom-nav-height bg-surface overflow-y-auto">
+<div class="flex items-center justify-between mb-4">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Manajemen Pengguna</h2>
+</div>
+<div class="space-y-3">
+<div class="bg-surface-container-lowest p-3 rounded-xl border border-outline-variant shadow-sm flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-primary-container font-headline-sm text-headline-sm">A</div>
+<div class="flex-1">
+<h3 class="font-body-md text-body-md font-semibold text-on-surface">Mas Andi</h3>
+<p class="font-label-sm text-label-sm text-secondary">Koordinator - Sie Perkap</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded-xl border border-outline-variant shadow-sm flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-primary-container font-headline-sm text-headline-sm">S</div>
+<div class="flex-1">
+<h3 class="font-body-md text-body-md font-semibold text-on-surface">Siti Rahma</h3>
+<p class="font-label-sm text-label-sm text-secondary">Anggota - Sie Acara</p>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (from JSON) -->
+<nav class="fixed bottom-0 w-full z-10 flex justify-around items-center h-bottom-nav-height bg-surface border-t border-outline-variant pb-safe max-w-md">
+<button class="flex flex-col items-center justify-center text-secondary hover:bg-surface-container-low active:scale-90 transition-all w-16 h-full">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">dashboard</span>
+<span class="font-label-md text-label-md mt-1">Dashboard</span>
+</button>
+<button class="flex flex-col items-center justify-center text-secondary hover:bg-surface-container-low active:scale-90 transition-all w-16 h-full">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">assignment</span>
+<span class="font-label-md text-label-md mt-1">Tugas</span>
+</button>
+<button class="flex flex-col items-center justify-center text-secondary hover:bg-surface-container-low active:scale-90 transition-all w-16 h-full">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">inventory_2</span>
+<span class="font-label-md text-label-md mt-1">Logistik</span>
+</button>
+<button class="flex flex-col items-center justify-center text-primary-container font-bold hover:bg-surface-container-low active:scale-90 transition-all w-16 h-full">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-md text-label-md mt-1">Profil</span>
+</button>
+</nav>
+</div>
+<!-- Scrim / Dim Overlay -->
+<div class="absolute inset-0 bg-inverse-surface/60 backdrop-blur-[2px] z-40"></div>
+<!-- Bottom Sheet -->
+<div class="absolute bottom-0 left-0 right-0 bg-surface-container-lowest rounded-t-xl z-50 flex flex-col pt-3 pb-8 px-container-padding shadow-[0_-8px_30px_rgba(0,0,0,0.12)] transition-transform duration-300 translate-y-0">
+<!-- Drag Handle -->
+<div class="w-12 h-1.5 bg-surface-variant rounded-full mx-auto mb-5"></div>
+<!-- Header -->
+<div class="flex items-center justify-between mb-6">
+<h2 class="font-headline-md text-headline-md text-on-surface">Edit User: Mas Andi</h2>
+<button class="w-8 h-8 flex items-center justify-center rounded-full text-secondary hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Form Elements -->
+<form class="flex flex-col gap-5 overflow-y-auto max-h-[574px]">
+<!-- Name Field -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface-variant">Nama Lengkap</label>
+<input class="w-full h-12 px-4 rounded-xl border border-outline-variant bg-surface focus:border-primary-container focus:ring-1 focus:ring-primary-container font-body-md text-body-md text-on-surface transition-colors" placeholder="Masukkan nama" type="text" value="Mas Andi"/>
+</div>
+<!-- Email Field -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface-variant">Email</label>
+<input class="w-full h-12 px-4 rounded-xl border border-outline-variant bg-surface focus:border-primary-container focus:ring-1 focus:ring-primary-container font-body-md text-body-md text-on-surface transition-colors" placeholder="contoh@email.com" type="email" value="andi@email.com"/>
+</div>
+<!-- Role Dropdown -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface-variant">Peran Utama</label>
+<div class="relative">
+<select class="w-full h-12 px-4 pr-10 rounded-xl border border-outline-variant bg-surface focus:border-primary-container focus:ring-1 focus:ring-primary-container font-body-md text-body-md text-on-surface appearance-none transition-colors">
+<option>Super Admin</option>
+<option>BPH</option>
+<option selected="">Koordinator Sie</option>
+<option>Anggota Sie</option>
+<option>Viewer</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-secondary pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Division Selection (Multi-select) -->
+<div class="flex flex-col gap-2 mt-1">
+<label class="font-label-md text-label-md text-on-surface-variant">Divisi Terlibat</label>
+<p class="font-label-sm text-label-sm text-secondary -mt-1">Pilih satu atau lebih divisi untuk user ini.</p>
+<div class="flex flex-wrap gap-x-3 gap-y-4 mt-2">
+<!-- Selected Chip with Toggle -->
+<div class="flex flex-col items-start gap-1.5 relative">
+<div class="px-4 py-2 bg-primary-container text-on-primary rounded-full font-label-md text-label-md border border-primary-container flex items-center justify-between gap-2 shadow-sm">
+<span>Sie Perkap</span>
+<button class="flex items-center justify-center opacity-80 hover:opacity-100" type="button"><span class="material-symbols-outlined text-[16px]">close</span></button>
+</div>
+<label class="flex items-center gap-2 pl-2 cursor-pointer group">
+<input checked="" class="w-4 h-4 rounded border-outline-variant text-primary-container focus:ring-primary-container focus:ring-2 bg-surface transition-colors" type="checkbox"/>
+<span class="font-label-sm text-label-sm text-secondary group-hover:text-on-surface-variant transition-colors">Jadikan Koordinator</span>
+</label>
+</div>
+<!-- Unselected Chip -->
+<div class="flex flex-col items-start gap-1.5">
+<button class="px-4 py-2 bg-surface-bright text-secondary rounded-full font-label-md text-label-md border border-outline-variant flex items-center gap-1 hover:bg-surface-variant transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span> Sie Acara
+                        </button>
+</div>
+<!-- Unselected Chip -->
+<div class="flex flex-col items-start gap-1.5">
+<button class="px-4 py-2 bg-surface-bright text-secondary rounded-full font-label-md text-label-md border border-outline-variant flex items-center gap-1 hover:bg-surface-variant transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span> Sie Konsumsi
+                        </button>
+</div>
+</div>
+</div>
+<!-- Action Area -->
+<div class="flex flex-col gap-4 mt-6 pt-2 border-t border-divider">
+<button class="w-full h-12 bg-primary-container text-on-primary rounded-xl font-label-md text-label-md flex items-center justify-center hover:opacity-90 active:scale-[0.98] transition-all shadow-sm" type="button">
+                    Simpan Perubahan
+                </button>
+<button class="w-full bg-transparent border-0 text-error font-label-md text-label-md hover:underline decoration-error underline-offset-2 transition-all" type="button">
+                    Nonaktifkan User
+                </button>
+</div>
+</form>
+</div>
+</body></html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SiPanitia - Notifikasi</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#ffe2dd",
+                        "tertiary-fixed-dim": "#bcc2ff",
+                        "tertiary": "#001ba0",
+                        "surface-container-highest": "#f9dcd7",
+                        "secondary-fixed-dim": "#c4c7ca",
+                        "status-progress-text": "#92400E",
+                        "progress-high": "#059669",
+                        "surface-dim": "#f1d4cf",
+                        "on-secondary-fixed": "#191c1f",
+                        "on-secondary-fixed-variant": "#44474a",
+                        "tertiary-fixed": "#dfe0ff",
+                        "status-progress-bg": "#FEF3C7",
+                        "on-tertiary-fixed": "#000c61",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "status-overdue-text": "#991B1B",
+                        "background": "#fff8f6",
+                        "surface-variant": "#f9dcd7",
+                        "secondary-container": "#dee0e4",
+                        "primary-container": "#990000",
+                        "status-pending-text": "#6B7280",
+                        "secondary": "#5c5f62",
+                        "on-surface": "#271815",
+                        "outline-variant": "#e4beb8",
+                        "outline": "#8f706b",
+                        "on-secondary-container": "#606366",
+                        "status-delayed-text": "#9A3412",
+                        "tertiary-container": "#0029dc",
+                        "inverse-on-surface": "#ffedea",
+                        "status-completed-text": "#065F46",
+                        "status-completed-bg": "#D1FAE5",
+                        "surface-container": "#ffe9e6",
+                        "status-overdue-bg": "#FEE2E2",
+                        "on-tertiary-fixed-variant": "#0027d4",
+                        "on-primary-fixed-variant": "#930000",
+                        "inverse-primary": "#ffb4a8",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#abb4ff",
+                        "error": "#ba1a1a",
+                        "on-primary-container": "#ffa092",
+                        "surface-container-low": "#fff0ee",
+                        "primary-fixed-dim": "#ffb4a8",
+                        "primary": "#6e0000",
+                        "on-primary-fixed": "#410000",
+                        "on-primary": "#ffffff",
+                        "status-pending-bg": "#E5E7EB",
+                        "surface-tint": "#b82014",
+                        "progress-low": "#DC2626",
+                        "surface": "#fff8f6",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#fff8f6",
+                        "primary-fixed": "#ffdad4",
+                        "on-background": "#271815",
+                        "progress-medium": "#D97706",
+                        "divider": "#F3F4F6",
+                        "inverse-surface": "#3e2c29",
+                        "status-delayed-bg": "#FED7AA",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed": "#e0e2e6",
+                        "on-secondary": "#ffffff",
+                        "on-surface-variant": "#5b403c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "bottom-nav-height": "64px",
+                        "gutter": "12px",
+                        "container-padding": "16px",
+                        "component-gap": "8px",
+                        "top-bar-height": "56px"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-container-lowest text-on-surface font-body-md antialiased md:max-w-md md:mx-auto md:border-x md:border-outline-variant min-h-screen flex flex-col relative overflow-x-hidden">
+<!-- Header -->
+<header class="flex items-center justify-between px-container-padding h-top-bar-height bg-surface-container-lowest sticky top-0 z-40">
+<h1 class="font-headline-md text-headline-md text-on-surface">Notifikasi</h1>
+<button class="font-label-md text-label-md text-primary active:scale-95 transition-transform">
+            Tandai semua dibaca
+        </button>
+</header>
+<!-- Tabs -->
+<div class="flex border-b border-divider px-container-padding bg-surface-container-lowest sticky top-[56px] z-30">
+<button class="flex-1 pb-3 pt-2 text-center border-b-2 border-primary font-label-md text-label-md text-primary">
+            Semua
+        </button>
+<button class="flex-1 pb-3 pt-2 text-center border-b-2 border-transparent font-label-md text-label-md text-secondary flex items-center justify-center gap-2">
+            Belum Dibaca
+            <span class="bg-primary text-on-primary text-[10px] font-bold px-1.5 py-0.5 rounded-full leading-none">
+                4
+            </span>
+</button>
+</div>
+<!-- Notification List -->
+<main class="flex-1 flex flex-col py-2">
+<!-- Card 1 (Unread) -->
+<div class="flex items-start px-container-padding py-3 gap-3 bg-surface-container-lowest active:bg-surface-container-low transition-colors cursor-pointer border-b border-divider/50 last:border-b-0">
+<div class="flex flex-col items-center pt-2 gap-1 w-4">
+<div class="w-2 h-2 rounded-full bg-tertiary"></div>
+</div>
+<div class="flex-shrink-0 mt-0.5 w-10 h-10 rounded-full bg-error-container flex items-center justify-center text-error">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+<div class="flex-1 flex flex-col gap-1">
+<p class="font-body-md text-body-md text-on-surface leading-tight">
+                    Tugas 'Sebar Undangan' sudah <span class="font-semibold text-error">terlambat 3 hari</span>
+</p>
+<div class="flex items-center justify-between mt-1">
+<span class="font-label-sm text-label-sm text-secondary">BPH · Pak Budi</span>
+<span class="font-label-sm text-label-sm text-secondary">1 jam lalu</span>
+</div>
+</div>
+</div>
+<!-- Card 2 (Unread) -->
+<div class="flex items-start px-container-padding py-3 gap-3 bg-surface-container-lowest active:bg-surface-container-low transition-colors cursor-pointer border-b border-divider/50 last:border-b-0">
+<div class="flex flex-col items-center pt-2 gap-1 w-4">
+<div class="w-2 h-2 rounded-full bg-tertiary"></div>
+</div>
+<div class="flex-shrink-0 mt-0.5 w-10 h-10 rounded-full bg-status-delayed-bg flex items-center justify-center text-status-delayed-text">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">schedule</span>
+</div>
+<div class="flex-1 flex flex-col gap-1">
+<p class="font-body-md text-body-md text-on-surface leading-tight">
+                    Tugas 'Booking Sound System' jatuh tempo <span class="font-semibold text-status-delayed-text">2 hari lagi</span>
+</p>
+<div class="flex items-center justify-between mt-1">
+<span class="font-label-sm text-label-sm text-secondary">Sie Perkap · Mas Andi</span>
+<span class="font-label-sm text-label-sm text-secondary">3 jam lalu</span>
+</div>
+</div>
+</div>
+<!-- Card 3 (Unread) -->
+<div class="flex items-start px-container-padding py-3 gap-3 bg-surface-container-lowest active:bg-surface-container-low transition-colors cursor-pointer border-b border-divider/50 last:border-b-0">
+<div class="flex flex-col items-center pt-2 gap-1 w-4">
+<div class="w-2 h-2 rounded-full bg-tertiary"></div>
+</div>
+<div class="flex-shrink-0 mt-0.5 w-10 h-10 rounded-full bg-error-container flex items-center justify-center text-error">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+<div class="flex-1 flex flex-col gap-1">
+<p class="font-body-md text-body-md text-on-surface leading-tight">
+                    Barang 'Sound System' <span class="font-semibold text-error">deadline kumpul terlewat</span> 4 hari
+                </p>
+<div class="flex items-center justify-between mt-1">
+<span class="font-label-sm text-label-sm text-secondary">Sie Perkap</span>
+<span class="font-label-sm text-label-sm text-secondary">5 jam lalu</span>
+</div>
+</div>
+</div>
+<!-- Card 4 (Read) -->
+<div class="flex items-start px-container-padding py-3 gap-3 bg-surface-container-lowest opacity-70 active:bg-surface-container-low transition-colors cursor-pointer border-b border-divider/50 last:border-b-0">
+<div class="flex flex-col items-center pt-2 gap-1 w-4">
+<!-- No unread dot -->
+</div>
+<div class="flex-shrink-0 mt-0.5 w-10 h-10 rounded-full bg-status-delayed-bg flex items-center justify-center text-status-delayed-text">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<div class="flex-1 flex flex-col gap-1">
+<p class="font-body-md text-body-md text-secondary leading-tight">
+                    Tugas 'Pesan Tumpeng' jatuh tempo <span class="font-semibold text-status-delayed-text opacity-80">2 hari lagi</span>
+</p>
+<div class="flex items-center justify-between mt-1">
+<span class="font-label-sm text-label-sm text-secondary">Sie Konsumsi · Bu Sari</span>
+<span class="font-label-sm text-label-sm text-secondary">Kemarin, 07:00</span>
+</div>
+</div>
+</div>
+<!-- Card 5 (Read) -->
+<div class="flex items-start px-container-padding py-3 gap-3 bg-surface-container-lowest opacity-70 active:bg-surface-container-low transition-colors cursor-pointer border-b border-divider/50 last:border-b-0">
+<div class="flex flex-col items-center pt-2 gap-1 w-4">
+<!-- No unread dot -->
+</div>
+<div class="flex-shrink-0 mt-0.5 w-10 h-10 rounded-full bg-status-completed-bg flex items-center justify-center text-status-completed-text">
+<span class="material-symbols-outlined">check_circle</span>
+</div>
+<div class="flex-1 flex flex-col gap-1">
+<p class="font-body-md text-body-md text-secondary leading-tight">
+                    Pak Budi menyelesaikan tugas 'Buat Proposal Kegiatan'
+                </p>
+<div class="flex items-center justify-between mt-1">
+<span class="font-label-sm text-label-sm text-secondary">BPH</span>
+<span class="font-label-sm text-label-sm text-secondary">2 hari lalu</span>
+</div>
+</div>
+</div>
+</main>
+</body></html>

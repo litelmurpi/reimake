@@ -1,0 +1,8 @@
+# Ignore everything in the root
+/*
+
+# Except the sipanitia folder
+!/sipanitia/
+
+# And except this .gitignore itself
+!.gitignore

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tambah Barang Inventaris</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-error": "#ffffff",
+                        "surface-container": "#ffe9e6",
+                        "surface": "#fff8f6",
+                        "status-overdue-bg": "#FEE2E2",
+                        "on-background": "#271815",
+                        "outline": "#8f706b",
+                        "inverse-on-surface": "#ffedea",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#410000",
+                        "error-container": "#ffdad6",
+                        "progress-medium": "#D97706",
+                        "on-surface": "#271815",
+                        "surface-tint": "#b82014",
+                        "tertiary": "#001ba0",
+                        "secondary": "#5c5f62",
+                        "surface-container-low": "#fff0ee",
+                        "on-primary-container": "#ffa092",
+                        "inverse-surface": "#3e2c29",
+                        "tertiary-fixed": "#dfe0ff",
+                        "primary": "#6e0000",
+                        "outline-variant": "#e4beb8",
+                        "primary-fixed": "#ffdad4",
+                        "status-delayed-bg": "#FED7AA",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "status-delayed-text": "#9A3412",
+                        "tertiary-container": "#0029dc",
+                        "primary-fixed-dim": "#ffb4a8",
+                        "surface-container-highest": "#f9dcd7",
+                        "secondary-fixed": "#e0e2e6",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed-variant": "#930000",
+                        "error": "#ba1a1a",
+                        "background": "#fff8f6",
+                        "surface-dim": "#f1d4cf",
+                        "on-surface-variant": "#5b403c",
+                        "on-tertiary-fixed-variant": "#0027d4",
+                        "status-progress-bg": "#FEF3C7",
+                        "on-secondary-fixed": "#191c1f",
+                        "surface-bright": "#fff8f6",
+                        "surface-container-high": "#ffe2dd",
+                        "status-pending-text": "#6B7280",
+                        "on-tertiary-container": "#abb4ff",
+                        "tertiary-fixed-dim": "#bcc2ff",
+                        "status-progress-text": "#92400E",
+                        "secondary-container": "#dee0e4",
+                        "on-secondary-container": "#606366",
+                        "secondary-fixed-dim": "#c4c7ca",
+                        "on-secondary-fixed-variant": "#44474a",
+                        "inverse-primary": "#ffb4a8",
+                        "divider": "#F3F4F6",
+                        "status-overdue-text": "#991B1B",
+                        "status-completed-bg": "#D1FAE5",
+                        "surface-variant": "#f9dcd7",
+                        "status-pending-bg": "#E5E7EB",
+                        "primary-container": "#990000",
+                        "on-secondary": "#ffffff",
+                        "progress-high": "#059669",
+                        "status-completed-text": "#065F46",
+                        "progress-low": "#DC2626",
+                        "on-tertiary-fixed": "#000c61"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        "container-padding": "16px",
+                        "component-gap": "8px",
+                        "top-bar-height": "56px",
+                        "bottom-nav-height": "64px",
+                        "gutter": "12px"
+                    },
+                    fontFamily: {
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-sm": ["Plus Jakarta Sans"]
+                    },
+                    fontSize: {
+                        "headline-md": ["20px", { lineHeight: "28px", fontWeight: "600" }],
+                        "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+                        "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "headline-lg": ["24px", { lineHeight: "32px", fontWeight: "700" }],
+                        "label-md": ["12px", { lineHeight: "16px", fontWeight: "600" }],
+                        "label-sm": ["11px", { lineHeight: "14px", fontWeight: "500" }],
+                        "headline-sm": ["18px", { lineHeight: "24px", fontWeight: "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            --tw-ring-color: #990000;
+            border-color: #990000;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md h-screen flex flex-col antialiased">
+<!-- Header -->
+<header class="bg-surface-container-lowest fixed top-0 w-full z-50 h-top-bar-height flex items-center justify-between px-container-padding shadow-sm">
+<div class="w-8"></div> <!-- Spacer for center alignment -->
+<h1 class="font-headline-sm text-headline-sm text-on-surface">Tambah Barang</h1>
+<button class="text-on-surface-variant hover:text-on-surface active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined">close</span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto pt-top-bar-height pb-[96px] px-container-padding py-container-padding flex flex-col gap-6">
+<form class="flex flex-col gap-6" id="tambahBarangForm">
+<!-- SECTION 1 — Info Barang -->
+<section class="flex flex-col gap-4">
+<h2 class="font-label-md text-label-md text-secondary uppercase tracking-wider">Info Barang</h2>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface" for="nama_barang">Nama Barang</label>
+<input class="form-input w-full h-12 rounded-lg border-outline-variant bg-surface-container-lowest text-on-surface font-body-md focus:ring-1 focus:ring-primary-container focus:border-primary-container" id="nama_barang" name="nama_barang" placeholder="Contoh: Sound System 1 Set" type="text"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface" for="divisi_peminta">Divisi Peminta</label>
+<input class="form-input w-full h-12 rounded-lg border-outline-variant bg-surface-container-lowest text-on-surface font-body-md focus:ring-1 focus:ring-primary-container focus:border-primary-container" id="divisi_peminta" name="divisi_peminta" placeholder="Contoh: Sie Acara" type="text"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface" for="sistem_pengadaan">Sistem Pengadaan</label>
+<select class="form-select w-full h-12 rounded-lg border-outline-variant bg-surface-container-lowest text-on-surface font-body-md focus:ring-1 focus:ring-primary-container focus:border-primary-container" id="sistem_pengadaan" name="sistem_pengadaan">
+<option value="pinjam">Pinjam</option>
+<option value="beli">Beli</option>
+<option value="inventaris_sendiri">Inventaris Milik Sendiri</option>
+</select>
+</div>
+</section>
+<!-- SECTION 2 — Jadwal & Biaya -->
+<section class="flex flex-col gap-4">
+<h2 class="font-label-md text-label-md text-secondary uppercase tracking-wider">Jadwal &amp; Biaya</h2>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface" for="tgl_pinjam_beli">Tanggal Pinjam/Beli</label>
+<div class="relative">
+<input class="form-input w-full h-12 rounded-lg border-outline-variant bg-surface-container-lowest text-on-surface font-body-md pl-10 focus:ring-1 focus:ring-primary-container focus:border-primary-container" id="tgl_pinjam_beli" name="tgl_pinjam_beli" type="date"/>
+<span class="material-symbols-outlined absolute left-3 top-3 text-secondary pointer-events-none">calendar_month</span>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface" for="deadline_kumpul">Deadline Kumpul</label>
+<div class="relative">
+<input class="form-input w-full h-12 rounded-lg border-outline-variant bg-surface-container-lowest text-on-surface font-body-md pl-10 focus:ring-1 focus:ring-primary-container focus:border-primary-container" id="deadline_kumpul" name="deadline_kumpul" type="date"/>
+<span class="material-symbols-outlined absolute left-3 top-3 text-secondary pointer-events-none">calendar_month</span>
+</div>
+</div>
+<div class="flex flex-col gap-1.5" id="container_tgl_kembali">
+<label class="font-label-md text-label-md text-on-surface" for="tgl_kembali">Tanggal Kembali <span class="text-secondary font-normal">(Pinjam)</span></label>
+<div class="relative">
+<input class="form-input w-full h-12 rounded-lg border-outline-variant bg-surface-container-lowest text-on-surface font-body-md pl-10 focus:ring-1 focus:ring-primary-container focus:border-primary-container" id="tgl_kembali" name="tgl_kembali" type="date"/>
+<span class="material-symbols-outlined absolute left-3 top-3 text-secondary pointer-events-none">calendar_month</span>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface" for="estimasi_biaya">Estimasi Biaya</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="text-secondary font-body-md">Rp</span>
+</div>
+<input class="form-input w-full h-12 rounded-lg border-outline-variant bg-surface-container-lowest text-on-surface font-body-md pl-10 text-right focus:ring-1 focus:ring-primary-container focus:border-primary-container" id="estimasi_biaya" name="estimasi_biaya" placeholder="0" type="number"/>
+</div>
+</div>
+</section>
+<!-- SECTION 3 — Status & Posisi -->
+<section class="flex flex-col gap-4">
+<h2 class="font-label-md text-label-md text-secondary uppercase tracking-wider">Status &amp; Posisi</h2>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface" for="pj_peminjam">PJ Peminjam</label>
+<div class="relative">
+<input class="form-input w-full h-12 rounded-lg border-outline-variant bg-surface-container-lowest text-on-surface font-body-md pl-10 focus:ring-1 focus:ring-primary-container focus:border-primary-container" id="pj_peminjam" name="pj_peminjam" placeholder="Cari nama PJ..." type="text"/>
+<span class="material-symbols-outlined absolute left-3 top-3 text-secondary pointer-events-none">search</span>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface" for="pihak_toko">Pihak Dipinjami/Toko</label>
+<input class="form-input w-full h-12 rounded-lg border-outline-variant bg-surface-container-lowest text-on-surface font-body-md focus:ring-1 focus:ring-primary-container focus:border-primary-container" id="pihak_toko" name="pihak_toko" placeholder="Contoh: Pak RT 03 / TB Makmur" type="text"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface" for="posisi_barang">Posisi Barang Terkini</label>
+<input class="form-input w-full h-12 rounded-lg border-outline-variant bg-surface-container-lowest text-on-surface font-body-md focus:ring-1 focus:ring-primary-container focus:border-primary-container" id="posisi_barang" name="posisi_barang" placeholder="Contoh: Di gudang balai desa" type="text"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface" for="status_barang">Status</label>
+<select class="form-select w-full h-12 rounded-lg border-outline-variant bg-surface-container-lowest text-on-surface font-body-md focus:ring-1 focus:ring-primary-container focus:border-primary-container appearance-none" id="status_barang" name="status_barang">
+<option value="tersedia">Tersedia</option>
+<option value="belum_kembali">Belum Kembali</option>
+<option value="sudah_kembali">Sudah Kembali</option>
+<option value="habis_pakai">Habis Pakai</option>
+</select>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface" for="catatan">Catatan</label>
+<textarea class="form-textarea w-full rounded-lg border-outline-variant bg-surface-container-lowest text-on-surface font-body-md focus:ring-1 focus:ring-primary-container focus:border-primary-container p-3" id="catatan" name="catatan" placeholder="Tambahkan catatan jika perlu" rows="3"></textarea>
+</div>
+</section>
+</form>
+</main>
+<!-- Bottom Sticky Area -->
+<div class="fixed bottom-0 w-full bg-surface-container-lowest border-t border-divider p-container-padding z-50">
+<div class="flex gap-[12px]">
+<button class="flex-1 h-12 rounded-xl border border-primary-container text-primary-container font-headline-md text-[16px] flex items-center justify-center hover:bg-surface-container-low transition-colors" type="button">
+                Batal
+            </button>
+<button class="flex-1 h-12 rounded-xl bg-primary-container text-on-primary font-headline-md text-[16px] flex items-center justify-center hover:opacity-90 transition-opacity" form="tambahBarangForm" type="submit">
+                Simpan
+            </button>
+</div>
+</div>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sistemPengadaanSelect = document.getElementById('sistem_pengadaan');
+            const containerTglKembali = document.getElementById('container_tgl_kembali');
+
+            const toggleConditionalFields = () => {
+                const value = sistemPengadaanSelect.value;
+                if (value === 'pinjam') {
+                    containerTglKembali.style.display = 'flex';
+                } else {
+                    containerTglKembali.style.display = 'none';
+                }
+            };
+
+            sistemPengadaanSelect.addEventListener('change', toggleConditionalFields);
+            
+            // Initial call
+            toggleConditionalFields();
+        });
+    </script>
+</body></html>

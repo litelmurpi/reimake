@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Snack Jajanan Pasar Detail</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700&family=Inter:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#ffe9e6",
+                        "status-progress-text": "#92400E",
+                        "progress-high": "#059669",
+                        "status-pending-bg": "#E5E7EB",
+                        "secondary-fixed": "#e0e2e6",
+                        "on-tertiary-container": "#abb4ff",
+                        "on-surface-variant": "#5b403c",
+                        "surface": "#fff8f6",
+                        "on-secondary-fixed": "#191c1f",
+                        "primary-fixed-dim": "#ffb4a8",
+                        "primary": "#6e0000",
+                        "surface-tint": "#b82014",
+                        "progress-low": "#DC2626",
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#fff0ee",
+                        "tertiary-container": "#0029dc",
+                        "status-overdue-bg": "#FEE2E2",
+                        "on-tertiary-fixed-variant": "#0027d4",
+                        "on-background": "#271815",
+                        "status-completed-bg": "#D1FAE5",
+                        "secondary": "#5c5f62",
+                        "inverse-primary": "#ffb4a8",
+                        "status-progress-bg": "#FEF3C7",
+                        "tertiary-fixed-dim": "#bcc2ff",
+                        "on-secondary-fixed-variant": "#44474a",
+                        "surface-dim": "#f1d4cf",
+                        "secondary-container": "#dee0e4",
+                        "on-primary-fixed-variant": "#930000",
+                        "surface-container-highest": "#f9dcd7",
+                        "primary-fixed": "#ffdad4",
+                        "outline-variant": "#e4beb8",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#fff8f6",
+                        "progress-medium": "#D97706",
+                        "on-primary-fixed": "#410000",
+                        "on-tertiary-fixed": "#000c61",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#c4c7ca",
+                        "tertiary": "#001ba0",
+                        "surface-container-high": "#ffe2dd",
+                        "status-overdue-text": "#991B1B",
+                        "on-primary-container": "#ffa092",
+                        "status-delayed-text": "#9A3412",
+                        "status-pending-text": "#6B7280",
+                        "divider": "#F3F4F6",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#271815",
+                        "status-completed-text": "#065F46",
+                        "surface-variant": "#f9dcd7",
+                        "status-delayed-bg": "#FED7AA",
+                        "on-tertiary": "#ffffff",
+                        "inverse-on-surface": "#ffedea",
+                        "inverse-surface": "#3e2c29",
+                        "error-container": "#ffdad6",
+                        "outline": "#8f706b",
+                        "primary-container": "#990000",
+                        "background": "#fff8f6",
+                        "tertiary-fixed": "#dfe0ff",
+                        "on-secondary-container": "#606366"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-padding": "16px",
+                        "component-gap": "8px",
+                        "top-bar-height": "56px",
+                        "bottom-nav-height": "64px",
+                        "gutter": "12px"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "headline-lg": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { -webkit-tap-highlight-color: transparent; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md antialiased pb-[80px]">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-container-padding h-top-bar-height bg-surface dark:bg-surface-dim flat no shadows border-b border-outline-variant/30">
+<button class="text-primary dark:text-primary-fixed-dim hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors active:scale-95 transition-transform duration-200 p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-headline-sm text-headline-sm font-bold text-primary dark:text-primary-fixed-dim truncate px-4 flex-1 text-center">Snack Jajanan Pasar</h1>
+<button class="text-primary dark:text-primary-fixed-dim hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors active:scale-95 transition-transform duration-200 p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">edit</span>
+</button>
+</header>
+<main class="pt-[72px] px-container-padding pb-[20px] max-w-md mx-auto flex flex-col gap-4">
+<!-- Status Badge Full-width -->
+<div class="w-full bg-status-completed-bg py-2 px-4 rounded-xl flex items-center justify-center gap-2 border border-status-completed-text/20">
+<span class="material-symbols-outlined text-status-completed-text text-[18px]">check_circle</span>
+<span class="font-label-md text-label-md text-status-completed-text uppercase tracking-wide">Siap Hari H</span>
+</div>
+<!-- Calculation Card -->
+<div class="bg-surface-container-low rounded-[12px] p-4 border border-outline-variant shadow-[0_1px_3px_rgba(0,0,0,0.08)] flex flex-col gap-2">
+<div class="flex items-center gap-2 text-on-surface-variant font-body-md">
+<span class="text-lg">🧮</span>
+<span>100 porsi × Rp 5.000</span>
+</div>
+<div class="font-headline-lg text-headline-lg text-primary text-right mt-2 border-t border-outline-variant/50 pt-2">
+                = Rp 500.000
+            </div>
+</div>
+<!-- Info List Card -->
+<div class="bg-surface-container-lowest rounded-[12px] p-4 border border-outline-variant shadow-[0_1px_3px_rgba(0,0,0,0.08)] flex flex-col gap-4">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Event</span>
+<div>
+<span class="bg-tertiary-container/10 text-tertiary-container font-label-md text-label-md px-3 py-1 rounded-full border border-tertiary-container/20 inline-block">Outbound</span>
+</div>
+</div>
+<div class="h-px bg-divider w-full"></div>
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Jenis</span>
+<span class="font-body-md text-on-surface">Snack Jajanan Pasar (klepon, getuk, pisang goreng, onde-onde)</span>
+</div>
+<div class="h-px bg-divider w-full"></div>
+<div class="flex flex-col gap-2">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">PJ (Penanggung Jawab)</span>
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover border border-outline-variant" data-alt="A small circular avatar of an Indonesian woman wearing a hijab, warm lighting, professional yet approachable expression, modern flat design aesthetic, maroon and white background elements, high quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGlQ_dKZCHQyc7WpWUU0jVfsccjZYy3k2fIkXnvYU6R7CrGXMint1BdTiQL5DhGNxVE3mCihzV066gLuLX40CDkugwyWI5-wbQSMTnEVqklXbagPVxOZEwsbfha0U5c3j9S7A2HjFmI-QGkyORy2UEGb9mrJSE4foBmyoDMT1ZXBBVdKNJUFVDYDvg0VtZiXXIpQ9DUZSFpAM7UTfO6k8-DvIqRo9nRanFaz9IMF8-Vrev8oWy0GAjXhvcxNIAYDET2t9QQmxEtx4"/>
+<span class="font-body-md text-on-surface font-medium">Bu Sari</span>
+</div>
+</div>
+<div class="h-px bg-divider w-full"></div>
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Kru Pembantu</span>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-container text-on-surface font-body-md px-3 py-1 rounded-full text-sm border border-outline-variant/50">Bu Ani</span>
+<span class="bg-surface-container text-on-surface font-body-md px-3 py-1 rounded-full text-sm border border-outline-variant/50">Mbak Rina</span>
+</div>
+</div>
+<div class="h-px bg-divider w-full"></div>
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Perlengkapan</span>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">inventory_2</span>
+<span class="font-body-md text-on-surface">15 tampah kecil, daun pisang</span>
+</div>
+</div>
+<div class="h-px bg-divider w-full"></div>
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Vendor / Catatan</span>
+<div class="bg-status-pending-bg/30 p-3 rounded-lg border border-status-pending-bg flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">sticky_note_2</span>
+<span class="font-body-md text-on-surface-variant italic">"Pesan dari Bu Tini RT 03, bayar H-3"</span>
+</div>
+</div>
+</div>
+<!-- Riwayat Perubahan -->
+<div class="bg-surface-container-lowest rounded-[12px] p-4 border border-outline-variant shadow-[0_1px_3px_rgba(0,0,0,0.08)] flex flex-col gap-4 mt-2 mb-4">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Riwayat Perubahan</h3>
+<div class="relative pl-6 flex flex-col gap-4">
+<!-- Line -->
+<div class="absolute left-[11px] top-2 bottom-2 w-[2px] bg-divider"></div>
+<!-- Entry 1 -->
+<div class="relative z-10 flex gap-4">
+<div class="absolute -left-6 bg-status-completed-bg rounded-full w-6 h-6 flex items-center justify-center border-2 border-surface">
+<div class="w-2 h-2 bg-status-completed-text rounded-full"></div>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary">Hari ini, 10:30 AM</span>
+<span class="font-body-md text-on-surface">Bu Sari mengubah status menjadi <strong class="text-status-completed-text">Siap Hari H</strong></span>
+</div>
+</div>
+<!-- Entry 2 -->
+<div class="relative z-10 flex gap-4">
+<div class="absolute -left-6 bg-surface-container rounded-full w-6 h-6 flex items-center justify-center border-2 border-surface">
+<div class="w-2 h-2 bg-secondary rounded-full"></div>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary">Kemarin, 15:45 PM</span>
+<span class="font-body-md text-on-surface">Bu Sari menambahkan catatan vendor</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Sticky Bottom Button -->
+<div class="fixed bottom-0 left-0 w-full bg-surface/90 backdrop-blur-md border-t border-outline-variant/30 p-container-padding z-40 pb-[env(safe-area-inset-bottom,16px)]">
+<div class="max-w-md mx-auto">
+<button class="w-full h-[48px] bg-primary text-on-primary font-label-md text-label-md rounded-xl flex items-center justify-center gap-2 active:scale-[0.98] transition-transform shadow-sm">
+<span class="material-symbols-outlined text-[20px]">sync_alt</span>
+                Ubah Status
+            </button>
+</div>
+</div>
+</body></html>

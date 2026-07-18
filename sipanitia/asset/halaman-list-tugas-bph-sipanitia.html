@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>SiPanitia - Checklist BPH/Humas/Dekdok</title>
+<!-- Google Fonts: Plus Jakarta Sans and Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config from Brand Anchors -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface": "#fff8f6",
+                    "on-surface": "#271815",
+                    "status-overdue-bg": "#FEE2E2",
+                    "inverse-surface": "#3e2c29",
+                    "on-surface-variant": "#5b403c",
+                    "on-primary-fixed-variant": "#930000",
+                    "tertiary-container": "#0029dc",
+                    "on-tertiary": "#ffffff",
+                    "status-overdue-text": "#991B1B",
+                    "surface-tint": "#b82014",
+                    "inverse-primary": "#ffb4a8",
+                    "primary-container": "#990000",
+                    "on-secondary-fixed": "#191c1f",
+                    "status-progress-text": "#92400E",
+                    "status-progress-bg": "#FEF3C7",
+                    "on-background": "#271815",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container": "#ffe9e6",
+                    "surface-dim": "#f1d4cf",
+                    "surface-bright": "#fff8f6",
+                    "status-completed-bg": "#D1FAE5",
+                    "error-container": "#ffdad6",
+                    "outline": "#8f706b",
+                    "secondary-fixed-dim": "#c4c7ca",
+                    "on-tertiary-fixed-variant": "#0027d4",
+                    "status-delayed-text": "#9A3412",
+                    "on-primary": "#ffffff",
+                    "progress-low": "#DC2626",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-container": "#abb4ff",
+                    "tertiary-fixed-dim": "#bcc2ff",
+                    "status-delayed-bg": "#FED7AA",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed-dim": "#ffb4a8",
+                    "outline-variant": "#e4beb8",
+                    "status-pending-text": "#6B7280",
+                    "surface-variant": "#f9dcd7",
+                    "status-pending-bg": "#E5E7EB",
+                    "secondary-fixed": "#e0e2e6",
+                    "progress-high": "#059669",
+                    "inverse-on-surface": "#ffedea",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed-variant": "#44474a",
+                    "on-secondary-container": "#606366",
+                    "tertiary": "#001ba0",
+                    "secondary-container": "#dee0e4",
+                    "progress-medium": "#D97706",
+                    "secondary": "#5c5f62",
+                    "on-primary-fixed": "#410000",
+                    "primary": "#6e0000",
+                    "status-completed-text": "#065F46",
+                    "divider": "#F3F4F6",
+                    "tertiary-fixed": "#dfe0ff",
+                    "surface-container-low": "#fff0ee",
+                    "background": "#fff8f6",
+                    "error": "#ba1a1a",
+                    "on-primary-container": "#ffa092",
+                    "on-tertiary-fixed": "#000c61",
+                    "surface-container-highest": "#f9dcd7",
+                    "primary-fixed": "#ffdad4",
+                    "surface-container-high": "#ffe2dd"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "bottom-nav-height": "64px",
+                    "top-bar-height": "56px",
+                    "gutter": "12px",
+                    "component-gap": "8px",
+                    "container-padding": "16px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Inter"],
+                    "headline-sm": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "body-md": ["Inter"],
+                    "label-md": ["Inter"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+                    "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                    "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        /* Custom scrollbar hiding for chips */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        /* Custom Checkbox Styling */
+        input[type="checkbox"] {
+            accent-color: #990000;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen pb-safe antialiased flex justify-center">
+<!-- Mobile Container (Max 375px for strict mobile emulation as requested) -->
+<div class="w-full max-w-[375px] bg-surface-container-lowest min-h-screen relative shadow-lg overflow-x-hidden pb-40">
+<!-- 1. TOP BAR -->
+<header class="fixed top-0 w-full max-w-[375px] z-50 bg-surface-container-lowest shadow-sm h-top-bar-height flex items-center px-container-padding">
+<button aria-label="Go back" class="mr-4 text-on-surface hover:bg-surface-variant p-2 rounded-full transition-colors active:scale-95">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-on-surface truncate">Checklist BPH/Humas/Dekdok</h1>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-[72px] px-container-padding flex flex-col gap-4">
+<!-- 2. SEARCH BAR -->
+<div class="relative w-full h-10">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary pointer-events-none" style="font-variation-settings: 'FILL' 0;">search</span>
+<input class="w-full h-full pl-10 pr-4 rounded-lg bg-surface border border-outline-variant focus:border-primary-container focus:ring-1 focus:ring-primary-container text-body-md placeholder-secondary outline-none transition-shadow" placeholder="Cari tugas..." type="text"/>
+</div>
+<!-- 3. FILTER CHIPS -->
+<div class="flex overflow-x-auto hide-scrollbar gap-2 py-1 -mx-container-padding px-container-padding w-[calc(100%+32px)]">
+<button class="whitespace-nowrap px-4 py-1.5 rounded-full bg-primary-container text-on-primary font-label-md text-label-md active:scale-95 transition-transform flex-shrink-0 shadow-sm">
+                    Semua
+                </button>
+<button class="whitespace-nowrap px-4 py-1.5 rounded-full bg-surface-variant text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high active:scale-95 transition-transform flex-shrink-0">
+                    Belum Mulai
+                </button>
+<button class="whitespace-nowrap px-4 py-1.5 rounded-full bg-surface-variant text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high active:scale-95 transition-transform flex-shrink-0">
+                    Proses
+                </button>
+<button class="whitespace-nowrap px-4 py-1.5 rounded-full bg-surface-variant text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high active:scale-95 transition-transform flex-shrink-0">
+                    Selesai
+                </button>
+<button class="whitespace-nowrap px-4 py-1.5 rounded-full bg-surface-variant text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high active:scale-95 transition-transform flex-shrink-0">
+                    Tertunda
+                </button>
+</div>
+<!-- 4. TASK LIST -->
+<div class="flex flex-col gap-component-gap mt-2 pb-24">
+<!-- Card 1 (Selesai) - Selected -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm p-4 flex flex-col gap-3 transition-colors bg-surface-container-low">
+<div class="flex items-start gap-3">
+<div class="pt-1">
+<input checked="" class="w-5 h-5 rounded border-outline-variant text-primary-container focus:ring-primary-container cursor-pointer" type="checkbox"/>
+</div>
+<div class="flex-1 flex flex-col gap-2">
+<div class="flex justify-between items-start gap-2">
+<h3 class="font-headline-sm text-body-lg font-bold text-on-surface line-through text-secondary">Buat Proposal Kegiatan</h3>
+<span class="bg-status-completed-bg text-status-completed-text px-3 py-1 rounded-full font-label-sm text-label-sm whitespace-nowrap">Selesai</span>
+</div>
+<div class="flex items-center justify-between mt-1">
+<div class="flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+<span class="font-body-md text-label-sm">12 Jul 2026</span>
+</div>
+<div class="w-6 h-6 rounded-full overflow-hidden bg-surface-variant flex-shrink-0 border border-surface-container-lowest">
+<img alt="Avatar" class="w-full h-full object-cover" data-alt="A small, professional portrait photograph of an Indonesian man, Pak Budi, wearing a formal batik shirt in a bright office environment, modern corporate headshot style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAb8GPRoVM78OuWcJfEmZjTyxH-mCeGXgAuQCUPKrXjTqWWYX2oqvyGbLiHMKsVu4zSE61b38F6I7a-r86Uos3XG_Ssjh30mt7IXdoahG8BKw3QF_Fx0GKGNutEWUTU1XHQ8jUwkqRwFaXr-9h4bOm1dY_xTbY38UadCKxbz7AmQLv6g4hVYbt69-lDwc0WMx5u8Omqv3wxQ9SQ5TX_klmuvInHdMgvqLHOpkBae8t2lMuXp7_cufPSfzh5uzhizrs01G95SNln0M"/>
+</div>
+</div>
+</div>
+</div>
+<div class="border-t border-divider pt-2 mt-1">
+<p class="font-label-md text-label-sm text-secondary">Diubah oleh Pak Ahmad · 2 jam lalu</p>
+</div>
+</div>
+<!-- Card 2 (Overdue/Proses) - Selected -->
+<div class="bg-surface-container-lowest rounded-xl border border-status-overdue-bg shadow-sm p-4 flex flex-col gap-3 relative overflow-hidden transition-colors bg-surface-container-low">
+<!-- Left Red Accent -->
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-status-overdue-text"></div>
+<div class="flex items-start gap-3 pl-1">
+<div class="pt-1">
+<input checked="" class="w-5 h-5 rounded border-outline-variant text-primary-container focus:ring-primary-container cursor-pointer" type="checkbox"/>
+</div>
+<div class="flex-1 flex flex-col gap-2">
+<div class="flex justify-between items-start gap-2">
+<h3 class="font-headline-sm text-body-lg font-bold text-on-surface">Sebar Undangan ke RT 01-05</h3>
+<span class="bg-status-progress-bg text-status-progress-text px-3 py-1 rounded-full font-label-sm text-label-sm whitespace-nowrap">Proses</span>
+</div>
+<div class="flex items-center justify-between mt-1">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-status-overdue-text">error</span>
+<span class="font-body-md text-label-sm text-status-overdue-text font-medium">15 Jul 2026 (Telat 3 hari)</span>
+</div>
+<div class="w-6 h-6 rounded-full overflow-hidden bg-surface-variant flex-shrink-0 border border-surface-container-lowest">
+<img alt="Avatar" class="w-full h-full object-cover" data-alt="A small, professional portrait photograph of an Indonesian man, Pak Budi, wearing a formal batik shirt in a bright office environment, modern corporate headshot style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcMWo3dYWTzND-PGBXeLhr_SZ9N00GRBApjQ_cT2zolDlrO3b1P1zJTbnm52zFuH1FtaMl0eYtyQhlwr8ws2SpjjZGsMf_IbrIcyDEPXGW4Qzxli47llwM1XifsZ9WpL6LWo1TxpMTwIbIlOdRPPTmYATEDV9O47iKSnftbdjBQAApwLX--8PeQm_3OST_BFWt72nakMGR8Ba6F1w5iAzAZSMWByC28LpZhQCbGnv7-lRgs7E8dHm3WpCFyuSlarXUXbwjdzhq2A0"/>
+</div>
+</div>
+</div>
+</div>
+<div class="border-t border-divider pt-2 mt-1 pl-1">
+<p class="font-label-md text-label-sm text-secondary">Diubah oleh Pak Budi · kemarin</p>
+</div>
+</div>
+<!-- Card 3 (Belum Mulai) -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm p-4 flex flex-col gap-3">
+<div class="flex items-start gap-3">
+<div class="pt-1">
+<input class="w-5 h-5 rounded border-outline-variant text-primary-container focus:ring-primary-container cursor-pointer" type="checkbox"/>
+</div>
+<div class="flex-1 flex flex-col gap-2">
+<div class="flex justify-between items-start gap-2">
+<h3 class="font-headline-sm text-body-lg font-bold text-on-surface">Koordinasi Sponsor</h3>
+<span class="bg-status-pending-bg text-status-pending-text px-3 py-1 rounded-full font-label-sm text-label-sm whitespace-nowrap">Belum Mulai</span>
+</div>
+<div class="flex items-center justify-between mt-1">
+<div class="flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+<span class="font-body-md text-label-sm">25 Jul 2026</span>
+</div>
+<div class="w-6 h-6 rounded-full overflow-hidden bg-surface-variant flex-shrink-0 border border-surface-container-lowest">
+<img alt="Avatar" class="w-full h-full object-cover" data-alt="A small portrait of an Indonesian woman, Bu Ani, wearing a modern hijab and glasses, brightly lit in a clean, minimal white studio setting, corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOoHtwbZ-q3bRloSyLdEevCnJPn6r9xZtl8NzQ_C36CVoj4z41xyI1e15QJO_ns54tQgdE8npUaWftVIZ-EMLlekHip04B3Ty9AY3pv_r3sEZvuBos-4XXtonxejSe9RPLSuWs1JgVN7l1xWfXvRH3Rr7iLyvXY8hk33uFgYvFankEZ0GMhiexPBYDwT70e_6j__0deVQHqE3557nKdYWnArfaeHZZ5YDYAT8FUxtR_ON6h9d62lOmoV1mV56614_nVhhczB8WOm0"/>
+</div>
+</div>
+</div>
+</div>
+<div class="border-t border-divider pt-2 mt-1">
+<p class="font-label-md text-label-sm text-secondary">Belum ada perubahan</p>
+</div>
+</div>
+<!-- Card 4 (Tertunda) -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm p-4 flex flex-col gap-3">
+<div class="flex items-start gap-3">
+<div class="pt-1">
+<input class="w-5 h-5 rounded border-outline-variant text-primary-container focus:ring-primary-container cursor-pointer" type="checkbox"/>
+</div>
+<div class="flex-1 flex flex-col gap-2">
+<div class="flex justify-between items-start gap-2">
+<h3 class="font-headline-sm text-body-lg font-bold text-on-surface">Bikin Video Tutorial Outbound</h3>
+<span class="bg-status-delayed-bg text-status-delayed-text px-3 py-1 rounded-full font-label-sm text-label-sm whitespace-nowrap">Tertunda</span>
+</div>
+<div class="flex items-center justify-between mt-1">
+<div class="flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+<span class="font-body-md text-label-sm">20 Jul 2026</span>
+</div>
+<div class="w-6 h-6 rounded-full overflow-hidden bg-surface-variant flex-shrink-0 border border-surface-container-lowest">
+<img alt="Avatar" class="w-full h-full object-cover" data-alt="A small casual portrait of a young Indonesian man, Mas Deni, wearing a plain white t-shirt, smiling slightly, soft natural lighting, outdoor campus background blur." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxcoNcoDstGONmwrovQir3xD2CxTD3LN6jxdbBwgLYuLXIID2gbEftfGkbtpU3_oiZ0iNJk3GBkgVXik5J0YSsj_ElNkCYkFZL0Q5mdGg9ni5KzsCytFEOQPzPAs7oBHaaAodltkZ-81DlhBHbM4ky0BrO5J-aOPodRCOqeE3i-FK7ForXYNY4bd_diRxVZDXGlJePR64uOOf7qSGIoXyvpw-CDwV_Xmb0CC_CeK7BLwkYTwa07YYEDXVDbYglTjLt0qVrYDHxkRk"/>
+</div>
+</div>
+</div>
+</div>
+<div class="border-t border-divider pt-2 mt-1">
+<p class="font-label-md text-label-sm text-secondary">Diubah oleh Mas Deni · 3 hari lalu</p>
+</div>
+</div>
+</div>
+</main>
+<!-- 7. FAB (Hidden when multi-select active, but included per requirements. Positioning adjusted to sit above bottom nav and multi-select bar) -->
+<button aria-label="Add Task" class="fixed bottom-[140px] right-4 w-14 h-14 bg-primary-container text-on-primary rounded-full flex items-center justify-center shadow-md active:scale-90 transition-transform z-40 max-w-[375px]:absolute">
+<span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 0;">add</span>
+</button>
+<!-- 6. BOTTOM ACTION BAR (Multi-select Overlay) -->
+<div class="fixed bottom-[64px] w-full max-w-[375px] bg-surface-container-lowest border-t border-outline-variant shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] px-container-padding py-3 flex items-center justify-between z-40 pb-[calc(12px+env(safe-area-inset-bottom))]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-headline-sm text-body-md text-on-surface font-semibold">2 dipilih</span>
+</div>
+<button class="bg-primary-container text-on-primary px-4 py-2 rounded-lg font-label-md text-label-md flex items-center gap-2 active:scale-95 transition-transform">
+                Ubah Status
+                <span class="material-symbols-outlined text-[18px]">arrow_drop_down</span>
+</button>
+</div>
+<!-- 8. BOTTOM NAV (Shared Component implementation) -->
+<nav class="fixed bottom-0 w-full max-w-[375px] z-50 pb-safe bg-surface dark:bg-surface-container border-t border-outline-variant flex justify-around items-center h-bottom-nav-height">
+<a class="flex flex-col items-center justify-center text-secondary dark:text-on-secondary-fixed-variant hover:bg-surface-container-low active:scale-90 transition-all w-full h-full" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">dashboard</span>
+<span class="font-label-sm text-label-sm mt-1">Dashboard</span>
+</a>
+<!-- ACTIVE TAB -->
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim font-bold hover:bg-surface-container-low active:scale-90 transition-all w-full h-full relative" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">assignment</span>
+<span class="font-label-sm text-label-sm mt-1">Tugas</span>
+<!-- Optional active indicator dot -->
+<div class="absolute top-2 right-1/4 w-2 h-2 rounded-full bg-primary-container border-2 border-surface"></div>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary dark:text-on-secondary-fixed-variant hover:bg-surface-container-low active:scale-90 transition-all w-full h-full" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">inventory_2</span>
+<span class="font-label-sm text-label-sm mt-1">Logistik</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary dark:text-on-secondary-fixed-variant hover:bg-surface-container-low active:scale-90 transition-all w-full h-full" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">person</span>
+<span class="font-label-sm text-label-sm mt-1">Profil</span>
+</a>
+</nav>
+</div>
+</body></html>

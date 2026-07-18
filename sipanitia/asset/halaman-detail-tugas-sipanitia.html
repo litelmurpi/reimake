@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>SiPanitia - Task Detail</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-fixed": "#ffdad4",
+                      "secondary-container": "#dee0e4",
+                      "background": "#fff8f6",
+                      "status-pending-bg": "#E5E7EB",
+                      "status-delayed-bg": "#FED7AA",
+                      "surface": "#fff8f6",
+                      "progress-medium": "#D97706",
+                      "surface-container": "#ffe9e6",
+                      "progress-high": "#059669",
+                      "on-background": "#271815",
+                      "surface-variant": "#f9dcd7",
+                      "outline-variant": "#e4beb8",
+                      "on-tertiary-fixed": "#000c61",
+                      "error-container": "#ffdad6",
+                      "outline": "#8f706b",
+                      "secondary": "#5c5f62",
+                      "status-overdue-bg": "#FEE2E2",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-fixed-variant": "#930000",
+                      "tertiary-container": "#0029dc",
+                      "on-secondary-container": "#606366",
+                      "surface-container-highest": "#f9dcd7",
+                      "progress-low": "#DC2626",
+                      "status-delayed-text": "#9A3412",
+                      "status-progress-bg": "#FEF3C7",
+                      "surface-container-high": "#ffe2dd",
+                      "on-primary-fixed": "#410000",
+                      "on-secondary-fixed": "#191c1f",
+                      "primary": "#6e0000",
+                      "primary-fixed-dim": "#ffb4a8",
+                      "inverse-on-surface": "#ffedea",
+                      "on-surface-variant": "#5b403c",
+                      "status-completed-text": "#065F46",
+                      "surface-container-lowest": "#ffffff",
+                      "status-overdue-text": "#991B1B",
+                      "tertiary-fixed-dim": "#bcc2ff",
+                      "surface-dim": "#f1d4cf",
+                      "status-pending-text": "#6B7280",
+                      "divider": "#F3F4F6",
+                      "tertiary-fixed": "#dfe0ff",
+                      "on-secondary-fixed-variant": "#44474a",
+                      "on-primary-container": "#ffa092",
+                      "inverse-primary": "#ffb4a8",
+                      "primary-container": "#990000",
+                      "on-surface": "#271815",
+                      "secondary-fixed-dim": "#c4c7ca",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-fixed-variant": "#0027d4",
+                      "surface-tint": "#b82014",
+                      "status-completed-bg": "#D1FAE5",
+                      "on-tertiary-container": "#abb4ff",
+                      "surface-container-low": "#fff0ee",
+                      "tertiary": "#001ba0",
+                      "status-progress-text": "#92400E",
+                      "secondary-fixed": "#e0e2e6",
+                      "on-error-container": "#93000a",
+                      "on-secondary": "#ffffff",
+                      "error": "#ba1a1a",
+                      "on-error": "#ffffff",
+                      "inverse-surface": "#3e2c29",
+                      "surface-bright": "#fff8f6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "12px",
+                      "top-bar-height": "56px",
+                      "container-padding": "16px",
+                      "bottom-nav-height": "64px",
+                      "component-gap": "8px"
+              },
+              "fontFamily": {
+                      "headline-sm": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Plus Jakarta Sans"
+                      ]
+              },
+              "fontSize": {
+                      "headline-sm": [
+                              "18px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-sm": [
+                              "11px",
+                              {
+                                      "lineHeight": "14px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .pb-safe { padding-bottom: env(safe-area-inset-bottom); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col antialiased">
+<!-- Top App Bar (Custom for sub-page) -->
+<header class="fixed top-0 w-full z-50 bg-surface-container-lowest flex items-center justify-between px-container-padding h-top-bar-height border-b border-divider shadow-sm">
+<button aria-label="Go back" class="text-on-surface hover:opacity-90 active:scale-95 transition-transform p-2 -ml-2" type="button">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<h1 class="font-headline-sm text-headline-sm text-on-surface truncate flex-1 text-center px-4">Sebar Undangan ke RT...</h1>
+<button aria-label="Edit task" class="text-on-surface hover:opacity-90 active:scale-95 transition-transform p-2 -mr-2" type="button">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">edit</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 pt-[calc(56px+16px)] pb-[calc(80px+env(safe-area-inset-bottom))] px-container-padding flex flex-col gap-4 max-w-[400px] mx-auto w-full">
+<!-- Status Highlight -->
+<div class="bg-status-progress-bg rounded-lg p-3 flex items-center justify-center gap-2 border border-[#FDE68A] shadow-[0_1px_3px_rgba(0,0,0,0.05)]">
+<span class="material-symbols-outlined text-status-progress-text animate-spin" style="font-variation-settings: 'FILL' 1;">progress_activity</span>
+<span class="font-label-md text-label-md text-status-progress-text uppercase tracking-wider">Proses</span>
+</div>
+<!-- Overdue Alert -->
+<div class="bg-status-overdue-bg rounded-xl p-3 flex items-start gap-3 border border-red-200 shadow-[0_1px_3px_rgba(0,0,0,0.05)]">
+<span class="material-symbols-outlined text-status-overdue-text mt-0.5" style="font-variation-settings: 'FILL' 1;">warning</span>
+<div>
+<p class="font-label-md text-label-md text-status-overdue-text mb-0.5">Perhatian</p>
+<p class="font-body-md text-body-md text-status-overdue-text">Terlambat 3 hari dari target (15 Jul 2026)</p>
+</div>
+</div>
+<!-- Info Section Card -->
+<div class="bg-surface-container-lowest rounded-xl border border-divider shadow-[0_1px_3px_rgba(0,0,0,0.08)] p-container-padding flex flex-col">
+<div class="flex justify-between items-center py-3 border-b border-divider first:pt-0">
+<span class="font-body-md text-body-md text-secondary">Divisi</span>
+<span class="bg-surface-container-high text-on-surface px-3 py-1 rounded-full font-label-md text-label-md">BPH</span>
+</div>
+<div class="flex justify-between items-center py-3 border-b border-divider">
+<span class="font-body-md text-body-md text-secondary">Target Tanggal</span>
+<span class="font-body-md text-body-md text-status-overdue-text font-semibold">15 Juli 2026</span>
+</div>
+<div class="flex justify-between items-center py-3 border-b border-divider">
+<span class="font-body-md text-body-md text-secondary">Penanggung Jawab</span>
+<div class="flex items-center gap-2">
+<img alt="Pak Budi" class="w-8 h-8 rounded-full object-cover border border-divider" data-alt="A small circular avatar placeholder image showing a professional headshot of an Indonesian man in a community setting, wearing a simple polo shirt. Warm lighting, modern minimal style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZ2WNJCMgeQ5l4QcKE_4j2VsUzuqilyE_-ruOcbJmclVkvBxSwa3Ow-cWHDfr_2JZKJRFaNdGJlU_lbVtNb-2TCk6pXpVo5IirRpJYP_qOdsL0-G4sLsIAbOBJPUa736W-T3vrBmwCLd8UMUpem8HaKcG6ee_2IZbqxMPoKBdx7FHn2F72cMBfezBFJF3ngz2yF-TWiu2MUXIldkSom4hxE4pUa_-bUXCfdr1rZ-DSL7X_qEppJZD9DBBDU5fRzpYb5cIsNV7Y0bo"/>
+<span class="font-body-md text-body-md text-on-surface font-medium">Pak Budi</span>
+<span class="bg-surface-container-high text-on-surface px-2 py-0.5 rounded-full font-label-sm text-label-sm ml-1">BPH</span>
+</div>
+</div>
+<div class="py-3 last:pb-0 flex flex-col gap-2">
+<span class="font-body-md text-body-md text-secondary">Catatan</span>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+                    Undangan fisik ke RT 01-05, undangan digital ke RT 06-10 via WA grup. Perlu cap Ketua Panitia di undangan fisik.
+                </p>
+</div>
+</div>
+<!-- Timeline Section -->
+<div class="mt-4 flex flex-col gap-4">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Riwayat Perubahan</h2>
+<div class="relative pl-4">
+<!-- Vertical Line -->
+<div class="absolute left-[7px] top-2 bottom-2 w-[2px] bg-divider"></div>
+<!-- Timeline Item 1 -->
+<div class="relative pl-6 pb-6">
+<div class="absolute left-[-5px] top-1 w-3 h-3 rounded-full bg-status-progress-bg border-2 border-[#FDE68A] z-10"></div>
+<p class="font-body-md text-body-md text-on-surface">
+<span class="font-semibold">Pak Budi</span> mengubah status: 
+                        <span class="text-secondary line-through mr-1">Belum Mulai</span>
+<span class="material-symbols-outlined text-[14px] align-middle" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+<span class="text-status-progress-text font-semibold ml-1">Proses</span>
+</p>
+<p class="font-label-sm text-label-sm text-secondary mt-1">14 Jul 2026, 10:30</p>
+</div>
+<!-- Timeline Item 2 -->
+<div class="relative pl-6 pb-6">
+<div class="absolute left-[-5px] top-1 w-3 h-3 rounded-full bg-status-completed-bg border-2 border-emerald-300 z-10"></div>
+<p class="font-body-md text-body-md text-on-surface">
+<span class="font-semibold">Pak Ahmad</span> menambahkan catatan
+                    </p>
+<p class="font-label-sm text-label-sm text-secondary mt-1">13 Jul 2026, 16:15</p>
+</div>
+<!-- Timeline Item 3 -->
+<div class="relative pl-6">
+<div class="absolute left-[-5px] top-1 w-3 h-3 rounded-full bg-surface-container-lowest border-2 border-secondary z-10"></div>
+<p class="font-body-md text-body-md text-on-surface">
+<span class="font-semibold">Pak Ahmad</span> membuat tugas ini
+                    </p>
+<p class="font-label-sm text-label-sm text-secondary mt-1">10 Jul 2026, 09:00</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Action Bar (Sticky) -->
+<div class="fixed bottom-0 w-full z-50 bg-surface-container-lowest border-t border-divider p-container-padding pb-safe shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
+<div class="max-w-[400px] mx-auto">
+<button class="w-full bg-primary-container text-on-primary min-h-[48px] rounded-xl font-label-md text-label-md flex items-center justify-center gap-2 hover:opacity-90 active:scale-95 transition-all shadow-[0_4px_6px_-1px_rgba(153,0,0,0.2)]" type="button">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">update</span>
+                Ubah Status
+            </button>
+</div>
+</div>
+</body></html>

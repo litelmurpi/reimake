@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Detail Inventaris - SiPanitia</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#f1d4cf",
+                    "surface-container-low": "#fff0ee",
+                    "primary": "#6e0000",
+                    "outline": "#8f706b",
+                    "status-pending-text": "#6B7280",
+                    "background": "#fff8f6",
+                    "tertiary-fixed-dim": "#bcc2ff",
+                    "secondary-container": "#dee0e4",
+                    "progress-high": "#059669",
+                    "status-overdue-bg": "#FEE2E2",
+                    "inverse-surface": "#3e2c29",
+                    "on-secondary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "surface-tint": "#b82014",
+                    "status-delayed-text": "#9A3412",
+                    "on-secondary-fixed-variant": "#44474a",
+                    "on-secondary-container": "#606366",
+                    "on-primary": "#ffffff",
+                    "on-primary-fixed-variant": "#930000",
+                    "tertiary-container": "#0029dc",
+                    "inverse-on-surface": "#ffedea",
+                    "status-progress-text": "#92400E",
+                    "on-surface": "#271815",
+                    "primary-fixed": "#ffdad4",
+                    "status-overdue-text": "#991B1B",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed-dim": "#ffb4a8",
+                    "outline-variant": "#e4beb8",
+                    "error": "#ba1a1a",
+                    "on-surface-variant": "#5b403c",
+                    "surface-container-high": "#ffe2dd",
+                    "on-tertiary-fixed-variant": "#0027d4",
+                    "surface": "#fff8f6",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-container": "#ffa092",
+                    "progress-low": "#DC2626",
+                    "surface-variant": "#f9dcd7",
+                    "surface-container": "#ffe9e6",
+                    "status-completed-text": "#065F46",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed": "#410000",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed": "#dfe0ff",
+                    "on-tertiary-fixed": "#000c61",
+                    "status-pending-bg": "#E5E7EB",
+                    "secondary": "#5c5f62",
+                    "divider": "#F3F4F6",
+                    "progress-medium": "#D97706",
+                    "secondary-fixed": "#e0e2e6",
+                    "inverse-primary": "#ffb4a8",
+                    "surface-container-highest": "#f9dcd7",
+                    "on-secondary-fixed": "#191c1f",
+                    "on-background": "#271815",
+                    "primary-container": "#990000",
+                    "status-progress-bg": "#FEF3C7",
+                    "surface-bright": "#fff8f6",
+                    "status-completed-bg": "#D1FAE5",
+                    "on-tertiary-container": "#abb4ff",
+                    "tertiary": "#001ba0",
+                    "secondary-fixed-dim": "#c4c7ca",
+                    "status-delayed-bg": "#FED7AA"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "top-bar-height": "56px",
+                    "container-padding": "16px",
+                    "component-gap": "8px",
+                    "bottom-nav-height": "64px",
+                    "gutter": "12px"
+            },
+            "fontFamily": {
+                    "headline-sm": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "body-md": ["Inter"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "label-sm": ["Inter"],
+                    "label-md": ["Inter"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                    "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .pb-safe { padding-bottom: env(safe-area-inset-bottom); }
+        .pt-safe { padding-top: env(safe-area-inset-top); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col pt-safe pb-safe md:max-w-md md:mx-auto md:border-x md:border-outline-variant md:shadow-lg">
+<!-- Top App Bar -->
+<header class="fixed top-0 w-full md:max-w-md z-50 bg-surface shadow-sm h-top-bar-height flex items-center justify-between px-container-padding transition-transform pt-safe">
+<button aria-label="Kembali" class="p-2 -ml-2 text-on-surface hover:opacity-90 active:scale-95 transition-all">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-headline-sm text-headline-sm text-on-surface truncate flex-1 text-center px-4">Sound System 1 Set</h1>
+<button aria-label="Edit" class="p-2 -mr-2 text-on-surface hover:opacity-90 active:scale-95 transition-all">
+<span class="material-symbols-outlined">edit</span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="flex-1 mt-[calc(var(--spacing-top-bar-height)+env(safe-area-inset-top))] mb-[80px] p-container-padding flex flex-col gap-4">
+<!-- Overdue Alert -->
+<div class="bg-status-overdue-bg rounded-lg p-3 flex items-start gap-3 shadow-[0_1px_3px_rgba(0,0,0,0.08)] border border-status-overdue-text/20">
+<span class="material-symbols-outlined text-status-overdue-text mt-0.5" style="font-variation-settings: 'FILL' 1;">error</span>
+<p class="font-body-md text-status-overdue-text">
+<strong class="font-semibold block">Deadline kumpul terlewat 4 hari</strong>
+                (14 Jul 2026)
+            </p>
+</div>
+<!-- Status Badge -->
+<div class="w-full bg-error-container text-on-error-container py-3 px-4 rounded-xl flex items-center justify-center font-headline-sm text-headline-sm border border-error/20 shadow-[0_1px_3px_rgba(0,0,0,0.08)]">
+            Belum Kembali
+        </div>
+<!-- Info Group 1: Info Barang -->
+<section class="bg-surface rounded-xl p-4 shadow-[0_1px_3px_rgba(0,0,0,0.08)] border border-divider">
+<h2 class="font-label-md text-label-md text-secondary uppercase tracking-wider mb-4">Info Barang</h2>
+<div class="flex flex-col gap-3">
+<div class="flex justify-between items-center py-2 border-b border-divider last:border-0 last:pb-0">
+<span class="text-on-surface-variant font-body-md">Sistem Pengadaan</span>
+<span class="bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full font-label-md text-label-md">Pinjam</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-divider last:border-0 last:pb-0">
+<span class="text-on-surface-variant font-body-md">Divisi Peminta</span>
+<span class="text-on-surface font-body-md font-medium">Sie Acara</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-divider last:border-0 last:pb-0">
+<span class="text-on-surface-variant font-body-md">Pihak Dipinjami</span>
+<span class="text-on-surface font-body-md font-medium">Pak RT 03</span>
+</div>
+</div>
+</section>
+<!-- Info Group 2: Jadwal -->
+<section class="bg-surface rounded-xl p-4 shadow-[0_1px_3px_rgba(0,0,0,0.08)] border border-divider">
+<h2 class="font-label-md text-label-md text-secondary uppercase tracking-wider mb-4">Jadwal</h2>
+<div class="flex flex-col gap-3">
+<div class="flex justify-between items-center py-2 border-b border-divider last:border-0 last:pb-0">
+<span class="text-on-surface-variant font-body-md">Tanggal Pinjam</span>
+<span class="text-on-surface font-body-md font-medium">10 Jul 2026</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-divider last:border-0 last:pb-0">
+<span class="text-on-surface-variant font-body-md">Deadline Kumpul</span>
+<span class="text-status-overdue-text font-body-md font-bold">14 Jul 2026</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-divider last:border-0 last:pb-0">
+<span class="text-on-surface-variant font-body-md">Tanggal Kembali</span>
+<span class="text-secondary font-body-md">-</span>
+</div>
+</div>
+</section>
+<!-- Info Group 3: Biaya & Posisi -->
+<section class="bg-surface rounded-xl p-4 shadow-[0_1px_3px_rgba(0,0,0,0.08)] border border-divider">
+<h2 class="font-label-md text-label-md text-secondary uppercase tracking-wider mb-4">Biaya &amp; Posisi</h2>
+<div class="flex flex-col gap-3">
+<div class="flex justify-between items-center py-2 border-b border-divider last:border-0 last:pb-0">
+<span class="text-on-surface-variant font-body-md">Estimasi Biaya</span>
+<span class="text-on-surface font-body-md font-medium">Rp 0</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-divider last:border-0 last:pb-0">
+<span class="text-on-surface-variant font-body-md">Penanggung Jawab</span>
+<div class="flex items-center gap-2">
+<img alt="Avatar" class="w-6 h-6 rounded-full object-cover bg-secondary-container" data-alt="A small circular avatar placeholder image showing a generic user profile icon in a clean, modern, light mode UI style with soft grey tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7HqUMFkV3-saV5gX0BcDcjSghZxmwHZQ7KVyL4wEDwiEqpaJ30nKOsYuHLIexY2NeufZ2wfGH_qiEzle6FNna-nfhNJwNcaSHuQ502P3K6uK2qJJsg3w5offcGWbSl5KnLU-B-Zpfq3liy4giZKc_LJbu1tRARLbQEywei5qWrMlL_ek9yUXoWXtdVo-mNcGrdCbrlaL0uvYVG0D5Kdd_VWpQwdpqA3-gYYZBWUNBB0vK9-9Dj1ARFU6eK9OeDcvwc1V-KXdGpAY"/>
+<span class="text-on-surface font-body-md font-medium">Mas Andi</span>
+</div>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-divider last:border-0 last:pb-0">
+<span class="text-on-surface-variant font-body-md">Posisi Terkini</span>
+<span class="text-on-surface font-body-md font-medium">Di gudang balai desa</span>
+</div>
+</div>
+</section>
+<!-- Catatan -->
+<section class="bg-surface-container-lowest rounded-xl p-4 shadow-[0_1px_3px_rgba(0,0,0,0.08)] border border-outline-variant/30">
+<h2 class="font-label-md text-label-md text-secondary uppercase tracking-wider mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">notes</span> Catatan
+            </h2>
+<p class="font-body-md text-on-surface leading-relaxed">
+                Speaker aktif 2 unit + mixer + 2 mic wireless. Kabel extension perlu dibawa sendiri.
+            </p>
+</section>
+<!-- Riwayat Perubahan (Timeline) -->
+<section class="mt-4">
+<h2 class="font-headline-sm text-headline-sm text-on-background mb-4">Riwayat Perubahan</h2>
+<div class="relative border-l-2 border-divider ml-4 space-y-6">
+<!-- Entry 1 -->
+<div class="relative pl-6">
+<div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-surface border-2 border-primary-container"></div>
+<p class="font-body-md text-on-surface">Mas Andi mengubah status: <span class="text-secondary line-through">Tersedia</span> → <span class="font-semibold text-error">Belum Kembali</span></p>
+<span class="font-label-sm text-label-sm text-secondary mt-1 block">10 Jul 2026, 14:00</span>
+</div>
+<!-- Entry 2 -->
+<div class="relative pl-6">
+<div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-surface border-2 border-secondary"></div>
+<p class="font-body-md text-on-surface">Mas Andi menambahkan catatan</p>
+<span class="font-label-sm text-label-sm text-secondary mt-1 block">10 Jul 2026, 13:45</span>
+</div>
+<!-- Entry 3 -->
+<div class="relative pl-6">
+<div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-surface border-2 border-secondary"></div>
+<p class="font-body-md text-on-surface">Mas Andi membuat barang ini</p>
+<span class="font-label-sm text-label-sm text-secondary mt-1 block">10 Jul 2026, 13:30</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Sticky Action -->
+<div class="fixed bottom-0 w-full md:max-w-md bg-surface p-container-padding border-t border-outline-variant pb-safe shadow-[0_-2px_10px_rgba(0,0,0,0.05)] z-40">
+<button class="w-full h-[48px] bg-primary-container text-on-primary rounded-xl font-headline-sm text-headline-sm hover:opacity-90 active:scale-95 transition-all shadow-md flex items-center justify-center gap-2">
+            Ubah Status
+        </button>
+</div>
+</body></html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Manajemen User - SiPanitia</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "status-pending-text": "#6B7280",
+                        "divider": "#F3F4F6",
+                        "tertiary-fixed-dim": "#bcc2ff",
+                        "surface-dim": "#f1d4cf",
+                        "surface-container-lowest": "#ffffff",
+                        "status-overdue-text": "#991B1B",
+                        "status-completed-text": "#065F46",
+                        "primary-container": "#990000",
+                        "inverse-primary": "#ffb4a8",
+                        "on-primary-container": "#ffa092",
+                        "on-secondary-fixed-variant": "#44474a",
+                        "tertiary-fixed": "#dfe0ff",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#001ba0",
+                        "status-progress-text": "#92400E",
+                        "secondary-fixed": "#e0e2e6",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#fff0ee",
+                        "surface-tint": "#b82014",
+                        "status-completed-bg": "#D1FAE5",
+                        "on-tertiary-container": "#abb4ff",
+                        "on-tertiary-fixed-variant": "#0027d4",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#c4c7ca",
+                        "on-surface": "#271815",
+                        "surface-bright": "#fff8f6",
+                        "inverse-surface": "#3e2c29",
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#f9dcd7",
+                        "progress-high": "#059669",
+                        "on-background": "#271815",
+                        "surface-container": "#ffe9e6",
+                        "surface": "#fff8f6",
+                        "progress-medium": "#D97706",
+                        "status-pending-bg": "#E5E7EB",
+                        "status-delayed-bg": "#FED7AA",
+                        "secondary-container": "#dee0e4",
+                        "background": "#fff8f6",
+                        "primary-fixed": "#ffdad4",
+                        "secondary": "#5c5f62",
+                        "outline": "#8f706b",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#000c61",
+                        "outline-variant": "#e4beb8",
+                        "progress-low": "#DC2626",
+                        "surface-container-highest": "#f9dcd7",
+                        "on-secondary-container": "#606366",
+                        "tertiary-container": "#0029dc",
+                        "on-primary-fixed-variant": "#930000",
+                        "on-tertiary": "#ffffff",
+                        "status-overdue-bg": "#FEE2E2",
+                        "on-surface-variant": "#5b403c",
+                        "primary-fixed-dim": "#ffb4a8",
+                        "inverse-on-surface": "#ffedea",
+                        "primary": "#6e0000",
+                        "on-secondary-fixed": "#191c1f",
+                        "surface-container-high": "#ffe2dd",
+                        "on-primary-fixed": "#410000",
+                        "status-progress-bg": "#FEF3C7",
+                        "status-delayed-text": "#9A3412"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "component-gap": "8px",
+                        "gutter": "12px",
+                        "top-bar-height": "56px",
+                        "container-padding": "16px",
+                        "bottom-nav-height": "64px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "label-sm": ["Inter"],
+                        "headline-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+                        "headline-lg": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #059669; /* progress-high */
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #059669; /* progress-high */
+        }
+        .toggle-checkbox:checked + .toggle-label:after {
+            transform: translateX(100%);
+            border-color: white;
+        }
+        body {
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-container-lowest text-on-surface antialiased min-h-screen">
+<!-- Top App Bar (Task-Focused: No Bottom Nav) -->
+<header class="fixed top-0 w-full z-50 bg-surface-container-lowest shadow-sm flex items-center justify-between px-container-padding h-top-bar-height">
+<button class="text-on-surface hover:bg-surface-container-low p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-on-surface flex-1 text-center pr-10">Manajemen User</h1>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-top-bar-height pb-safe px-container-padding pb-32">
+<!-- Search Bar -->
+<div class="mt-4 mb-6 relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary">search</span>
+<input class="w-full bg-surface-container rounded-lg py-3 pl-10 pr-4 text-body-md font-body-md border border-outline-variant focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all outline-none" placeholder="Cari user..." type="text"/>
+</div>
+<!-- User List Grid -->
+<div class="grid gap-4">
+<!-- User Card 1: Pak Ahmad -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-4 shadow-[0_1px_3px_rgba(0,0,0,0.08)] flex flex-col gap-3 relative overflow-hidden">
+<div class="flex items-start gap-3">
+<img class="w-12 h-12 rounded-full object-cover border border-divider shrink-0" data-alt="A professional headshot of a middle-aged Indonesian man wearing a clean white shirt, against a light gray background, corporate modern style, soft lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5oPmRpFnHrVIpRDYKkbTUVX6A3C8EJ3KnlCVOLTQ9uEO2wOOVWMUXuVHNWxXqym8Z0sHodubBtRO-yT7T__f9E4rYesdUftcAyet41E5z6KMLfUqNxulJchaj6retJXz2oOYAj-nH_UdDLGP2iue-uj4VFDYnXzJZZITu1rsh3iIbegCp1NuNoKhnMUplpUgClftJqU5WlnraXeIxg1WcTBEodXFoR4HH0LH-Ki8lkFAE7YjxrgLyvYhIaYQ7ewbeg5Z5UTaTJ1A"/>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Pak Ahmad</h2>
+<span class="bg-primary-container text-on-primary font-label-sm text-label-sm px-3 py-1 rounded-full shrink-0">Super Admin</span>
+</div>
+<p class="font-body-md text-body-md text-secondary mt-0.5">pak.ahmad@email.com</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mt-1">
+<span class="border border-primary-container text-primary-container font-label-md text-label-md px-3 py-1 rounded-lg bg-surface-container-lowest">BPH</span>
+<span class="bg-primary-container text-on-primary font-label-md text-label-md px-3 py-1 rounded-lg">Koordinator</span>
+</div>
+<div class="flex items-center justify-between mt-2 pt-3 border-t border-divider">
+<span class="font-body-md text-body-md text-on-surface">Status</span>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-progress-high">Aktif</span>
+<div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none cursor-pointer z-10 transition-transform duration-200" id="toggle_ahmad" name="toggle_ahmad" style="border-color: #059669; transform: translateX(100%);" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-5 rounded-full bg-progress-high cursor-pointer" for="toggle_ahmad"></label>
+</div>
+</div>
+</div>
+</div>
+<!-- User Card 2: Mas Andi -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-4 shadow-[0_1px_3px_rgba(0,0,0,0.08)] flex flex-col gap-3 relative overflow-hidden">
+<div class="flex items-start gap-3">
+<img class="w-12 h-12 rounded-full object-cover border border-divider shrink-0" data-alt="A professional headshot of a young Indonesian man smiling lightly, wearing a navy blue polo shirt, against a soft white background, corporate modern style, bright lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTO81nwbBrJiz0nql3zTXKts8yJKgxfRPnGPB02-W9aIfQZuyYLdXBVAPtUEr4Ebj3Qp2KcNlvbjBu_v3WGkwrK-CwxkQfVz5DYEG-JoP9h0Bo72jqogE8heLEyzVe_XfoCeKnKn0bFvR-nfCsh8o4XUf83Vw3F9tdt7qw0RwPsWR4M5JFU0S8DIk9XlyxO4SKruf06T8NCgRLuwWzgXHvION090482R2ZYRZcbVhJsmx0H-n01Z3nhtQoCz6qM08__4gVTZ6fzrU"/>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Mas Andi</h2>
+<span class="bg-tertiary text-on-tertiary font-label-sm text-label-sm px-3 py-1 rounded-full shrink-0">Koordinator Sie</span>
+</div>
+<p class="font-body-md text-body-md text-secondary mt-0.5">andi@email.com</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mt-1">
+<span class="border border-outline text-secondary font-label-md text-label-md px-3 py-1 rounded-lg bg-surface-container-lowest">Sie Perkap</span>
+<span class="border border-outline text-secondary font-label-md text-label-md px-3 py-1 rounded-lg bg-surface-container-lowest">Koordinator</span>
+</div>
+<div class="flex items-center justify-between mt-2 pt-3 border-t border-divider">
+<span class="font-body-md text-body-md text-on-surface">Status</span>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-progress-high">Aktif</span>
+<div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none cursor-pointer z-10 transition-transform duration-200" id="toggle_andi" name="toggle_andi" style="border-color: #059669; transform: translateX(100%);" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-5 rounded-full bg-progress-high cursor-pointer" for="toggle_andi"></label>
+</div>
+</div>
+</div>
+</div>
+<!-- User Card 3: Bu Sari -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-4 shadow-[0_1px_3px_rgba(0,0,0,0.08)] flex flex-col gap-3 relative overflow-hidden">
+<div class="flex items-start gap-3">
+<img class="w-12 h-12 rounded-full object-cover border border-divider shrink-0" data-alt="A professional headshot of an Indonesian woman wearing a beige hijab and a smart blazer, smiling gently against a bright, airy background, modern corporate style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxsMozlXL8mPZ7-F7azT7bQJQanoFQHmqyF-TNudybFR4FNKmMDXmqToq5YOxcyqQEpkWnJvUBqQes0kk4f20wEf7Rl2qFIvU4af4nxNiny0qclNV-GIDlAyQwSuSEZkf9XCnsuy7h1wbkxSTX_a2g08424Hzi5TUCIG6lhhSWxDrDtPBh_GhvRg_jV5VowxbIgDE2NMsqcUtNWS0UNIbr_NNU5xj79b8er4GqCSkFlnV-rbq-IPT20HyUaWlcouBS37Ut4ubzVyk"/>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Bu Sari</h2>
+<span class="bg-secondary text-on-secondary font-label-sm text-label-sm px-3 py-1 rounded-full shrink-0">Anggota Sie</span>
+</div>
+<p class="font-body-md text-body-md text-secondary mt-0.5">sari@email.com</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mt-1">
+<span class="border border-outline text-secondary font-label-md text-label-md px-3 py-1 rounded-lg bg-surface-container-lowest">Sie Konsumsi</span>
+<span class="border border-outline text-secondary font-label-md text-label-md px-3 py-1 rounded-lg bg-surface-container-lowest">Sie Acara</span>
+</div>
+<div class="flex items-center justify-between mt-2 pt-3 border-t border-divider">
+<span class="font-body-md text-body-md text-on-surface">Status</span>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-progress-high">Aktif</span>
+<div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none cursor-pointer z-10 transition-transform duration-200" id="toggle_sari" name="toggle_sari" style="border-color: #059669; transform: translateX(100%);" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-5 rounded-full bg-progress-high cursor-pointer" for="toggle_sari"></label>
+</div>
+</div>
+</div>
+</div>
+<!-- User Card 4: Pak Joko (Inactive) -->
+<div class="bg-surface-container border border-outline-variant rounded-xl p-4 shadow-[0_1px_3px_rgba(0,0,0,0.08)] flex flex-col gap-3 relative overflow-hidden opacity-75">
+<div class="flex items-start gap-3">
+<img class="w-12 h-12 rounded-full object-cover border border-divider shrink-0 grayscale-[50%]" data-alt="A professional headshot of an older Indonesian man with a mustache, wearing a grey shirt, against a muted grey background, slightly desaturated, corporate modern style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfXH4DIZaIClJkRIGG4ZEuNj9vsQSHI3-0Mb0trlJfJTIGVVeP2sbnI__pr7e1-runp4dHNH0-fx3bvwVjdmVbsjzrYhvQMD9TQ0eSE-v8bQ8PRxeoxijK9MkcWJWA10qUsDlGFmwNpsckVRTicv1B3FQwWYaMaAidFyyry1GG5xBvtYmFlw5yGMQk0Jo_BFgI9602wkH3ywnLV6tnxN8GLFwjktLxktho3mbAStYDtTPsGkhQcLEgLwL-MEZuEGUQkFJS3OrojIc"/>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Pak Joko</h2>
+<span class="bg-surface-variant text-on-surface-variant font-label-sm text-label-sm px-3 py-1 rounded-full shrink-0 border border-outline-variant">Viewer</span>
+</div>
+<p class="font-body-md text-body-md text-secondary mt-0.5">joko@email.com</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mt-1">
+<span class="text-secondary font-body-md text-body-md italic opacity-70">Belum ada divisi</span>
+</div>
+<div class="flex items-center justify-between mt-2 pt-3 border-t border-divider">
+<span class="font-body-md text-body-md text-secondary">Status</span>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-secondary">Nonaktif</span>
+<div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+<input class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 border-status-pending-text appearance-none cursor-pointer z-10 transition-transform duration-200" id="toggle_joko" name="toggle_joko" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-5 rounded-full bg-status-pending-text cursor-pointer" for="toggle_joko"></label>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button -->
+<button class="fixed bottom-6 right-4 w-14 h-14 bg-primary-container text-on-primary rounded-full shadow-lg flex items-center justify-center hover:bg-primary transition-colors z-50 active:scale-95">
+<span class="material-symbols-outlined" style="font-size: 28px;">add</span>
+</button>
+</body></html>
